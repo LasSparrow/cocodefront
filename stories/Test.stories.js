@@ -3,7 +3,7 @@ import Sidebar from '../comps/Sidebar';
 
 export default {
     title: 'Test', 
-    component: Sidebar 
+    component: Sidebar
 }; 
 
 export const SidebarComponent = () => <Sidebar />; 
