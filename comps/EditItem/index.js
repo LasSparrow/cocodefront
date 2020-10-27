@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const Title = styled.div`
     margin-right: 10px;
+    font-weight: bold;
 `;
 
 const Desc = styled.div`
