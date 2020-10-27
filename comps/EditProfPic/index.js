@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Edit = styled.div`
     transform: ${props=>props.highlight ? "scale(1.1)" : "scale(1)"};
@@ -15,6 +15,9 @@ const Edit = styled.div`
 `;
 
 const Camera = styled.img`
+    width: 20px;
+    height: 20px;
+    fill: #018EA2;
 `;
 
 const EditProfPicContainer = styled.div`        
