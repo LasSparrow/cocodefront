@@ -12,32 +12,34 @@ const SessionBox = styled.div`
        margin-left: 10px;
        padding: 10px;
        }
-    div img {
-        left: 0px;
-    }
 `;
 
 const Icon = styled.div`
-    left: 0px;
+    float: left;
+    display: flex;
+    img {
+        width: 20px;
+        height: 20px;
+    }
 `;
 
 const SessionDes = styled.div`
     background-color: #D6D6D6;
-    max-width: 970px;
+    max-width: 940px;
     max-height: 200px; 
     border-radius:20px;
     margin-top:10px;
-    div{
-        padding: 20px;
-    }   
+    padding: 20px;
 `;
 
 const Session = ({SessionName, text1, text2, text3}) => {
     return <div>
             <SessionBox>
                 <div>{SessionName}</div>
-                <Icon><img src="/trash-solid.svg" /></Icon>
-                <Icon><img src="/chevron_right-24px.svg" /></Icon>
+                <Icon>
+                    <img src="/trash-solid.svg" />
+                    <img src="/chevron_right-24px.svg" />
+                </Icon>
             </SessionBox>
             <SessionDes>
                 <div><b>Tutor:</b>{text1}</div>

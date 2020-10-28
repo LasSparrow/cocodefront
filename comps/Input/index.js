@@ -6,16 +6,17 @@ const InputBox = styled.div`
     max-height: 730px;
     background-color:${props=>props.bgColor ? props.bgColor: "#173F5F"};
     color: ${props=>props.fontColor ? props.fontColor: "white"};
-    div{
-        align-item: center;
-        align-content:center;
-        padding: 20px;
-        margin-left: 30px;
+    input{
+        width: 350px;
+        height: 30px;
     }
 `;
 
 const Input = styled.div`
-    margin-left: 60px;
+    align-item: center;
+    align-content:center;
+    padding: 60px 20px 60px 20px;
+    margin-left: 20%;
 `;
 
 const TitleBox = styled.div`
@@ -33,7 +34,6 @@ const FormTitle = styled.div`
 
 const FormSubtitle = styled.p`
     font-size: 16px;
-    margin-top: 40px;
     margin-left: 40px;
     a {
         color: #018EA2;
@@ -42,7 +42,7 @@ const FormSubtitle = styled.p`
 
 const SigninForm = ({label, color, placeholder}) => {
     return <InputBox>
-        <div>    
+        <Input>    
             <TitleBox>
                 <FormTitle>
                     Sign In
@@ -51,7 +51,6 @@ const SigninForm = ({label, color, placeholder}) => {
                     Don't have an account? <a href="url">Sign Up</a>
                 </FormSubtitle>
             </TitleBox>
-            <Input>
                 <InputLabel color={color}>
                     Eamil
                 </InputLabel>
@@ -60,8 +59,7 @@ const SigninForm = ({label, color, placeholder}) => {
                     Password
                 </InputLabel>
                 <input type="text" placeholder="Password"/>
-            </Input>
-        </div>
+        </Input>
     </InputBox>
 }
 
