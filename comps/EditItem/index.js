@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Title = styled.div`
     margin-right: 10px;
@@ -7,6 +7,7 @@ const Title = styled.div`
 `;
 
 const Desc = styled.div`
+    margin-bottom: 30px;
 `;
 
 const Section = styled.div`
@@ -27,7 +28,6 @@ const Pencil = styled.img`
 const EditItemContainer = styled.div`
     display: inline-flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 `;
 
