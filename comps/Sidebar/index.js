@@ -14,6 +14,8 @@ const SidebarContainer = styled.div`
 `;
 
 const LogoContainer = styled.div`
+    transform: ${props=>props.hovered ? "scale(1)" : "scale(1.1)"};
+    transition: 0.5s;
     max-width: 175px; 
     max-height: 84px;  
     cursor: pointer;
@@ -83,6 +85,8 @@ const SettingsContainer = styled.div`
 `;
 
 const BecomeTutorContainer = styled.div`
+    transform: ${props=>props.hoveredtwo ? "scale(1)" : "scale(1.1)"};
+    transition: 0.5s; 
     min-width: 192px; 
     min-height: 48px; 
     background-color: #173F5F;
@@ -98,8 +102,15 @@ const BecomeTutorContainer = styled.div`
 `;
 
 const Sidebar = () => {
+    const[hovered, setHovered] = useState(true); 
+    const[hoveredtwo, setHoveredtwo] = useState(true); 
+
     return <SidebarContainer> 
-        <LogoContainer>
+        <LogoContainer hovered={hovered} onMouseEnter={() =>{
+            setHovered(!hovered);
+        }} onMouseLeave={() =>{
+            setHovered(!hovered); 
+        }}> 
             <img src="/CocodeSidebarLogo.png"></img>
         </LogoContainer>
         <ProfileContainer>
@@ -126,7 +137,11 @@ const Sidebar = () => {
             <img src="/SettingsIcon.png"></img>
             Settings
         </SettingsContainer>
-        <BecomeTutorContainer>
+        <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{
+            setHoveredtwo(!hoveredtwo);
+        }} onMouseLeave={() =>{
+            setHoveredtwo(!hoveredtwo); 
+        }}> 
             Become A Tutor 
         </BecomeTutorContainer>
     </SidebarContainer>
