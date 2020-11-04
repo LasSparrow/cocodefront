@@ -1,11 +1,11 @@
 import React from 'react';
-import EditItem from '../comps/EditItem'; 
-import EditProfPic from '../comps/EditProfPic'; 
-import ListLine from '../comps/ListLine';
-import List from '../comps/List';
-import AccountEdit from '../comps/AccountEdit';
-import TutorComp from '../comps/TutorComp';
-import MyAccountPage from '../comps/MyAccountPage';
+import EditItem from '../src/comps/EditItem'; 
+import EditProfPic from '../src/comps/EditProfPic'; 
+import ListLine from '../src/comps/ListLine';
+import List from '../src/comps/List';
+import AccountEdit from '../src/comps/AccountEdit';
+import TutorComp from '../src/comps/TutorComp';
+import MyAccountPage from '../src/comps/MyAccountPage';
 
 export default {
     title: 'Account', 

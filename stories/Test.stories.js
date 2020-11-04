@@ -1,7 +1,7 @@
 import React from 'react';
-import Sidebar from '../comps/Sidebar'; 
-import ExploreBox from '../comps/Explore';
-import Search from '../comps/Search'; 
+import Sidebar from '../src/comps/Sidebar'; 
+import ExploreBox from '../src/comps/Explore';
+import Search from '../src/comps/Search'; 
 
 export default {
     title: 'Test', 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'; 
+import React from 'react'; 
 import styled from "styled-components";
 
 const FormContainer = styled.div`
@@ -15,7 +15,7 @@ const Title = styled.div`
     }
 `;
 
-const Input = style.div`
+const Input = styled.div`
     font-size: 18px;
     input{
         width: 385px;
@@ -26,9 +26,6 @@ const Input = style.div`
 const SignupForm = () => {
     return <FormContainer>
             <Title>
-                <div>
-                    <img src="/CocodeSidebarLogo.png" />
-                </div>
                 <div>
                     Get started with a free account!
                 </div>
