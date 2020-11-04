@@ -53,6 +53,8 @@ const PRTabRight = styled.div`
     cursor: pointer; 
     position: absolute; 
     right: 1000px; 
+    transform: ${props=>props.enlarge ? "scale(1.3)" : "scale(1)"};
+    transition: 0.3s; 
 `;
 
 const PRText = styled.div`
@@ -65,6 +67,7 @@ const PRText = styled.div`
 `; 
 
 const PRTab = () => {
+    const[enlarge, setEnlarge] = useState(true); 
     return <PRTabMain>
 
         <PRText>Pending Requests</PRText>
@@ -77,7 +80,11 @@ const PRTab = () => {
             <h1>Machine Learning</h1>
             <p>Sandy Rivers</p>
         </PRTabText>
-        <PRTabRight>
+        <PRTabRight enlarge={enlarge === 1} onMouseEnter={() =>{
+            setEnlarge(1);
+        }} onMouseLeave={() =>{
+            setEnlarge(!enlarge);
+        }}> 
             <img src="/InformationIcon.png"></img>
         </PRTabRight>
         </PRTabContainer>
@@ -90,7 +97,11 @@ const PRTab = () => {
             <h1>Algorithm</h1>
             <p>Sandy Rivers</p>
         </PRTabText>
-        <PRTabRight>
+        <PRTabRight enlarge={enlarge === 2} onMouseEnter={() =>{
+            setEnlarge(2);
+        }} onMouseLeave={() =>{
+            setEnlarge(!enlarge);
+        }}> 
             <img src="/InformationIcon.png"></img>
         </PRTabRight>
         </PRTabContainer>
@@ -103,7 +114,11 @@ const PRTab = () => {
             <h1>Data Structure</h1>
             <p>Sandy Rivers</p>
         </PRTabText>
-        <PRTabRight>
+        <PRTabRight enlarge={enlarge === 3} onMouseEnter={() =>{
+            setEnlarge(3);
+        }} onMouseLeave={() =>{
+            setEnlarge(!enlarge);
+        }}>
             <img src="/InformationIcon.png"></img>
         </PRTabRight>
         </PRTabContainer>

@@ -6,6 +6,7 @@ import AccountBox from '../comps/Account';
 import PRTab from '../comps/PendingRequests';
 import USTab from '../comps/UpcomingSessions'; 
 import FSTab from '../comps/FreeSession'; 
+import RightSidebar from '../comps/RightSidebar'; 
 
 export default {
     title: 'Test', 
@@ -19,3 +20,4 @@ export const AccountBoxComponent = () => <AccountBox />;
 export const PRTabComponent = () => <PRTab />; 
 export const USTabComponent = () => <USTab />; 
 export const FSTabComponent = () => <FSTab />; 
+export const RightSidebarComponent = () => <RightSidebar />; 

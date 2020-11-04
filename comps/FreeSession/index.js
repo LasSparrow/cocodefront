@@ -40,9 +40,14 @@ const FSButton = styled.div`
     font-weight: 600; 
     padding: 15px 60px 15px 60px;  
     margin-bottom: 27px; 
+    transform: ${props=>props.enlarge ? "scale(1)" : "scale(1.1)"};
+    transition: 0.4s; 
+
 `;
 
 const FSTab = () => { 
+    const[enlarge, setEnlarge] = useState(true); 
+
     return <FSContainer>
         <FSIcon>
             <img src="/RibbonIcon.png"></img>
@@ -50,7 +55,11 @@ const FSTab = () => {
         <FSMiddle>
             Struggling at school?
         </FSMiddle>
-        <FSButton>
+        <FSButton enlarge={enlarge} onMouseEnter={() =>{
+            setEnlarge(!enlarge); 
+        }} onMouseLeave={() =>{
+            setEnlarge(!enlarge);
+        }}>
             Get a free session
         </FSButton>
     </FSContainer>
