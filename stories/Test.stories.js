@@ -1,12 +1,12 @@
 import React from 'react';
-import Sidebar from '../comps/Sidebar'; 
-import ExploreBox from '../comps/Explore';
-import Search from '../comps/Search'; 
-import AccountBox from '../comps/Account'; 
-import PRTab from '../comps/PendingRequests';
-import USTab from '../comps/UpcomingSessions'; 
-import FSTab from '../comps/FreeSession'; 
-import RightSidebar from '../comps/RightSidebar'; 
+import Sidebar from '../src/comps/Sidebar'; 
+import ExploreBox from '../src/comps/Explore';
+import Search from '../src/comps/Search'; 
+import AccountBox from '../src/comps/Account'; 
+import PRTab from '../src/comps/PendingRequests';
+import USTab from '../src/comps/UpcomingSessions'; 
+import FSTab from '../src/comps/FreeSession'; 
+import RightSidebar from '../src/comps/RightSidebar'; 
 
 export default {
     title: 'Test', 
