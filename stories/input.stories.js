@@ -1,6 +1,6 @@
 import React from 'react';
-import SigninForm from '../comps/Input'; 
-import SessionBox from '../comps/Session'; 
+import SigninForm from '../src/comps/Input'; 
+import SessionBox from '../src/comps/Session'; 
 
 export default {
     title: 'Form', 

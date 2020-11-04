@@ -1,6 +1,6 @@
 import React from 'react';
-import LangTags from '../comps/LangTags'; 
-import ProfTags from '../comps/ProfTags'; 
+import LangTags from '../src/comps/LangTags'; 
+import ProfTags from '../src/comps/ProfTags'; 
 
 export default {
     title: 'Tags', 
