@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'; 
-import styled from "styled-components"
+import styled from "styled-components";
+import Button from "../../Button";
 
 const InputBox = styled.div`
-    max-width: 700px;
+    max-width: 500px;
     max-height: 730px;
-    background-color:${props=>props.bgColor ? props.bgColor: "#173F5F"};
-    color: ${props=>props.fontColor ? props.fontColor: "white"};
+    background-color:#173F5F;
+    color: white;
     input{
         width: 350px;
         height: 30px;
@@ -16,12 +17,13 @@ const Input = styled.div`
     align-item: center;
     align-content:center;
     padding: 60px 20px 60px 20px;
-    margin-left: 20%;
+    margin-left: 10%;
 `;
 
 const TitleBox = styled.div`
     display: flex;
     align-item: center;
+    margin-bottom: 50px;
 `;
 
 const InputLabel = styled.p`
@@ -37,10 +39,11 @@ const FormSubtitle = styled.p`
     margin-left: 40px;
     a {
         color: #018EA2;
+        margin-left: 10px;
     }
 `;
 
-const SigninForm = ({label, color, placeholder}) => {
+const SigninForm = () => {
     return <InputBox>
         <Input>    
             <TitleBox>
@@ -51,21 +54,21 @@ const SigninForm = ({label, color, placeholder}) => {
                     Don't have an account? <a href="url">Sign Up</a>
                 </FormSubtitle>
             </TitleBox>
-                <InputLabel color={color}>
+                <InputLabel>
                     Eamil
                 </InputLabel>
-                <input type="text" placeholder={placeholder}/>
-                <InputLabel color={color}>
+                <input type="email" placeholder="Email"/>
+                <InputLabel>
                     Password
                 </InputLabel>
-                <input type="text" placeholder="Password"/>
+                <input type="password" placeholder="Password"/>
         </Input>
+        <div><Button text="Sign Up"/></div>
     </InputBox>
 }
 
 SigninForm.defaultProps = {
-    label: "Email",
-    placeholder: "Email"
+    
 }
 
 export default SigninForm; 

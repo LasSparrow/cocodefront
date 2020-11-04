@@ -1,6 +1,6 @@
 import React from 'react';
-import SigninForm from '../comps/Input'; 
-import SessionBox from '../comps/Session'; 
+import SigninForm from '../comps/Form/SignIn '; 
+import SignupForm from '../comps/Form/SignUp'
 
 export default {
     title: 'Form', 
@@ -8,4 +8,4 @@ export default {
 }; 
 
 export const BasicSigninForm = () => <SigninForm />;
-export const BasicSessionBox = () => <SessionBox />;
+export const BasicSignupForm = () => <SignupForm />;
