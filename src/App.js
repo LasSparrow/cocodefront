@@ -2,7 +2,7 @@
 //import './App.css';
 import Page from './pages/';
 //global styles
-//import './App.scss'
+import './App.scss'
 
 function App() {
   return (
