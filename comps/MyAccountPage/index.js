@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Sidebar from '../Sidebar';
 import EditProfPic from '../EditProfPic';
 
-const MyAccountPage = styled.div`
+const MyAccountPageContainer = styled.div`
 `;
 
 const MyAccountPage = () => {
