@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const ImageContainer = styled.div`
+    transform: ${props=>props.hovered ? "scale(1)" : "scale(1.1)"};
+    transition: 0.5s; 
     min-width: 801px; 
     min-height: 408px;
     img {
@@ -47,7 +49,13 @@ const IconContainer = styled.div`
 `; 
 
 const ExploreBox = () => {
-return  <ImageContainer>
+    const[hovered, setHovered] = useState(true); 
+
+return  <ImageContainer hovered={hovered} onMouseEnter={() =>{
+    setHovered(!hovered);
+}} onMouseLeave={() =>{
+    setHovered(!hovered);
+}}>
         <img src="/WebDevImage.png"></img>
         <BigTextContainer>Web Development</BigTextContainer>
         <SmallTextContainer>2000Students 30Tutors</SmallTextContainer>

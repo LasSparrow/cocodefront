@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
-import styled from "styled-components"
+import styled from "styled-components";
 
 const LangTagsContainer = styled.div`
     display: inline-flex;
@@ -10,11 +10,12 @@ const LangTagsContainer = styled.div`
     background-color: ${props=>props.selected ? "#173F5F" : "#018EA2"};
     border-radius: 10px;
     padding: 5px 10px;
+    margin: 5px;
     color: white;
     cursor: ${props=>props.select ? "default" : "pointer"};
 `;
 
-const LangTags = ({text, select}) => {
+const LangTags = ({text, select, selec}) => {
     const[selected, setSelected] = useState(true);
 
     useEffect(()=>{
