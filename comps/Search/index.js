@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const InputContainer = styled.input`
-    min-width: 872px; 
+    min-width: 192px; 
     min-height: 56px; 
     background-color: #FFFFFF;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #B8CAE8;
     border-radius: 10px; 
+    outline: none; 
 
     &::placeholder {
         color: #D6D6D6; 
