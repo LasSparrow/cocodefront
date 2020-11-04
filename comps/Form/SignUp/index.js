@@ -4,6 +4,7 @@ import styled from "styled-components";
 const FormContainer = styled.div`
     max-width:455px;
     height:auto;
+    box-sizing:border-box;
 `;
 
 const Title = styled.div`

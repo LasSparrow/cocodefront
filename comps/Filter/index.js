@@ -68,7 +68,7 @@ Filter.defaultProps = {
     text1:"5 Stars",
     text2:"4 Stars",
     text3:"3 Stars",
-    text4:"",
+    text4:"2 Stars",
     expand: false
 }
 

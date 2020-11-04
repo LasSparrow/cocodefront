@@ -8,4 +8,3 @@ export default {
 }; 
 
 export const BasicSigninForm = () => <SigninForm />;
-export const BasicSignupForm = () => <SignupForm />;
