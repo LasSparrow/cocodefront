@@ -172,7 +172,6 @@ const Sidebar = () => {
 }
 
 Sidebar.defaultProps = {
-
 }
 
 export default Sidebar; 
