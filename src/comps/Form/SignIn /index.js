@@ -3,67 +3,82 @@ import styled from "styled-components";
 import Button from "../../Button";
 
 const InputBox = styled.div`
-    max-width: 500px;
-    max-height: 730px;
+    width: 700px;
+    height: 730px;
     background-color:#173F5F;
+    box-sizing:border-box;
     color: white;
-    input{
-        width: 350px;
-        height: 30px;
-    }
-`;
-
-const Input = styled.div`
-    align-item: center;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
     align-content:center;
-    padding: 60px 20px 60px 20px;
-    margin-left: 10%;
+    padding-top: 10%;
 `;
 
 const TitleBox = styled.div`
-    display: flex;
-    align-item: center;
-    margin-bottom: 50px;
+    width:auto;
+    height:auto;
+    display:flex;
+    margin-bottom: 40px;
+    font-size: 36px; 
 `;
 
-const InputLabel = styled.p`
+const InputForm = styled.p`
+    width:auto;
+    height:auto;
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    div{
+        display:flex;
+        flex-direction:column;
+        margin-bottom: 40px;
+        input{
+            width: 535px;
+            height: 70px;
+            background-color:#D6D6D6;
+            margin-top:10px;
+            border:hidden;
+        }
+    } 
 `
-const FormTitle = styled.div`
-    font-size: 36px;
-`;
 
 const FormSubtitle = styled.p`
     font-size: 16px;
-    margin-left: 40px;
+    margin-left: 14em;
     a {
         color: #018EA2;
         margin-left: 10px;
     }
 `;
 
+const SignupBut = styled.div`
+    width:auto;
+    height:auto;
+`;
+
 const SigninForm = () => {
-    return <InputBox>
-        <Input>    
+    return <InputBox> 
             <TitleBox>
-                <FormTitle>
+                <div>
                     Sign In
-                </FormTitle>
+                </div>
                 <FormSubtitle>
                     Don't have an account? <a href="url">Sign Up</a>
                 </FormSubtitle>
             </TitleBox>
-                <InputLabel>
-                    Eamil
-                </InputLabel>
-                <input type="email" placeholder="Email"/>
-                <InputLabel>
-                    Password
-                </InputLabel>
-                <input type="password" placeholder="Password"/>
-        </Input>
-        <div><Button text="Sign Up"/></div>
+            <InputForm>
+                <div>
+                    <label>Eamil</label>
+                    <input type="email" placeholder="Email"/>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="password" placeholder="Password"/>
+                </div>  
+            </InputForm> 
+            <SignupBut>
+                    <Button text="Sign Up"/>
+            </SignupBut>         
     </InputBox>
 }
 

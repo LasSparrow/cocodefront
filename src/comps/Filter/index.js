@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 const FilterBox = styled.div`
     width: 155px;
@@ -43,7 +43,16 @@ const RotateImg = styled.img`
     margin-left: 3em;;
 `;
 
-const Filter = ({FilterName, text1, text2, text3, text4}) => {
+const Option = styled.div`
+    ${props=>props.reMove1 === true && css`
+        display: none;
+    `} 
+    ${props=>props.reMove2 === true && css`
+        display: none;
+    `}
+`;
+
+const Filter = ({FilterName, text1, text2, text3, text4, reMove1, reMove2}) => {
 
     const [expanded, setExpanded] = useState(false);
 
@@ -54,22 +63,22 @@ const Filter = ({FilterName, text1, text2, text3, text4}) => {
             </FilterBox>
             <Dropdown expanded={expanded}>
                 <div>{text1}</div>
-                <div>{text2}</div>
-                <div>{text3}</div>
-                <div>{text4}</div>
+                <Option reMove1={reMove1}>{text2}</Option>
+                <Option reMove2={reMove2}>{text3}</Option>
+                <Option reMove2={reMove2}>{text4}</Option>
             </Dropdown>
     </div>
-}
-    
-    
+}   
 
 Filter.defaultProps = {
     FilterName:"Rating",
-    text1:"5 Stars",
-    text2:"4 Stars",
-    text3:"3 Stars",
-    text4:"2 Stars",
-    expand: false
+    text1:"4.5 & up",
+    text2:"4.0 & up",
+    text3:"3.5 & up",
+    text4:"3.0 & up",
+    expand: false,
+    reMove1: true,
+    reMove2: true
 }
 
 export default Filter; 

@@ -36,6 +36,9 @@ const SessionDes = styled.div`
     opacity:${props=>props.expanded ? 1 : 0};
     height:${props=>props.expanded ? "auto" : "0px"};
     transition:opacity 0.3s;
+    div {
+        margin-top:15px;
+    }
 `;
 
 const RotateImg = styled.img`

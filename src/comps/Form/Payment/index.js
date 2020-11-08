@@ -1,7 +1,6 @@
 import React from 'react'; 
 import styled from "styled-components";
-import InPut from "../Input";
-import Filter from "../../Filter";
+import InPut from "../Input"
 
 const FormContainer = styled.div`
     max-width:455px;
@@ -24,17 +23,7 @@ const InputBox = styled.div`
     }
 `;
 
-const Choose = styled.div`
-    display: flex;
-    margin-top: 25px;
-    font-size: 18px;
-    align-content:justify;
-    label{
-        margin-right:20px;
-    }
-`;
-
-const SignupForm = ({title}) => {
+const PaymentForm = ({title}) => {
     return <FormContainer>
             <Title>
                 <div>
@@ -43,27 +32,26 @@ const SignupForm = ({title}) => {
             </Title>
         <InputBox> 
             <div>
-                <InPut />
+                <InPut label="Name on Card:" type="text" ph="Name on card"/>
             </div>
             <div>
-                <InPut label="Email" type="email" ph="Email"/>
+                <InPut label="Credit Card Number:" type="number" ph="Credit card number"/>
             </div>
             <div>
-                <InPut label="Password" type="password" ph="Password"/>
+                <InPut changeWidth="false" label="Expiry date:" ph="MM/YY" />
+            </div>
+            <div>
+                <InPut changeWidth="false" label="CVC:" ph="CVC" />
+            </div>
+            <div>
+                <InPut changeWidth="false" label="Postal Code for Billing:" ph="Postal code" />
             </div>
         </InputBox>
-        <Choose>
-            <label>You are a:</label>
-            <div>
-                <Filter FilterName="Student" text1="Tutor"/>
-            </div>
-        </Choose>
     </FormContainer>
 }
 
-SignupForm.defaultProps = {
-    title: "Get started with a free account!",
-    
+PaymentForm.defaultProps = {
+    title: "Payment Method",
 }
 
-export default SignupForm; 
+export default PaymentForm; 
