@@ -1,5 +1,12 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
+import sidebarlogo from '../../public/CocodeSidebarLogo.png';
+import sidebarprofile from '../../public//ProfileIcon.png';
+import sidebarexplore from '../../public/ExploreIcon.png';
+import sidebarhistory from '../../public/HistoryIcon.png';
+import sidebartutors from '../../public/TopTutorsIcon.png';
+import sidebarsupport from '../../public/SupportIcon.png';
+import sidebarsettings from '../../public/SettingsIcon.png';
 
 const AllContainers = styled.div`
 //clicked prop css here
@@ -123,42 +130,42 @@ const Sidebar = () => {
         }} onMouseLeave={() =>{
             setHovered(!hovered); 
         }}> 
-            <img src="/CocodeSidebarLogo.png"></img>
+            <img src={sidebarlogo}></img>
         </LogoContainer>
         <ProfileContainer clicked={clicked === 2} onClick={() =>{
             setClicked(2); 
         }}>
-            <img src="/ProfileIcon.png"></img>
+            <img src={sidebarprofile}></img>
             Profile 
         </ProfileContainer>
         <ExploreContainer clicked={clicked === 1} onClick={() =>{
             setClicked(1); 
         }}>
-            <img src="/ExploreIcon.png"></img>
+            <img src={sidebarexplore}></img>
             Explore 
         </ExploreContainer>
         <HistoryContainer clicked={clicked === 3} onClick={() =>{
             setClicked(3); 
         }}>
-            <img src="/HistoryIcon.png"></img>
+            <img src={sidebarhistory}></img>
             History 
         </HistoryContainer>
         <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
             setClicked(4); 
         }}>
-            <img src="/TopTutorsIcon.png"></img>
+            <img src={sidebartutors}></img>
                 Top Tutors 
         </TopTutorsContainer>
         <SupportContainer clicked={clicked === 5} onClick={() =>{
             setClicked(5); 
         }}>
-            <img src="/SupportIcon.png"></img>
+            <img src={sidebarsupport}></img>
             Support
         </SupportContainer>
         <SettingsContainer clicked={clicked === 6} onClick={() =>{
             setClicked(6); 
         }}>
-            <img src="/SettingsIcon.png"></img>
+            <img src={sidebarsettings}></img>
             Settings
         </SettingsContainer>
         <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{
