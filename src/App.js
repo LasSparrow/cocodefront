@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/';
+import Page from './pages/MyAccount';
 //global styles
 import './App.scss'
 

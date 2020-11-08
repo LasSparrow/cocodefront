@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from 'react'; 
 import styled from "styled-components";
+import cameraimg from '../../public/camera.svg';
+import picture from '../../public/user.svg';
 
 const Edit = styled.div`
     transform: ${props=>props.highlight ? "scale(1.1)" : "scale(1)"};
-    min-width: 20px;
-    min-height: 20px;
+    width: 20px;
+    height: 20px;
     background-color: #D6D6D6;
     border-radius: 100px;
     padding: 5px 7px;
-    position: absolute;
-    left: 125px;
-    top: 125px;
+    left: -30px;
+    top: 110px;
     cursor: pointer;
+    position: relative;
 `;
 
 const Camera = styled.img`
@@ -24,10 +26,10 @@ const EditProfPicContainer = styled.div`
     max-width: 150px; 
     max-height: 150px;
     border-radius: 100px;
+    display: flex;
 `;
 
 const UserImg = styled.img`
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 150px;
@@ -36,7 +38,7 @@ const UserImg = styled.img`
     border-radius: 100px;
 `;
 
-const EditProfPic = ({picture}) => {
+const EditProfPic = () => {
     const[highlight, setHighlight] = useState(false);
 
     return <EditProfPicContainer>
@@ -46,14 +48,13 @@ const EditProfPic = ({picture}) => {
     }} onMouseLeave={()=>{
         setHighlight(false);
     }}>
-            <Camera src="/camera.svg"></Camera>
+            <Camera src={cameraimg}></Camera>
         </Edit>
     </EditProfPicContainer>
 }
 
 EditProfPic.defaultProps = {
-    text: "Home",
-    picture: "/user.svg"
+    text: "Home"
 }
 
 export default EditProfPic; 

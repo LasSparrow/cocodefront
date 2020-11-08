@@ -4,6 +4,7 @@ import Sidebar from '../Sidebar';
 import EditProfPic from '../EditProfPic';
 
 const MyAccountPageContainer = styled.div`
+    display: flex;
 `;
 
 const MyAccountPage = () => {

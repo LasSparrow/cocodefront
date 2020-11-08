@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'; 
 import styled from "styled-components";
+import pencil from '../../public/pencil.svg';
 
 const Title = styled.div`
     margin-right: 10px;
@@ -8,6 +9,7 @@ const Title = styled.div`
 
 const Desc = styled.div`
     margin-bottom: 30px;
+    text-align: start;
 `;
 
 const Section = styled.div`
@@ -28,7 +30,6 @@ const Pencil = styled.img`
 const EditItemContainer = styled.div`
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
 `;
 
 const EditItem = ({desc, title}) => {
@@ -37,7 +38,7 @@ const EditItem = ({desc, title}) => {
         <Content>
             <Section>
                 <Title>{title}</Title>
-                <Pencil src="/pencil.svg"></Pencil>
+                <Pencil src={pencil}></Pencil>
             </Section>
             <Desc>{desc}</Desc>
         </Content>
