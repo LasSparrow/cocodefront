@@ -14,12 +14,14 @@ const AllContainers = styled.div`
 
 const SidebarContainer = styled(AllContainers)`
     padding: 25px 25px 0px 25px;
-    max-width: 272px; 
-    max-width: 1024px; 
+    flex: 0 0 200px;
+    height:100vh;
+    width:200px;
     background-color: #FFFFFF; 
     display: flex; 
     flex-direction: column; 
     align-items: center;
+    position: fixed;
     img {
         margin-right: 20px; 
     }
@@ -31,6 +33,7 @@ const LogoContainer = styled.div`
     min-width: 175px; 
     min-height: 84px;  
     cursor: pointer;
+    padding-left: 15px;
 `; 
 
 const ProfileContainer = styled.div`

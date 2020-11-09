@@ -22,6 +22,7 @@ const UserImg = styled.img`
 
 const Edit = styled.div`
     transform: ${props=>props.highlight ? "scale(1.1)" : "scale(1)"};
+    transition: 0.5s;
     width: 50px;
     height: 50px;
     background-color: #D6D6D6;
