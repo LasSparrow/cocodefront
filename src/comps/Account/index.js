@@ -1,7 +1,6 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
 
-
 const AccountBoxMain = styled.div`
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -10,19 +9,22 @@ const AccountBoxMain = styled.div`
 `;
 
 const AccountBoxContainer = styled.div`
-    max-width: 250px; 
-    max-height: 56px;
-    background-color: #FFFFFF;   
+    max-width: 300px; 
+    max-height: 56px; 
     font-size: 24px; 
     font-weight: 400; 
     color: #011F3B; 
     display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
+    margin-left: -10px;
     img {
         cursor: pointer;
     }
 `; 
+
+const Name = styled.h5`
+    align-self: center;
+    padding: 0px 10px;
+`;
 
 const ExpandContainer = styled.div`
     max-width: 250px; 
@@ -36,24 +38,28 @@ const ExpandContainer = styled.div`
     border: 1px solid #EAEAEA; 
     box-sizing: border-box; 
     box-shadow: 5px 0px 18px rgba(0, 0, 0, 0, 0.08);
+    cursor: pointer; 
     a {
         margin: 10px 0; 
     }
-    cursor: pointer; 
-
 `; 
 
+const DDIcon = styled.img`
+    max-height: 20px;
+    max-width: 20px;
+    align-self: center;
+`;
 
-const AccountBox = () => {
+const AccountBox = ({name}) => {
     const[expanded, setExpanded] = useState(false)
 
     return <AccountBoxMain>
     <AccountBoxContainer>
         <img src="/Account Icon.png"></img>
-        <p>Adam Jameson</p>
-        <img src="/DropdownIcon.png" onClick={()=>{
+        <Name>{name}</Name>
+        <DDIcon src="/DropdownIcon.png" onClick={()=>{
             setExpanded(!expanded);
-        }}></img> 
+        }}></DDIcon> 
     </AccountBoxContainer>
     <ExpandContainer expanded={expanded}>
         <a>Account Settings</a>
@@ -63,7 +69,7 @@ const AccountBox = () => {
 }
 
 AccountBox.defaultProps = {
-
+    name: "Adam Jameson"
 }
 
 export default AccountBox; 

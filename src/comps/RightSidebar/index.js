@@ -7,23 +7,28 @@ import FSTab from '../FreeSession';
 
 
 const RightSidebarContainer = styled.div`
-    max-width: 363px; 
-    max-height: 1024px; 
+    width: 300px; 
+    height: 100vh; 
     display: flex; 
     flex-direction: column;
+    padding: 0px 5px 0px 5px;
     margin-left: 20px;
+    background: white;
+    position: fixed;
+    right: 0;
+    align-items: center;
 `; 
 
 const AccountBoxContainer = styled.div`
-    margin: 20px 0px 60px 0px; 
+    margin: 20px 0px 20px 0px; 
 `; 
 
 const PRTabContainer = styled.div`
-    margin: 0px 0px 40px 0px; 
+    margin: 0px 0px 20px 0px; 
 `; 
 
 const USTabContainer = styled.div`
-    margin: 0px 0px 40px 0px; 
+    margin: 0px 0px 20px 0px; 
 `;
 
 const FSTabContainer = styled.div`
