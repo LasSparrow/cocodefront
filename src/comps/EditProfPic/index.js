@@ -3,39 +3,40 @@ import styled from "styled-components";
 import cameraimg from '../../public/camera.svg';
 import picture from '../../public/user.svg';
 
-const Edit = styled.div`
-    transform: ${props=>props.highlight ? "scale(1.1)" : "scale(1)"};
-    width: 20px;
-    height: 20px;
-    background-color: #D6D6D6;
-    border-radius: 100px;
-    padding: 5px 7px;
-    left: -30px;
-    top: 110px;
-    cursor: pointer;
-    position: relative;
-`;
-
-const Camera = styled.img`
-    width: 20px;
-    height: 20px;
-    fill: #018EA2;
-`;
-
 const EditProfPicContainer = styled.div`        
-    max-width: 150px; 
-    max-height: 150px;
-    border-radius: 100px;
+    border-radius: 150px;
     display: flex;
+    position: relative;
+    z-index: 1;
 `;
 
 const UserImg = styled.img`
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 150px;    
+    width: 300px;
+    height: 300px;    
     object-fit: cover;
-    border-radius: 100px;
+    border-radius: 150px;
+    background: white;
+`;
+
+const Edit = styled.div`
+    transform: ${props=>props.highlight ? "scale(1.1)" : "scale(1)"};
+    width: 50px;
+    height: 50px;
+    background-color: #D6D6D6;
+    border-radius: 150px;
+    padding: 5px 7px;
+    left: -60px;
+    top: 210px;
+    cursor: pointer;
+    position: relative;
+`;
+
+const Camera = styled.img`
+    width: 40px;
+    height: 40px;
+    padding-top: 4px;
 `;
 
 const EditProfPic = () => {
