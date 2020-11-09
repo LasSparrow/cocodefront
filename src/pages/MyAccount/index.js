@@ -13,24 +13,24 @@ const MyAccountPage = styled.div`
 `;
 
 const Content = styled.div`
-  margin: auto;
-  display: flex;
+  width: 60vw;
+  margin-left: 350px;
+  margin-right: 40px;
   flex-direction: column;
-  align-self: center;
   padding: 50px;
 `;
 
 const ProfPicContainer = styled.div`
   position: relative;
-  margin: auto;
-  left: -150px;
+  left: -100px;
 `;
 
 const NameComp = styled.h1`
   position: relative;
   margin: auto;
+  transform: scale(1.2);
   top: -120px;
-  left: 260px;
+  left: 200px;
 `;
 
 export default function MyAccount({name}) {
