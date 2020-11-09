@@ -15,8 +15,8 @@ const AllContainers = styled.div`
 const SidebarContainer = styled(AllContainers)`
     padding: 25px 25px 0px 25px;
     flex: 0 0 200px;
-    height:100vh;
-    width:200px;
+    width: 200px;
+    height: 100vh;
     background-color: #FFFFFF; 
     display: flex; 
     flex-direction: column; 

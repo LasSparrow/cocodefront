@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import styled from 'styled-components'; 
 
 const FSContainer = styled.div`
-    max-width: 298px; 
-    max-height: 216px; 
+    max-width: 250px; 
+    max-height: 200px; 
     display: flex;
     flex-direction: column; 
     align-items: center; 
@@ -28,7 +28,7 @@ const FSMiddle = styled.div`
 `;
 
 const FSButton = styled.div`
-    max-width: 252px; 
+    max-width: 200px; 
     max-height: 49px; 
     background-color: #018EA2; 
     border-radius: 10px; 
@@ -38,7 +38,7 @@ const FSButton = styled.div`
     justify-content: center; 
     font-size: 18px; 
     font-weight: 600; 
-    padding: 15px 60px 15px 60px;  
+    padding: 10px 20px 10px 20px;  
     margin-bottom: 27px; 
     transform: ${props=>props.enlarge ? "scale(1)" : "scale(1.1)"};
     transition: 0.4s; 

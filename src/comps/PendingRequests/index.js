@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import styled from 'styled-components'; 
 
 const PRTabMain = styled.div`
-    max-width: = 298px; 
-    max-height = 251px; 
+    max-width: 246px; 
+    max-height: 176px; 
     display: flex; 
     flex-direction: column; 
 `;
 
 const PRTabContainer = styled.div`
-    max-width: 298px; 
-    max-height: 48px;  
+    max-width: 246px; 
+    max-height: 48px; 
     display: flex; 
     flex-direction: row; 
     align-items: center; 
@@ -26,9 +26,10 @@ const PRTabLeft = styled.div`
 `; 
 
 const PRTabText = styled.div`
-    max-width: 138px; 
+    min-width: 200px; 
     max-height: 42px; 
     justify-content: center; 
+    text-align: start;
     display: flex; 
     flex-direction: column; 
     h1 {
@@ -49,17 +50,18 @@ const PRTabRight = styled.div`
     max-width: 22px; 
     max-height: 22px; 
     display: flex; 
-    margin-left: 60px; 
+    margin-left: -35px; 
+    margin-top: -25px;
     cursor: pointer; 
-    position: absolute; 
-    right: 1000px; 
     transform: ${props=>props.enlarge ? "scale(1.3)" : "scale(1)"};
     transition: 0.3s; 
 `;
 
 const PRText = styled.div`
-    max-width: 158px; 
+    max-width: 200px; 
     max-height: 22px; 
+    text-align: start;
+    padding-left: 5px;
     font-size: 18px; 
     font-weight: 600; 
     color: #011F3B; 
@@ -94,23 +96,6 @@ const PRTab = () => {
             <img src="/PencilIcon.png"></img>
         </PRTabLeft>
         <PRTabText>
-            <h1>Algorithm</h1>
-            <p>Sandy Rivers</p>
-        </PRTabText>
-        <PRTabRight enlarge={enlarge === 2} onMouseEnter={() =>{
-            setEnlarge(2);
-        }} onMouseLeave={() =>{
-            setEnlarge(!enlarge);
-        }}> 
-            <img src="/InformationIcon.png"></img>
-        </PRTabRight>
-        </PRTabContainer>
-
-        <PRTabContainer>
-        <PRTabLeft>
-            <img src="/PencilIcon.png"></img>
-        </PRTabLeft>
-        <PRTabText>
             <h1>Data Structure</h1>
             <p>Sandy Rivers</p>
         </PRTabText>
@@ -122,10 +107,6 @@ const PRTab = () => {
             <img src="/InformationIcon.png"></img>
         </PRTabRight>
         </PRTabContainer>
-
-
-
-
 
         </PRTabMain>
 }
