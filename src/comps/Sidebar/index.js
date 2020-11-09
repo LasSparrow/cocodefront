@@ -1,6 +1,6 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
-import sidebarlogo from '../../public/CocodeSidebarLogo.png';
+import sidebarlogo from '../../public/logo.svg';
 import sidebarprofile from '../../public//ProfileIcon.png';
 import sidebarexplore from '../../public/ExploreIcon.png';
 import sidebarhistory from '../../public/HistoryIcon.png';
@@ -13,6 +13,7 @@ const AllContainers = styled.div`
 `;
 
 const SidebarContainer = styled(AllContainers)`
+    padding: 25px 25px 0px 25px;
     max-width: 272px; 
     max-width: 1024px; 
     background-color: #FFFFFF; 
@@ -27,8 +28,8 @@ const SidebarContainer = styled(AllContainers)`
 const LogoContainer = styled.div`
     transform: ${props=>props.hovered ? "scale(1)" : "scale(1.1)"};
     transition: 0.5s;
-    max-width: 175px; 
-    max-height: 84px;  
+    min-width: 175px; 
+    min-height: 84px;  
     cursor: pointer;
 `; 
 
