@@ -59,9 +59,9 @@ const Session = ({SessionName, text1, text2, text3}) => {
                 </Icon>
             </SessionBox>
             <SessionDes expanded={expanded}>
-                <div><b>Tutor:</b>{text1}</div>
-                <div><b>Schedule Time:</b>{text2}</div>
-                <div><b>Status:</b>{text3}</div>
+                <div><b>Tutor: </b>{text1}</div>
+                <div><b>Schedule Time: </b>{text2}</div>
+                <div><b>Status: </b>{text3}</div>
             </SessionDes>
     </div>
 }

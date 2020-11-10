@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import InPut from "../Input";
 import Filter from "../../Filter";
+import Button from "../../Button"
 
 const FormContainer = styled.div`
     max-width:455px;
@@ -34,6 +35,19 @@ const Choose = styled.div`
     }
 `;
 
+const Submit = styled.div`
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    align-content:center;
+    margin-top:60px;
+    a {
+        color: #018EA2;
+        margin-left: 10px;
+    }
+`;
+
 const SignupForm = ({title}) => {
     return <FormContainer>
             <Title>
@@ -58,6 +72,12 @@ const SignupForm = ({title}) => {
                 <Filter FilterName="Student" text1="Tutor"/>
             </div>
         </Choose>
+        <Submit>
+            <div><Button text="Sign Up"/></div>
+            <div>
+                Already have an account? <a href="url">Sign in</a>
+            </div>
+        </Submit>
     </FormContainer>
 }
 
