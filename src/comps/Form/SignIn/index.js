@@ -77,7 +77,7 @@ const SigninForm = () => {
                 </div>  
             </InputForm> 
             <SignupBut>
-                    <Button text="Sign Up"/>
+                    <Button text="Sign In"/>
             </SignupBut>         
     </InputBox>
 }

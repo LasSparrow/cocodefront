@@ -4,13 +4,15 @@ import styled, {css} from "styled-components";
 const FilterBox = styled.div`
     width: 155px;
     max-height: 39px;
+    border-radius:5px;
+    box-sizing:border-box;
     display:inline-flex;
     justify-content:center;
     align-items: center;
     cursor:pointer;
     background-color: #D6D6D6;
+    padding: 15px;
     div {
-       padding: 5px;
        flex-grow:1;
     }
 `;
