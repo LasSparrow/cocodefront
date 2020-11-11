@@ -1,4 +1,4 @@
-import React, {useState} from 'react'; 
+import React from 'react'; 
 import styled from "styled-components";
 import Button from "../../Button";
 
@@ -51,7 +51,7 @@ const FormSubtitle = styled.p`
     }
 `;
 
-const SignupBut = styled.div`
+const SigninBut = styled.div`
     width:auto;
     height:auto;
 `;
@@ -76,9 +76,9 @@ const SigninForm = () => {
                     <input type="password" placeholder="Password"/>
                 </div>  
             </InputForm> 
-            <SignupBut>
+            <SigninBut>
                     <Button text="Sign In"/>
-            </SignupBut>         
+            </SigninBut>         
     </InputBox>
 }
 
