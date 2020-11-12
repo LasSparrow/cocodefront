@@ -1,17 +1,27 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
+import sidebarlogo from '../../public/logo.svg';
+import sidebarprofile from '../../public//ProfileIcon.png';
+import sidebarexplore from '../../public/ExploreIcon.png';
+import sidebarhistory from '../../public/HistoryIcon.png';
+import sidebartutors from '../../public/TopTutorsIcon.png';
+import sidebarsupport from '../../public/SupportIcon.png';
+import sidebarsettings from '../../public/SettingsIcon.png';
 
 const AllContainers = styled.div`
 //clicked prop css here
 `;
 
 const SidebarContainer = styled(AllContainers)`
-    max-width: 272px; 
-    max-width: 1024px; 
+    padding: 25px 25px 0px 25px;
+    flex: 0 0 200px;
+    width: 200px;
+    height: 100vh;
     background-color: #FFFFFF; 
     display: flex; 
     flex-direction: column; 
     align-items: center;
+    position: fixed;
     img {
         margin-right: 20px; 
     }
@@ -20,9 +30,10 @@ const SidebarContainer = styled(AllContainers)`
 const LogoContainer = styled.div`
     transform: ${props=>props.hovered ? "scale(1)" : "scale(1.1)"};
     transition: 0.5s;
-    max-width: 175px; 
-    max-height: 84px;  
+    min-width: 175px; 
+    min-height: 84px;  
     cursor: pointer;
+    padding-left: 15px;
 `; 
 
 const ProfileContainer = styled.div`
@@ -123,42 +134,42 @@ const Sidebar = () => {
         }} onMouseLeave={() =>{
             setHovered(!hovered); 
         }}> 
-            <img src="/CocodeSidebarLogo.png"></img>
+            <img src={sidebarlogo}></img>
         </LogoContainer>
         <ProfileContainer clicked={clicked === 2} onClick={() =>{
             setClicked(2); 
         }}>
-            <img src="/ProfileIcon.png"></img>
+            <img src={sidebarprofile}></img>
             Profile 
         </ProfileContainer>
         <ExploreContainer clicked={clicked === 1} onClick={() =>{
             setClicked(1); 
         }}>
-            <img src="/ExploreIcon.png"></img>
+            <img src={sidebarexplore}></img>
             Explore 
         </ExploreContainer>
         <HistoryContainer clicked={clicked === 3} onClick={() =>{
             setClicked(3); 
         }}>
-            <img src="/HistoryIcon.png"></img>
+            <img src={sidebarhistory}></img>
             History 
         </HistoryContainer>
         <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
             setClicked(4); 
         }}>
-            <img src="/TopTutorsIcon.png"></img>
+            <img src={sidebartutors}></img>
                 Top Tutors 
         </TopTutorsContainer>
         <SupportContainer clicked={clicked === 5} onClick={() =>{
             setClicked(5); 
         }}>
-            <img src="/SupportIcon.png"></img>
+            <img src={sidebarsupport}></img>
             Support
         </SupportContainer>
         <SettingsContainer clicked={clicked === 6} onClick={() =>{
             setClicked(6); 
         }}>
-            <img src="/SettingsIcon.png"></img>
+            <img src={sidebarsettings}></img>
             Settings
         </SettingsContainer>
         <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{

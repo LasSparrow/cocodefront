@@ -1,42 +1,46 @@
 import React, {useState, useEffect} from 'react'; 
 import styled from "styled-components";
-
-const Edit = styled.div`
-    transform: ${props=>props.highlight ? "scale(1.1)" : "scale(1)"};
-    min-width: 20px;
-    min-height: 20px;
-    background-color: #D6D6D6;
-    border-radius: 100px;
-    padding: 5px 7px;
-    position: absolute;
-    left: 125px;
-    top: 125px;
-    cursor: pointer;
-`;
-
-const Camera = styled.img`
-    width: 20px;
-    height: 20px;
-    fill: #018EA2;
-`;
+import cameraimg from '../../public/camera.svg';
+import picture from '../../public/user.svg';
 
 const EditProfPicContainer = styled.div`        
-    max-width: 150px; 
-    max-height: 150px;
-    border-radius: 100px;
+    border-radius: 150px;
+    display: flex;
+    position: relative;
+    z-index: 1;
 `;
 
 const UserImg = styled.img`
-    display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 150px;    
+    width: 300px;
+    height: 300px;    
     object-fit: cover;
-    border-radius: 100px;
+    border-radius: 150px;
+    background: white;
 `;
 
-const EditProfPic = ({picture}) => {
+const Edit = styled.div`
+    transform: ${props=>props.highlight ? "scale(1.1)" : "scale(1)"};
+    transition: 0.5s;
+    width: 50px;
+    height: 50px;
+    background-color: #D6D6D6;
+    border-radius: 150px;
+    padding: 5px 7px;
+    left: -60px;
+    top: 210px;
+    cursor: pointer;
+    position: relative;
+`;
+
+const Camera = styled.img`
+    width: 40px;
+    height: 40px;
+    padding-top: 4px;
+`;
+
+const EditProfPic = () => {
     const[highlight, setHighlight] = useState(false);
 
     return <EditProfPicContainer>
@@ -46,14 +50,13 @@ const EditProfPic = ({picture}) => {
     }} onMouseLeave={()=>{
         setHighlight(false);
     }}>
-            <Camera src="/camera.svg"></Camera>
+            <Camera src={cameraimg}></Camera>
         </Edit>
     </EditProfPicContainer>
 }
 
 EditProfPic.defaultProps = {
-    text: "Home",
-    picture: "/user.svg"
+    text: "Home"
 }
 
 export default EditProfPic; 
