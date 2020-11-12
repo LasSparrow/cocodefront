@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
 import RightSidebar from '../../comps/RightSidebar';
 import Input from '../../comps/Form/Input';
+import { useToken } from '../../hooks/useToken'
 
 const ContactUsPage = styled.div`
     min-width: 100vw;
@@ -52,6 +53,8 @@ export default function ContactUs() {
     alert(str);
   }
 
+
+  
   return <ContactUsPage>
     <Sidebar />
     <Content>
