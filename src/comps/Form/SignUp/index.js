@@ -10,6 +10,7 @@ const FormContainer = styled.div`
     box-sizing:border-box;
     display: flex;
     flex-direction: column;
+    align-content:center;
 `;
 
 const Title = styled.div`
@@ -18,18 +19,20 @@ const Title = styled.div`
 `;
 
 const InputBox = styled.div`
+    
     div{
         display:inline-flex;
         flex-direction:column;
         margin-top: 10px;
+        text-align:left;
     }
 `;
 
 const Choose = styled.div`
+    margin-left:35px;
     display: flex;
     margin-top: 25px;
     font-size: 18px;
-    align-content:justify;
     label{
         margin-right:20px;
     }
@@ -82,7 +85,7 @@ const SignupForm = ({title}) => {
 }
 
 SignupForm.defaultProps = {
-    title: "Get started with a free account!",
+    title: "Get Started With A Free Account!",
     
 }
 
