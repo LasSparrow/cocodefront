@@ -29,6 +29,7 @@ const USTabText = styled.div`
     min-width: 138px; 
     max-height: 42px; 
     justify-content: center; 
+    text-align: start;
     display: flex; 
     flex-direction: column; 
     h1 {
@@ -46,8 +47,10 @@ const USTabText = styled.div`
 `;
 
 const USText = styled.div`
-    max-width: 158px; 
+    max-width: 200px; 
     max-height: 22px; 
+    text-align: start;
+    padding-left: 5px;
     font-size: 18px; 
     font-weight: 600; 
     color: #011F3B; 
