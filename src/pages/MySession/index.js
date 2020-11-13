@@ -3,8 +3,15 @@ import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
 import Session from '../../comps/Session';
 
-const SessionList = styled.div`
+const MysessionPage = styled.div`
+  width:100vw;
+  height:100vh;
+  display:flex;
 
+`;
+
+const SessionList = styled.div`
+  
 `;
 
 export default function Home() {
@@ -12,12 +19,14 @@ export default function Home() {
       alert(str);
     }
   
-    return <SessionList>
+    return <MysessionPage>
         <Sidebar />
+        <SessionList>
           My Session
           <Session />
           <Session />
           <Session />
           <Session />
         </SessionList>
+    </MysessionPage>
   }
