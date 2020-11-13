@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from '../src/comps/Form/Input';
-import SigninForm from '../src/comps/Form/SignIn '; 
+import SigninForm from '../src/comps/Form/SignIn'; 
 import SignupForm from '../src/comps/Form/SignUp';
 import PaymentForm from '../src/comps/Form/Payment';
 
