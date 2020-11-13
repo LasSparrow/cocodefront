@@ -11,6 +11,15 @@ const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-content:center;
+    align-items:center;       
+`;
+
+const Logo = styled.div`
+    margin-bottom:50px;
+    img{
+        width:224px;
+        height:106px;
+    }
 `;
 
 const Title = styled.div`
@@ -19,9 +28,8 @@ const Title = styled.div`
 `;
 
 const InputBox = styled.div`
-    
     div{
-        display:inline-flex;
+        display:flex;
         flex-direction:column;
         margin-top: 10px;
         text-align:left;
@@ -29,7 +37,6 @@ const InputBox = styled.div`
 `;
 
 const Choose = styled.div`
-    margin-left:35px;
     display: flex;
     margin-top: 25px;
     font-size: 18px;
@@ -53,6 +60,9 @@ const Submit = styled.div`
 
 const SignupForm = ({title}) => {
     return <FormContainer>
+        <Logo>
+            <img src="/CocodeSidebarLogo.png"/>
+        </Logo>
             <Title>
                 <div>
                     <b>{title}</b>
