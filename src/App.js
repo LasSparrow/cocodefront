@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/Explore';
+import Page from './pages/FindATutor';
 
 //global styles
 import './App.scss'

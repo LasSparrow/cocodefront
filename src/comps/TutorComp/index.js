@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import Button from '../Button';
 import LangTags from '../LangTags';
-import tutorimage from '../../public/guy.jpg';
+import tutorimage from '../../public/guy.jpg'; 
 
 const ButtonBox = styled.div`
     display: flex;
