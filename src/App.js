@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 //import './App.css';
 import Page from './pages/Explore';
+
 //global styles
 import './App.scss'
 

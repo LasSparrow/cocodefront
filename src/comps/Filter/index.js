@@ -1,16 +1,19 @@
 import React, {useState, useEffect} from 'react'; 
 import styled, {css} from "styled-components";
+import Arrow from '../../public/chevron_right-24px.svg';
 
 const FilterBox = styled.div`
     width: 155px;
-    max-height: 39px;
-    display:inline-flex;
+    height: 39px;
+    border-radius:5px;
+    box-sizing:border-box;
+    display:flex;
     justify-content:center;
     align-items: center;
     cursor:pointer;
     background-color: #D6D6D6;
+    padding: 15px;
     div {
-       padding: 5px;
        flex-grow:1;
     }
 `;
@@ -19,8 +22,9 @@ const Dropdown = styled.div`
     background-color: #FFFF;
     border: 1px solid #D6D6D6;
     box-sizing:border-box;
-    max-width: 155px;
+    width: 155px;
     margin-top: 10px;
+    margin-bottom: 10px;
     display:${props=>props.expanded ? "binline-flex" : "hidden"};
     opacity:${props=>props.expanded ? 1 : 0};
     height:${props=>props.expanded ? "auto" : "0px"};
@@ -59,7 +63,7 @@ const Filter = ({FilterName, text1, text2, text3, text4, reMove1, reMove2}) => {
     return <div>
             <FilterBox onClick={()=>{setExpanded(!expanded);}}>
                 <div>{FilterName}</div>
-                <div><RotateImg expanded={expanded} src="/chevron_right-24px.svg" /></div>
+                <div><RotateImg expanded={expanded} src={Arrow} /></div>
             </FilterBox>
             <Dropdown expanded={expanded}>
                 <div>{text1}</div>

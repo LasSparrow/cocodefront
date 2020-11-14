@@ -1,29 +1,34 @@
-import React, {useState, useEffect} from 'react'; 
+import React from 'react'; 
 import styled, {css} from "styled-components";
 
 const InputCon = styled.div`
     display:flex;
     flex-direction:column;
     outline: none;
-    width:384px;
-    font-size: 18px;
+    width:384px; 
+`;
+
+const Label = styled.label`
+    font-size: 16pt;
 `;
 
 const EnterInfo = styled.input`
     margin-top:10px;
     background-color:#D6D6D6;
     width:240px;
-    height: 50px;
+    height: ${props=>props.height};
     border:hidden;
+    margin-bottom: 15px;
+    padding-left: 10px;
     ${props=>props.changeWidth === true && css`
         width:384px;
     `}
 `;
 
-const InPut = ({label, type, ph, changeWidth}) => {
+const InPut = ({label, type, ph, changeWidth, height}) => {
     return <InputCon>
-        <label>{label}</label>
-        <EnterInfo changeWidth={changeWidth} type={type} placeholder={ph}></EnterInfo>
+        <Label>{label}</Label>
+        <EnterInfo height={height} changeWidth={changeWidth} type={type} placeholder={ph}></EnterInfo>
     </InputCon>   
 }
 
@@ -31,6 +36,7 @@ InPut.defaultProps = {
     label:"Username",
     type:"text",
     ph:"Username",
+    height: "50px",
     changeWidth:true
 }
 

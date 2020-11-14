@@ -12,7 +12,7 @@ const InputBox = styled.div`
     flex-direction: column;
     align-items:center;
     align-content:center;
-    padding-top: 10%;
+    padding-top: 15%;
 `;
 
 const TitleBox = styled.div`
@@ -32,6 +32,7 @@ const InputForm = styled.p`
         display:flex;
         flex-direction:column;
         margin-bottom: 40px;
+        text-align:left;
         input{
             width: 535px;
             height: 70px;
@@ -44,14 +45,14 @@ const InputForm = styled.p`
 
 const FormSubtitle = styled.p`
     font-size: 16px;
-    margin-left: 14em;
+    margin-left: 12em;
     a {
         color: #018EA2;
         margin-left: 10px;
     }
 `;
 
-const SignupBut = styled.div`
+const SigninBut = styled.div`
     width:auto;
     height:auto;
 `;
@@ -68,7 +69,7 @@ const SigninForm = () => {
             </TitleBox>
             <InputForm>
                 <div>
-                    <label>Eamil</label>
+                    <label>Email</label>
                     <input type="email" placeholder="Email"/>
                 </div>
                 <div>
@@ -76,9 +77,9 @@ const SigninForm = () => {
                     <input type="password" placeholder="Password"/>
                 </div>  
             </InputForm> 
-            <SignupBut>
-                    <Button text="Sign Up"/>
-            </SignupBut>         
+            <SigninBut>
+                    <Button text="Sign In"/>
+            </SigninBut>         
     </InputBox>
 }
 

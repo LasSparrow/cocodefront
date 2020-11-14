@@ -2,13 +2,22 @@ import React from 'react';
 import styled from "styled-components";
 import InPut from "../Input";
 import Filter from "../../Filter";
+import LOGO from '../../../public/logo.svg';
 
 const FormContainer = styled.div`
-    max-width:455px;
     height:auto;
     box-sizing:border-box;
     display: flex;
     flex-direction: column;
+    align-content:center;       
+`;
+
+const Logo = styled.div`
+    margin-bottom:50px;
+    img{
+        width:224px;
+        height:106px;
+    }
 `;
 
 const Title = styled.div`
@@ -18,9 +27,10 @@ const Title = styled.div`
 
 const InputBox = styled.div`
     div{
-        display:inline-flex;
+        display:flex;
         flex-direction:column;
         margin-top: 10px;
+        text-align:left;
     }
 `;
 
@@ -28,7 +38,6 @@ const Choose = styled.div`
     display: flex;
     margin-top: 25px;
     font-size: 18px;
-    align-content:justify;
     label{
         margin-right:20px;
     }
@@ -36,6 +45,9 @@ const Choose = styled.div`
 
 const SignupForm = ({title}) => {
     return <FormContainer>
+        <Logo>
+            <img src={LOGO}/>
+        </Logo>
             <Title>
                 <div>
                     <b>{title}</b>
@@ -62,7 +74,7 @@ const SignupForm = ({title}) => {
 }
 
 SignupForm.defaultProps = {
-    title: "Get started with a free account!",
+    title: "Get Started With A Free Account!",
     
 }
 
