@@ -4,6 +4,7 @@ import Sidebar from '../../comps/Sidebar';
 import RightSidebar from '../../comps/RightSidebar';
 import Input from '../../comps/Form/Input';
 
+
 const ContactUsPage = styled.div`
     min-width: 100vw;
     min-height: 100vh;
@@ -51,22 +52,24 @@ export default function ContactUs() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }
-
-  return <ContactUsPage>
-    <Sidebar />
-    <Content>
-      <Text>
-        <h1>Contact Us</h1>
-        <h3>Have a question or comment? Feel free to reach out!</h3>
-        <p>If you have any questions, comments, or concerns please use the contact form below to get in touch. You can also reach us at <a href="mailto:projectcocode@gmail.com">projectcocode@gmail.com</a>.</p>
-      </Text>
-      <Form>
-        <Input label="Name *" type="text" ph="Name"/>
-        <Input label="Email *" type="email" ph="Email"/>
-        <Input label="Message *" type="text" ph="Message" height="150px"/>
-        <Submit label="Submit" type="submit"/>
-      </Form>
-    </Content>
-    <RightSidebar />
+  
+  return (
+    <ContactUsPage>
+      <Sidebar />
+      <Content>
+        <Text>
+          <h1>Contact Us</h1>
+          <h3>Have a question or comment? Feel free to reach out!</h3>
+          <p>If you have any questions, comments, or concerns please use the contact form below to get in touch. You can also reach us at <a href="mailto:projectcocode@gmail.com">projectcocode@gmail.com</a>.</p>
+        </Text>
+        <Form>
+          <Input label="Name *" type="text" ph="Name"/>
+          <Input label="Email *" type="email" ph="Email"/>
+          <Input label="Message *" type="text" ph="Message" height="150px"/>
+          <Submit label="Submit" type="submit"/>
+        </Form>
+      </Content>
+      <RightSidebar />
   </ContactUsPage>
+  )
 }
