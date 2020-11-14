@@ -26,7 +26,7 @@ const BigTextContainer = styled.div`
     color: #FFFFFF; 
     position: absolute; 
     top: 0; 
-    margin-top: 490px; 
+    margin-top: 560px; 
     margin-left: 35px; 
 `;
 
@@ -38,7 +38,7 @@ const SmallTextContainer = styled.div`
     opacity: 80%; 
     position: absolute;
     top: 0; 
-    margin-top: 525px; 
+    margin-top: 595px; 
     margin-left: 36px; 
     display: flex; 
     justify-content: space-bewteen; 
@@ -52,7 +52,7 @@ const IconContainer = styled.div`
     max-height: 46px; 
     position: absolute; 
     top: 0; 
-    margin-top: 660px; 
+    margin-top: 735px; 
     margin-left: 35px; 
     cursor: pointer; 
      

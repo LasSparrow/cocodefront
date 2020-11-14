@@ -22,7 +22,7 @@ const ContentTop = styled.div`
     display: flex;
     margin: auto;
     margin-top: 25px;
-    margin-left: 324px;
+    margin-left: 520px;
     margin-bottom: -45px;
     border-radius: 30px;
 `;
@@ -33,7 +33,7 @@ max-height: 50vh;
 display: flex;
 margin: auto;
 margin-top: 25px;
-margin-left: 324px;
+margin-left: 520px;
 margin-bottom: 25px;
 border-radius: 30px;
 `;
