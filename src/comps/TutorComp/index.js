@@ -2,7 +2,9 @@ import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import Button from '../Button';
 import LangTags from '../LangTags';
-import tutorimage from '../../public/guy.jpg';
+import tutorimage from '../../public/guy.jpg'; 
+import BookModal from '../BookModal/BookModal'
+
 
 const ButtonBox = styled.div`
     display: flex;
@@ -43,6 +45,11 @@ const Info = styled.div`
 `;
 
 const TutorComp = ({text, name}) => {
+    const [open, setOpen] = useState(false)
+
+    const openModal = () => {
+        setOpen(true)
+    }
 
     return <TutorCompContainer>
         <Top>
@@ -53,7 +60,7 @@ const TutorComp = ({text, name}) => {
             </Info>
             <ButtonBox>
                 <Button text="Profile"/>
-                <Button text="Book"/>
+                <Button text="Book" openModal={openModal}/>
             </ButtonBox>
         </Top>
         <LangBox>
@@ -61,6 +68,9 @@ const TutorComp = ({text, name}) => {
             <LangTags text="JavaScript"/>
             <LangTags text="Java"/>
         </LangBox>
+        <BookModal open={open} setOpen={setOpen}>
+            <h1>Some component</h1>
+        </BookModal>
     </TutorCompContainer>
 }
 
