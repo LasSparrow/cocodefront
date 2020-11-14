@@ -1,5 +1,7 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components';
+import Delete from '../../public/trash-solid.svg'
+import Arrow from '../../public/chevron_right-24px.svg'
 
 const SessionBox = styled.div`
     border: 1px solid #7B7B7B;
@@ -28,14 +30,15 @@ const Icon = styled.div`
 
 const SessionDes = styled.div`
     background-color: #D6D6D6;
-    max-width: 790px;
+    width: 820px;
     border-radius:20px;
-    margin-top:10px;
+    box-sizing:border-box;
     padding: 20px;
     display:${props=>props.expanded ? "block" : "hidden"};
     opacity:${props=>props.expanded ? 1 : 0};
     height:${props=>props.expanded ? "auto" : "0px"};
     transition:opacity 0.3s;
+    margin:${props=>props.expanded ? "10px 0px" : "0px"};
     div {
         margin-top:15px;
     }
@@ -54,8 +57,8 @@ const Session = ({SessionName, text1, text2, text3}) => {
             <SessionBox onClick={()=>{setExpanded(!expanded);}}>
                 <div>{SessionName}</div>
                 <Icon>
-                    <div><img src="/trash-solid.svg" /></div>
-                    <div><RotateImg expanded={expanded} src="/chevron_right-24px.svg" /></div>
+                    <div><img src={Delete} /></div>
+                    <div><RotateImg expanded={expanded} src={Arrow} /></div>
                 </Icon>
             </SessionBox>
             <SessionDes expanded={expanded}>

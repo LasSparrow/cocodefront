@@ -7,11 +7,19 @@ const MysessionPage = styled.div`
   width:100vw;
   height:100vh;
   display:flex;
-
+  align-items:flex-start;
 `;
 
 const SessionList = styled.div`
-  
+    width:60%;
+    text-align:left;
+    margin-left:25%;
+    margin-top:5%;
+`;
+
+const Title = styled.div`
+    font-size:24px;
+    margin-bottom:20px;
 `;
 
 export default function Home() {
@@ -22,11 +30,15 @@ export default function Home() {
     return <MysessionPage>
         <Sidebar />
         <SessionList>
-          My Session
-          <Session />
-          <Session />
-          <Session />
-          <Session />
+          <Title>
+            <b>My Sessions</b>
+          </Title>
+          <div>
+            <Session />
+            <Session />
+            <Session />
+            <Session />
+          </div>
         </SessionList>
     </MysessionPage>
   }

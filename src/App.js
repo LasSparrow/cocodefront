@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/MySession';
+import Page from './pages/BecomeATutor';
 
 //global styles
 import './App.scss'
