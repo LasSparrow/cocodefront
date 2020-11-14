@@ -21,15 +21,15 @@ const ButtonContainer = styled.div`
     user-select: none; 
 `;
 
-const Button = ({text, select}) => {
+const Button = (props) => {
     const[highlight, setHighlight] = useState(true);
 
-    return <ButtonContainer highlight={highlight} onMouseOver={()=>{
+    return <ButtonContainer onClick={props.openModal} highlight={highlight} onMouseOver={()=>{
         setHighlight(false);
     }} onMouseLeave={()=>{
         setHighlight(true);
     }}>
-        <Text>{text}</Text>
+        <Text>{props.text}</Text>
     </ButtonContainer>
 }
 
