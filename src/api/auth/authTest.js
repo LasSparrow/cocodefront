@@ -13,6 +13,8 @@ const authTest =  async (token) => {
     }
 
     const url = path.join(serverUrl , endpoint)
+    console.log('url' , url)
+
 
     return await (await axios.get(url , config)).data
 }
