@@ -7,7 +7,8 @@ const authTest =  async (token) => {
 
     const config = {
         headers: {
-          'Authorization': token
+          'Authorization': token,
+          'Access-Control-Allow-Origin' : true
         }
     }
 
