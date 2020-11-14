@@ -18,6 +18,7 @@ const ButtonContainer = styled.div`
     transform: ${props=>props.highlight ? "scale(1)" : "scale(1.1)"};
     color: white;
     cursor: pointer;
+    user-select: none; 
 `;
 
 const Button = ({text, select}) => {
