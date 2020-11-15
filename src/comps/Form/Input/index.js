@@ -5,30 +5,34 @@ const InputCon = styled.div`
     display:flex;
     flex-direction:column;
     outline: none;
-    width:384px; 
+    margin-left: 10px;
+    margin-right: 10px;
+    width: ${props=>props.width};
 `;
 
 const Label = styled.label`
-    font-size: 16pt;
+    margin-left: -10px;
+    font-size: ${props=>props.fontSize};
+    font-weight: ${props=>props.fontWeight};
+    width:384px; 
 `;
 
 const EnterInfo = styled.input`
     margin-top:10px;
     background-color:#D6D6D6;
-    width:240px;
+    width: ${props=>props.width};
     height: ${props=>props.height};
     border:hidden;
+    border-radius: 5px;
     margin-bottom: 15px;
     padding-left: 10px;
-    ${props=>props.changeWidth === true && css`
-        width:384px;
-    `}
+    outline: none;
 `;
 
-const InPut = ({label, type, ph, changeWidth, height}) => {
+const InPut = ({fontSize, fontWeight, label, type, ph, width, height}) => {
     return <InputCon>
-        <Label>{label}</Label>
-        <EnterInfo height={height} changeWidth={changeWidth} type={type} placeholder={ph}></EnterInfo>
+        <Label fontSize={fontSize} fontWeight={fontWeight}>{label}</Label>
+        <EnterInfo height={height} width={width} type={type} placeholder={ph}></EnterInfo>
     </InputCon>   
 }
 
@@ -37,7 +41,9 @@ InPut.defaultProps = {
     type:"text",
     ph:"Username",
     height: "50px",
-    changeWidth:true
+    width: "384px",
+    fontSize: "13pt",
+    fontWeight: "400"
 }
 
 export default InPut; 

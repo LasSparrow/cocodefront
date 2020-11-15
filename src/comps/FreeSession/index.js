@@ -40,6 +40,7 @@ const FSButton = styled.div`
     font-weight: 600; 
     padding: 10px 20px 10px 20px;  
     margin-bottom: 27px; 
+    cursor: pointer;
     transform: ${props=>props.enlarge ? "scale(1)" : "scale(1.1)"};
     transition: 0.4s; 
 
