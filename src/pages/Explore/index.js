@@ -6,6 +6,7 @@ import ExploreBox from '../../comps/Explore';
 import ExploreHTML from '../../comps/HTMLExplore';
 import ExploreCSS from '../../comps/CSSExplore'; 
 import ExplorePython from '../../comps/PythonExplore'; 
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"; 
 
 const ExplorePage = styled.div`
     max-width: 100vw;
@@ -43,8 +44,11 @@ export default function ContactUs() {
     alert(str);
   }
 
-  return <ExplorePage>
-    <Sidebar />
+  return <Router>
+  <ExplorePage>
+    <Link to "/">
+      <Sidebar />
+    </Link>
     <ContentTop>
         <ExploreHTML />
         <ExploreBox /> 
@@ -55,4 +59,5 @@ export default function ContactUs() {
     </ContentBottom>
     <RightSidebar />
   </ExplorePage>
+  </Router>
 }
