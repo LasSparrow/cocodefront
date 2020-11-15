@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import styled from "styled-components";
 
 const ProfileCon = styled.div`
-
+    display:flex;
+    flex-direction:column;
 `;
 
 const TitleName = styled.div`
@@ -12,54 +13,72 @@ const TitleName = styled.div`
     height:42px;
     font-size:20px; 
     align-items: center;
-    div {
-        margin-top:19px;
-        text-align:center;
-        flex-grow:1;
-        box-shadow: ${props=>props.clicked ?  "none" : "0 10px 8px -8px black"};
-        border-right:${props=>props.clicked ?  "none" : "1px solid black"};
-        height:22px;
-        box-sizing:border-box;
-        align-items: center;
-        cursor:pointer;
-    }
-    div:hover {
+`;
+
+const Option = styled.div`
+    margin-top:19px;
+    text-align:center;
+    flex-grow:1;
+    box-shadow: ${props=>props.clicked ?  "0 8px 6px -6px black" : "none"};
+    font-weight:${props=>props.clicked ?  "bold" : "none"};
+    height:22px;
+    box-sizing:border-box;
+    align-items: center;
+    cursor:pointer;
+    &:hover {
         box-shadow:0 10px 8px -8px black;
     }
 `;
 
 const Details = styled.div`
-
+    font-size:16px; 
+    padding:25px;
+    display:${props=>props.clicked ? "flex" : "none"};
+    flex-direction:column;
+    margin-top:10px;
 `;
 
-const UserProfile = ({}) => {
+const UserProfile = ({school, major, text1, text2}) => {
     const[clicked, setClicked] = useState(1);
 
     return <ProfileCon>
         <TitleName>
-            <div clicked={clicked === 1} onClick={() => {
+            <Option clicked={clicked === 1} onClick={() => {
                 setClicked(1);
             }}>
                 Education
-            </div>
-            <div clicked={clicked === 2} onClick={() => {
+            </Option>
+            <Option clicked={clicked === 2} onClick={() => {
                 setClicked(2);
             }}>
                 Experience
-            </div>
-            <div clicked={clicked === 3} onClick={() => {
+            </Option>
+            <Option clicked={clicked === 3} onClick={() => {
                 setClicked(3);
             }}>
                 Reviews
-            </div>
+            </Option>
         </TitleName>
-        <Details>
-
-        </Details>
+        <div>
+            <Details clicked={clicked === 1}>
+                <div><b>{school}</b></div>
+                <div>{major}</div>
+            </Details>
+            <Details clicked={clicked === 2}>
+                {text1}
+            </Details>
+            <Details clicked={clicked === 3}>
+                {text2}
+            </Details>
+        </div>
     </ProfileCon>   
 }
 
 UserProfile.defaultProps = {
+    school:"School",
+    major:"Your Major",
+    text1:"Teaching Experience",
+    text2:"Student's Reviews"
     
 }
 
