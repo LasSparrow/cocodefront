@@ -35,10 +35,10 @@ const FSTabContainer = styled.div`
     margin: 0px 0px 75px 0px; 
 `;
 
-const RightSidebar = () => {
+const RightSidebar = ({name, img}) => {
     return <RightSidebarContainer>
             <AccountBoxContainer>
-                <AccountBox /> 
+                <AccountBox name={name} src={img}/> 
             </AccountBoxContainer>
             <PRTabContainer>
                 <PRTab />

@@ -108,7 +108,7 @@ export default function FindATutor() {
             </Dropdown>
             <Submit label="Submit" type="submit"/>
         </Form>
-      <TutorComp name="Angela Miller" text="Since high school, she has been immersed in the technological aspect of the world. She has been following the latest tech trends and performs well in school projects and assignments. She enjoys being helpful and is willing to share her knowledge with other people."/>
+      <TutorComp name="Angela Miller" img="angelamiller.jpg" text="Since high school, she has been immersed in the technological aspect of the world. She has been following the latest tech trends and performs well in school projects and assignments. She enjoys being helpful and is willing to share her knowledge with other people."/>
       <TutorComp />
     </Content>
     <RightSidebar />
