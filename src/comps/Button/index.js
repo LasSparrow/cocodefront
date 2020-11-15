@@ -19,6 +19,7 @@ const ButtonContainer = styled.div`
     transition: 0.4s; 
     color: white;
     cursor: pointer;
+    user-select: none; 
 `;
 
 const Button = (props) => {

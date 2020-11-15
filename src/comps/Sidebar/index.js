@@ -1,5 +1,19 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
+import sidebarlogo from '../../public/logo.svg';
+import sidebarprofile from '../../public//ProfileIcon.png';
+import sidebarexplore from '../../public/ExploreIcon.png';
+import sidebarhistory from '../../public/HistoryIcon.png';
+import sidebartutors from '../../public/TopTutorsIcon.png';
+import sidebarsupport from '../../public/SupportIcon.png';
+import sidebarsettings from '../../public/SettingsIcon.png';
+import Search from '../../comps/Search'; 
+import {
+    BrowserRouter as Router, 
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom"; 
 
 const AllContainers = styled.div`
 //clicked prop css here
@@ -127,7 +141,9 @@ const Sidebar = () => {
     const[hoveredtwo, setHoveredtwo] = useState(true); 
     const[clicked, setClicked] = useState(1);
 
-    return <SidebarContainer> 
+    return <Router> 
+    <Switch>
+    <SidebarContainer> 
         <LogoContainer hovered={hovered} onMouseEnter={() =>{
             setHovered(!hovered);
         }} onMouseLeave={() =>{
@@ -180,6 +196,8 @@ const Sidebar = () => {
         </BecomeTutorContainer>
         <Search />
   </SidebarContainer>
+  </Switch>
+  </Router>
 }
 
 Sidebar.defaultProps = {

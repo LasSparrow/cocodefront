@@ -68,7 +68,7 @@ const TutorComp = ({text, name, img}) => {
             <LangTags text="Java"/>
         </LangBox>
         <BookModal open={open} setOpen={setOpen}>
-            <h1>Some component</h1>
+            <h1>Book A Tutor</h1>
         </BookModal>
     </TutorCompContainer>
 }

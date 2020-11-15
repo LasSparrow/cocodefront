@@ -13,6 +13,7 @@ const LangTagsContainer = styled.div`
     margin: 5px;
     color: white;
     cursor: ${props=>props.select ? "default" : "pointer"};
+    user-select: none; 
 `;
 
 const LangTags = ({text, select}) => {
