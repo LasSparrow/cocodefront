@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'; 
+import React from 'react'; 
 import styled, {css} from "styled-components";
 
 const InputCon = styled.div`
@@ -14,6 +14,7 @@ const Label = styled.label`
     margin-left: -10px;
     font-size: ${props=>props.fontSize};
     font-weight: ${props=>props.fontWeight};
+    width:384px; 
 `;
 
 const EnterInfo = styled.input`
@@ -24,7 +25,6 @@ const EnterInfo = styled.input`
     border:hidden;
     border-radius: 5px;
     margin-bottom: 15px;
-    margin-left: -10px;
     padding-left: 10px;
     outline: none;
 `;

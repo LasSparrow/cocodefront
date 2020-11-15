@@ -3,6 +3,8 @@ import Input from '../src/comps/Form/Input';
 import SigninForm from '../src/comps/Form/SignIn'; 
 import SignupForm from '../src/comps/Form/SignUp';
 import PaymentForm from '../src/comps/Form/Payment';
+import UserProfile from '../src/comps/UserProfile';
+import ApplyForm from '../src/comps/Form/ApplyTutor';
 
 export default {
     title: 'Form', 
@@ -10,8 +12,10 @@ export default {
 }; 
 
 export const BasicInput = () => <Input />;
-export const ShortInput = () => <Input changeWidth="false" ph="MM/YY" label="Expiry date"/>;
+export const ShortInput = () => <Input changeWidth="false" ph="MM/YY" label="Expiry Date"/>;
 export const BasicSigninForm = () => <SigninForm />;
 export const BasicSignupForm = () => <SignupForm />;
 export const BasicPaymentForm = () => <PaymentForm />;
+export const BasicApplyForm = () => <ApplyForm />;
+export const BasicUserProfile = () => <UserProfile />;
 

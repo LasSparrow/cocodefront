@@ -4,19 +4,17 @@ import styled from 'styled-components';
 const ImageContainer = styled.div`
     max-width: 801px; 
     min-height: 408px;
-
     img {
         border-radius: 10px; 
         max-height: 350px;
-        max-width: 500px; 
+        max-width: 351px; 
         transform-origin: center;
         cursor: pointer; 
-        margin-right: 100px; 
         margin-top: 60px;  
     }
     user-select: none; 
     display: flex; 
-    margin-left: 60px;
+    margin-left: 5px;
 `;
 
 const BigTextContainer = styled.div`
@@ -27,7 +25,7 @@ const BigTextContainer = styled.div`
     color: #FFFFFF; 
     position: absolute; 
     top: 0; 
-    margin-top: 110px; 
+    margin-top: 560px; 
     margin-left: 35px; 
 `;
 
@@ -39,7 +37,7 @@ const SmallTextContainer = styled.div`
     opacity: 80%; 
     position: absolute;
     top: 0; 
-    margin-top: 145px; 
+    margin-top: 595px; 
     margin-left: 34px; 
     display: flex; 
     justify-content: space-bewteen; 
@@ -53,7 +51,7 @@ const IconContainer = styled.div`
     max-height: 46px; 
     position: absolute; 
     top: 0; 
-    margin-top: 280px; 
+    margin-top: 735px; 
     margin-left: 35px; 
     cursor: pointer; 
      
@@ -63,9 +61,9 @@ const ExplorePython = () => {
     const[hovered, setHovered] = useState(true); 
 
 return  <ImageContainer>
-        <img src="/JavaScriptImage.png"></img>
-        <BigTextContainer>JavaScript</BigTextContainer>
-        <SmallTextContainer>2000⠀Students 30⠀Tutors</SmallTextContainer>
+        <img src="/PythonImage.jpg"></img>
+        <BigTextContainer>Python</BigTextContainer>
+        <SmallTextContainer>1200⠀Students 22⠀Tutors</SmallTextContainer>
         <IconContainer hovered={hovered} onMouseEnter={() =>{
     setHovered(!hovered);
 }} onMouseLeave={() =>{
