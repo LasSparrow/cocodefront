@@ -38,7 +38,7 @@ const PaymentForm = ({title}) => {
                 <InPut label="Credit Card Number:" type="number" ph="Credit card number"/>
             </div>
             <div>
-                <InPut changeWidth="false" label="Expiry date:" ph="MM/YY" />
+                <InPut changeWidth="false" label="Expiry Date:" ph="MM/YY" />
             </div>
             <div>
                 <InPut changeWidth="false" label="CVC:" ph="CVC" />

@@ -5,8 +5,11 @@ import PRTab from '../PendingRequests';
 import USTab from '../UpcomingSessions'; 
 import FSTab from '../FreeSession'; 
 
+const AllContainers = styled.div`
+//clicked prop css here
+`;
 
-const RightSidebarContainer = styled.div`
+const RightSidebarContainer = styled(AllContainers)`
     width: 300px; 
     height: 100vh; 
     display: flex; 

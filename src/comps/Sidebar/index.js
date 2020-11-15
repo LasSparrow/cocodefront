@@ -35,6 +35,7 @@ const ProfileContainer = styled.div`
     display: inline-flex; 
     align-items: center; 
     margin-top: 60px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none; 
@@ -46,6 +47,7 @@ const ExploreContainer = styled.div`
     display: inline-flex; 
     align-items: center; 
     margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
@@ -57,6 +59,7 @@ const HistoryContainer = styled.div`
     display: inline-flex; 
     align-items: center; 
     margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
@@ -68,6 +71,7 @@ const TopTutorsContainer = styled.div`
     display: inline-flex; 
     align-items: center; 
     margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     img {
         margin-left: 20px; 
@@ -82,6 +86,7 @@ const SupportContainer = styled.div`
     display: inline-flex; 
     align-items: center; 
     margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
@@ -93,6 +98,7 @@ const SettingsContainer = styled.div`
     display: inline-flex; 
     align-items: center; 
     margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
@@ -172,7 +178,8 @@ const Sidebar = () => {
         }}> 
             Become A Tutor 
         </BecomeTutorContainer>
-    </SidebarContainer>
+        <Search />
+  </SidebarContainer>
 }
 
 Sidebar.defaultProps = {
