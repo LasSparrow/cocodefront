@@ -8,6 +8,7 @@ const ListLineContainer = styled.div`
 
 const Line = styled.hr`
     border: 1px solid black;
+    margin-bottom: 20px;
 `;
 
 const ListLine = () => {

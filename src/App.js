@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/SessionDenied';
+import Page from './pages/EditAccount';
 //global styles
 import './App.scss'
 
