@@ -46,9 +46,7 @@ export default function ContactUs() {
 
   return <Router>
   <ExplorePage>
-    <Link to "/">
       <Sidebar />
-    </Link>
     <ContentTop>
         <ExploreHTML />
         <ExploreBox /> 
