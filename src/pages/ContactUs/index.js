@@ -4,7 +4,6 @@ import Sidebar from '../../comps/Sidebar';
 import RightSidebar from '../../comps/RightSidebar';
 import Input from '../../comps/Form/Input';
 
-
 const ContactUsPage = styled.div`
     min-width: 100vw;
     min-height: 100vh;
@@ -52,7 +51,7 @@ export default function ContactUs() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }
-  
+
   return (
     <ContactUsPage>
       <Sidebar />
