@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
 import styled from "styled-components";
-import cameraimg from '../../public/camera.svg';
-import picture from '../../public/user.svg';
 
 const EditProfPicContainer = styled.div`        
     border-radius: 150px;
@@ -44,13 +42,13 @@ const EditProfPic = () => {
     const[highlight, setHighlight] = useState(false);
 
     return <EditProfPicContainer>
-        <UserImg src={picture}></UserImg>
+        <UserImg src="/user.svg"></UserImg>
         <Edit highlight={highlight} onMouseOver={()=>{
         setHighlight(true);
     }} onMouseLeave={()=>{
         setHighlight(false);
     }}>
-            <Camera src={cameraimg}></Camera>
+            <Camera src="/camera.svg"></Camera>
         </Edit>
     </EditProfPicContainer>
 }

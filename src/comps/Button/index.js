@@ -16,6 +16,7 @@ const ButtonContainer = styled.div`
     padding: 10px 20px;
     margin: 10px;
     transform: ${props=>props.highlight ? "scale(1)" : "scale(1.1)"};
+    transition: 0.4s; 
     color: white;
     cursor: pointer;
 `;

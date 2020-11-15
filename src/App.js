@@ -1,7 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/FindATutor';
-
+import Page from './pages/SessionDenied';
 //global styles
 import './App.scss'
 
