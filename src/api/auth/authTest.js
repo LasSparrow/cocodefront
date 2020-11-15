@@ -7,11 +7,14 @@ const authTest =  async (token) => {
 
     const config = {
         headers: {
-          'Authorization': token
+          'Authorization': token,
+          'Access-Control-Allow-Origin' : true
         }
     }
 
     const url = path.join(serverUrl , endpoint)
+    console.log('url' , url)
+
 
     return await (await axios.get(url , config)).data
 }

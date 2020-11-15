@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+
 export default function Home() {
   const HandleBoxClick = (str)=>{
     alert(str);
