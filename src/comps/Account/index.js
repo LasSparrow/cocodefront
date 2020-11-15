@@ -16,9 +16,7 @@ const AccountBoxContainer = styled.div`
     color: #011F3B; 
     display: flex; 
     margin-left: -10px;
-    img {
-        cursor: pointer;
-    }
+    cursor: pointer;
 `; 
 
 const Name = styled.h5`
@@ -27,18 +25,21 @@ const Name = styled.h5`
 `;
 
 const ExpandContainer = styled.div`
-    max-width: 250px; 
+    min-width: 250px; 
     min-height: 56px; 
     background-color: #FFFFFF;
     font-size: 16px; 
-    margin-top: 15px; 
+    margin-top: 10px; 
+    z-index: 1;
     display:${props=>props.expanded ? "flex" : "none"};  
     flex-direction: column; 
     align-items: center; 
+    position: fixed;
     border: 1px solid #EAEAEA; 
     box-sizing: border-box; 
     box-shadow: 5px 0px 18px rgba(0, 0, 0, 0, 0.08);
     cursor: pointer; 
+    margin-left: -15px;
     a {
         margin: 10px 0; 
     }
@@ -50,18 +51,19 @@ const DDIcon = styled.img`
     align-self: center;
 `;
 
-const AccountBox = ({name}) => {
+const AccountBox = ({name,img}) => {
     const[expanded, setExpanded] = useState(false)
 
     return <AccountBoxMain>
     <AccountBoxContainer>
-        <img src="/Account Icon.png"></img>
+        <img src={img}></img>
         <Name>{name}</Name>
         <DDIcon src="/DropdownIcon.png" onClick={()=>{
             setExpanded(!expanded);
         }}></DDIcon> 
     </AccountBoxContainer>
     <ExpandContainer expanded={expanded}>
+        <a>My Account</a>
         <a>Account Settings</a>
         <a>Payment Information</a>
     </ExpandContainer>
@@ -69,7 +71,8 @@ const AccountBox = ({name}) => {
 }
 
 AccountBox.defaultProps = {
-    name: "Adam Jameson"
+    name: "Adam Jameson",
+    img: "/Account Icon.png"
 }
 
 export default AccountBox; 

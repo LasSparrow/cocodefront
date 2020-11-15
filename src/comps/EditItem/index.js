@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'; 
 import styled from "styled-components";
-import pencil from '../../public/pencil.svg';
 
 const Title = styled.div`
     margin-right: 10px;
@@ -38,7 +37,7 @@ const EditItem = ({desc, title}) => {
         <Content>
             <Section>
                 <Title>{title}</Title>
-                <Pencil src={pencil}></Pencil>
+                <Pencil src="/pencil.svg"></Pencil>
             </Section>
             <Desc>{desc}</Desc>
         </Content>

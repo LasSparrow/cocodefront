@@ -13,9 +13,10 @@ const LangTagsContainer = styled.div`
     margin: 5px;
     color: white;
     cursor: ${props=>props.select ? "default" : "pointer"};
+    user-select: none; 
 `;
 
-const LangTags = ({text, select, selec}) => {
+const LangTags = ({text, select}) => {
     const[selected, setSelected] = useState(true);
 
     useEffect(()=>{

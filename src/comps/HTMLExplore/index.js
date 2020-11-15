@@ -4,19 +4,17 @@ import styled from 'styled-components';
 const ImageContainer = styled.div`
     max-width: 801px; 
     min-height: 408px;
-
     img {
         border-radius: 10px; 
         max-height: 350px;
-        max-width: 500px; 
+        max-width: 351px;  
         transform-origin: center;
         cursor: pointer; 
-        margin-right: 100px; 
-        margin-top: 60px;  
+        margin-right: 45px; 
+        margin-top: 60px; 
     }
     user-select: none; 
     display: flex; 
-    margin-left: 60px;
 `;
 
 const BigTextContainer = styled.div`
@@ -33,14 +31,14 @@ const BigTextContainer = styled.div`
 
 const SmallTextContainer = styled.div`
     max-width: 383px; 
-    max-height: 36px; 
+    max-height: 37px; 
     font-size: 18px; 
     color: #FFFFFF; 
     opacity: 80%; 
     position: absolute;
     top: 0; 
     margin-top: 145px; 
-    margin-left: 34px; 
+    margin-left: 36px; 
     display: flex; 
     justify-content: space-bewteen; 
     word-spacing: 80px; 
@@ -59,13 +57,13 @@ const IconContainer = styled.div`
      
 `; 
 
-const ExplorePython = () => {
+const ExploreHTML = () => {
     const[hovered, setHovered] = useState(true); 
 
 return  <ImageContainer>
-        <img src="/JavaScriptImage.png"></img>
-        <BigTextContainer>JavaScript</BigTextContainer>
-        <SmallTextContainer>2000⠀Students 30⠀Tutors</SmallTextContainer>
+        <img src="/WebDevImage.png"></img>
+        <BigTextContainer>HTML</BigTextContainer>
+        <SmallTextContainer>3200⠀Students 55⠀Tutors</SmallTextContainer>
         <IconContainer hovered={hovered} onMouseEnter={() =>{
     setHovered(!hovered);
 }} onMouseLeave={() =>{
@@ -76,8 +74,8 @@ return  <ImageContainer>
     </ImageContainer>
 }
 
-ExplorePython.defaultProps = {
+ExploreHTML.defaultProps = {
 
 }
 
-export default ExplorePython; 
+export default ExploreHTML; 

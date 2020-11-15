@@ -5,8 +5,11 @@ import PRTab from '../PendingRequests';
 import USTab from '../UpcomingSessions'; 
 import FSTab from '../FreeSession'; 
 
+const AllContainers = styled.div`
+//clicked prop css here
+`;
 
-const RightSidebarContainer = styled.div`
+const RightSidebarContainer = styled(AllContainers)`
     width: 300px; 
     height: 100vh; 
     display: flex; 
@@ -35,10 +38,10 @@ const FSTabContainer = styled.div`
     margin: 0px 0px 75px 0px; 
 `;
 
-const RightSidebar = () => {
+const RightSidebar = ({name, img}) => {
     return <RightSidebarContainer>
             <AccountBoxContainer>
-                <AccountBox /> 
+                <AccountBox name={name} src={img}/> 
             </AccountBoxContainer>
             <PRTabContainer>
                 <PRTab />

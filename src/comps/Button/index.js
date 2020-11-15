@@ -16,19 +16,21 @@ const ButtonContainer = styled.div`
     padding: 10px 20px;
     margin: 10px;
     transform: ${props=>props.highlight ? "scale(1)" : "scale(1.1)"};
+    transition: 0.4s; 
     color: white;
     cursor: pointer;
+    user-select: none; 
 `;
 
-const Button = ({text, select}) => {
+const Button = (props) => {
     const[highlight, setHighlight] = useState(true);
 
-    return <ButtonContainer highlight={highlight} onMouseOver={()=>{
+    return <ButtonContainer onClick={props.openModal} highlight={highlight} onMouseOver={()=>{
         setHighlight(false);
     }} onMouseLeave={()=>{
         setHighlight(true);
     }}>
-        <Text>{text}</Text>
+        <Text>{props.text}</Text>
     </ButtonContainer>
 }
 
