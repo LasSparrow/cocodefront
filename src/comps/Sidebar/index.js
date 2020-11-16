@@ -1,12 +1,5 @@
 import React, {useState} from 'react'; 
-import styled from 'styled-components'; 
-import sidebarlogo from '../../public/logo.svg';
-import sidebarprofile from '../../public//ProfileIcon.png';
-import sidebarexplore from '../../public/ExploreIcon.png';
-import sidebarhistory from '../../public/HistoryIcon.png';
-import sidebartutors from '../../public/TopTutorsIcon.png';
-import sidebarsupport from '../../public/SupportIcon.png';
-import sidebarsettings from '../../public/SettingsIcon.png';
+import styled from 'styled-components';
 import Search from '../../comps/Search'; 
 import {
     BrowserRouter as Router, 
@@ -15,13 +8,8 @@ import {
     Link
   } from "react-router-dom"; 
 
-const AllContainers = styled.div`
-//clicked prop css here
-`;
-
-const SidebarContainer = styled(AllContainers)`
+const SidebarContainer = styled.div`
     padding: 25px 25px 0px 25px;
-    flex: 0 0 200px;
     width: 200px;
     height: 100vh;
     background-color: #FFFFFF; 
@@ -32,6 +20,13 @@ const SidebarContainer = styled(AllContainers)`
     img {
         margin-right: 20px; 
     }
+`;
+
+const Links = styled.div`
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 `;
 
 const LogoContainer = styled.div`
@@ -87,9 +82,6 @@ const TopTutorsContainer = styled.div`
     margin-top: 40px; 
     font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
-    img {
-        margin-left: 20px; 
-    }
     cursor: pointer;
     user-select: none;
 `;
@@ -151,42 +143,44 @@ const Sidebar = () => {
         }}> 
             <img src="/logo.svg"></img>
         </LogoContainer>
-        <ProfileContainer clicked={clicked === 2} onClick={() =>{
-            setClicked(2); 
-        }}>
-            <img src="/ProfileIcon.png"></img>
-            Profile 
-        </ProfileContainer>
-        <ExploreContainer clicked={clicked === 1} onClick={() =>{
-            setClicked(1); 
-        }}>
-            <img src="/ExploreIcon.png"></img>
-            Explore 
-        </ExploreContainer>
-        <HistoryContainer clicked={clicked === 3} onClick={() =>{
-            setClicked(3); 
-        }}>
-            <img src="/HistoryIcon.png"></img>
-            History 
-        </HistoryContainer>
-        <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
-            setClicked(4); 
-        }}>
-            <img src="/TopTutorsIcon.png"></img>
-                Top Tutors 
-        </TopTutorsContainer>
-        <SupportContainer clicked={clicked === 5} onClick={() =>{
-            setClicked(5); 
-        }}>
-            <img src="/SupportIcon.png"></img>
-            Support
-        </SupportContainer>
-        <SettingsContainer clicked={clicked === 6} onClick={() =>{
-            setClicked(6); 
-        }}>
-            <img src="/SettingsIcon.png"></img>
-            Settings
-        </SettingsContainer>
+        <Links>
+            <ProfileContainer clicked={clicked === 2} onClick={() =>{
+                setClicked(2); 
+            }}>
+                <img src="/ProfileIcon.png"></img>
+                Profile 
+            </ProfileContainer>
+            <ExploreContainer clicked={clicked === 1} onClick={() =>{
+                setClicked(1); 
+            }}>
+                <img src="/ExploreIcon.png"></img>
+                Explore 
+            </ExploreContainer>
+            <HistoryContainer clicked={clicked === 3} onClick={() =>{
+                setClicked(3); 
+            }}>
+                <img src="/HistoryIcon.png"></img>
+                Sessions 
+            </HistoryContainer>
+            <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
+                setClicked(4); 
+            }}>
+                <img src="/TopTutorsIcon.png"></img>
+                Tutors 
+            </TopTutorsContainer>
+            <SupportContainer clicked={clicked === 5} onClick={() =>{
+                setClicked(5); 
+            }}>
+                <img src="/SupportIcon.png"></img>
+                Support
+            </SupportContainer>
+            <SettingsContainer clicked={clicked === 6} onClick={() =>{
+                setClicked(6); 
+            }}>
+                <img src="/SettingsIcon.png"></img>
+                Settings
+            </SettingsContainer>
+        </Links>
         <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{
             setHoveredtwo(!hoveredtwo);
         }} onMouseLeave={() =>{

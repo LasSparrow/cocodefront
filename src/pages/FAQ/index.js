@@ -8,9 +8,9 @@ const FAQPage = styled.div`
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     background: #F5F5FB;
-`;
+  `;
 
 const Content = styled.div`
     margin: auto;
