@@ -17,7 +17,7 @@ const Form = styled.div`
     margin-top:5%;
 `;
 
-export default function Home() {
+export default function BecomeATutor() {
     const HandleBoxClick = (str)=>{
       alert(str);
     }

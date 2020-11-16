@@ -18,7 +18,7 @@ const Logo = styled.div`
   }
 `;
 
-export default function Home() {
+export default function SignInPage() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }

@@ -151,12 +151,14 @@ const Sidebar = () => {
         }}> 
             <img src={sidebarlogo}></img>
         </LogoContainer>
+        <Link to ="/MyAccount">
         <ProfileContainer clicked={clicked === 2} onClick={() =>{
             setClicked(2); 
         }}>
             <img src={sidebarprofile}></img>
             Profile 
         </ProfileContainer>
+        </Link>
         <ExploreContainer clicked={clicked === 1} onClick={() =>{
             setClicked(1); 
         }}>
@@ -169,12 +171,14 @@ const Sidebar = () => {
             <img src={sidebarhistory}></img>
             History 
         </HistoryContainer>
+        <Link to="/FindATutor">
         <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
             setClicked(4); 
         }}>
             <img src={sidebartutors}></img>
                 Top Tutors 
         </TopTutorsContainer>
+        </Link>
         <SupportContainer clicked={clicked === 5} onClick={() =>{
             setClicked(5); 
         }}>
