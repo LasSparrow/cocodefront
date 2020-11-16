@@ -151,7 +151,7 @@ const Sidebar = () => {
         }}> 
             <img src="/logo.svg"></img>
         </LogoContainer>
-        <Link to ="/MyAccount">
+        <Link to ="/MyAccount" style={{ textDecoration: 'none' }} >
         <ProfileContainer clicked={clicked === 2} onClick={() =>{
             setClicked(2); 
         }}>
@@ -171,7 +171,7 @@ const Sidebar = () => {
             <img src="/HistoryIcon.png"></img>
             History 
         </HistoryContainer>
-        <Link to="/FindATutor">
+        <Link to="/FindATutor" style={{ textDecoration: 'none' }} >
         <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
             setClicked(4); 
         }}>
