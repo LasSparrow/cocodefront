@@ -16,7 +16,7 @@ const LangTagsContainer = styled.div`
     user-select: none; 
 `;
 
-const LangTags = ({text, select, selec}) => {
+const LangTags = ({text, select}) => {
     const[selected, setSelected] = useState(true);
 
     useEffect(()=>{

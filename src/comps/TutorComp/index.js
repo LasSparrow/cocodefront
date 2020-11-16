@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import Button from '../Button';
 import LangTags from '../LangTags';
-import tutorimage from '../../public/guy.jpg'; 
 import BookModal from '../BookModal/BookModal'
 
 
@@ -44,7 +43,7 @@ const Info = styled.div`
     margin-left: 15px;
 `;
 
-const TutorComp = ({text, name}) => {
+const TutorComp = ({text, name, img}) => {
     const [open, setOpen] = useState(false)
 
     const openModal = () => {
@@ -53,7 +52,7 @@ const TutorComp = ({text, name}) => {
 
     return <TutorCompContainer>
         <Top>
-            <ProfileImg src={tutorimage}/>
+            <ProfileImg src={img}/>
             <Info>
                 <Name>{name}</Name>
                 <Blurb>{text}</Blurb>
@@ -76,7 +75,8 @@ const TutorComp = ({text, name}) => {
 
 TutorComp.defaultProps = {
     name: "Jorge Canton",
-    text: "Minions ipsum wiiiii bee do bee do bee do chasy tatata bala tu butt bananaaaa jeje uuuhhh aaaaaah. Potatoooo la bodaaa baboiii tatata bala tu potatoooo chasy bappleees poopayee tank yuuu! Bappleees tatata bala tu pepete tank yuuu! Ti aamoo! Tank yuuu..."
+    img: "/jorgecanton.jpg",
+    text: "Jorge has been teaching students development for the past five years."
 }
 
 export default TutorComp; 

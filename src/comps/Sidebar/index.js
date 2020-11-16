@@ -149,46 +149,46 @@ const Sidebar = () => {
         }} onMouseLeave={() =>{
             setHovered(!hovered); 
         }}> 
-            <img src={sidebarlogo}></img>
+            <img src="/logo.svg"></img>
         </LogoContainer>
         <Link to ="/MyAccount">
         <ProfileContainer clicked={clicked === 2} onClick={() =>{
             setClicked(2); 
         }}>
-            <img src={sidebarprofile}></img>
+            <img src="/ProfileIcon.png"></img>
             Profile 
         </ProfileContainer>
         </Link>
         <ExploreContainer clicked={clicked === 1} onClick={() =>{
             setClicked(1); 
         }}>
-            <img src={sidebarexplore}></img>
+            <img src="/ExploreIcon.png"></img>
             Explore 
         </ExploreContainer>
         <HistoryContainer clicked={clicked === 3} onClick={() =>{
             setClicked(3); 
         }}>
-            <img src={sidebarhistory}></img>
+            <img src="/HistoryIcon.png"></img>
             History 
         </HistoryContainer>
         <Link to="/FindATutor">
         <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
             setClicked(4); 
         }}>
-            <img src={sidebartutors}></img>
+            <img src="/TopTutorsIcon.png"></img>
                 Top Tutors 
         </TopTutorsContainer>
         </Link>
         <SupportContainer clicked={clicked === 5} onClick={() =>{
             setClicked(5); 
         }}>
-            <img src={sidebarsupport}></img>
+            <img src="/SupportIcon.png"></img>
             Support
         </SupportContainer>
         <SettingsContainer clicked={clicked === 6} onClick={() =>{
             setClicked(6); 
         }}>
-            <img src={sidebarsettings}></img>
+            <img src="/SettingsIcon.png"></img>
             Settings
         </SettingsContainer>
         <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{
