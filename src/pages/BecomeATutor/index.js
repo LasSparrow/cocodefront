@@ -4,10 +4,11 @@ import Sidebar from '../../comps/Sidebar';
 import ApplyTutor from '../../comps/Form/ApplyTutor';
 
 const BecomeTutorPage = styled.div`
-  width:100vw;
-  height:100vh;
+  width:100%;
+  height:100%;
   display:flex;
   align-items:flex-start;
+  background: #F5F5FB;
 `;
 
 const Form = styled.div`

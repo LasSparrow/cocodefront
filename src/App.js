@@ -16,6 +16,7 @@ import SignInPage from './pages/SignIn';
 import SignUpPage from './pages/SignUp';
 
 
+
 //global styles
 import './App.scss'
 

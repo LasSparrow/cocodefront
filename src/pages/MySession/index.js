@@ -8,6 +8,7 @@ const MysessionPage = styled.div`
   height:100vh;
   display:flex;
   align-items:flex-start;
+  background: #F5F5FB;
 `;
 
 const SessionList = styled.div`
