@@ -8,7 +8,7 @@ import ExploreCSS from '../../comps/CSSExplore';
 import ExplorePython from '../../comps/PythonExplore'; 
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"; 
 
-const ExplorePage = styled.div`
+const ExplorePageContainer = styled.div`
     max-width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -39,13 +39,13 @@ margin-bottom: 25px;
 border-radius: 30px;
 `;
 
-export default function ContactUs() {
+export default function ExplorePage() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }
 
   return <Router>
-  <ExplorePage>
+  <ExplorePageContainer>
       <Sidebar />
     <ContentTop>
         <ExploreHTML />
@@ -56,6 +56,6 @@ export default function ContactUs() {
       <ExplorePython />
     </ContentBottom>
     <RightSidebar />
-  </ExplorePage>
+  </ExplorePageContainer>
   </Router>
 }
