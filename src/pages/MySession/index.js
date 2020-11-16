@@ -23,7 +23,7 @@ const Title = styled.div`
     margin-bottom:20px;
 `;
 
-export default function Home() {
+export default function MySession() {
     const HandleBoxClick = (str)=>{
       alert(str);
     }

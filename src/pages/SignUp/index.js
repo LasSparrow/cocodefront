@@ -38,7 +38,7 @@ const Photo = styled.div`
   }
 `;
 
-export default function Home() {
+export default function SignUpPage() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }
