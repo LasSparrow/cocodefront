@@ -23,12 +23,14 @@ export default function SignInPage() {
     alert(str);
   }
 
-  return <PageCon>
+  return (
+    <PageCon>
       <Logo >
         <img src={LOGO}/>
       </Logo>
       <div>
         <SignIn />
       </div>
-  </PageCon>
+    </PageCon>
+  )
 }
