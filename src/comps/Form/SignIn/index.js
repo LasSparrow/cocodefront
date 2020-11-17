@@ -12,7 +12,7 @@ const InputBox = styled.div`
     flex-direction: column;
     align-items:center;
     align-content:center;
-    padding-top: 15%;
+    padding-top: 10%;
 `;
 
 const TitleBox = styled.div`

@@ -9,11 +9,12 @@ const PageCon = styled.div`
   height:100vh;
   display: flex;
   align-items:center;
+  align-content:center;
 `;
 
 const Form = styled.div`
     width:50%;
-    padding-left:10%;
+    height:auto;
 `;
 
 const Submit = styled.div`
@@ -21,21 +22,15 @@ const Submit = styled.div`
     display: flex;
     flex-direction: column;
     align-items:center;
-    align-content:center;
-    margin-top:60px;
     a {
         color: #018EA2;
         margin-left: 10px;
     }
 `;
 
-const Photo = styled.div`
+const Photo = styled.img`
     width:50%;
-    padding:90px;
-    img{
-    width:766px;
-    height:805px;
-  }
+    height:auto;
 `;
 
 export default function SignUpPage() {
@@ -47,15 +42,12 @@ export default function SignUpPage() {
       <Form>
           <SignUp />
           <Submit>
-            <div><Button text="Sign Up"/></div>
+            <Button text="Sign Up"/>
             <div>
                 Already have an account? <a href="url">Sign in</a>
             </div>
         </Submit>
       </Form>
-      <Photo>
-        <img src={SignupImg}/>
-
-      </Photo>
+      <Photo src={SignupImg} />
   </PageCon>
 }
