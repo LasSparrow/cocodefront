@@ -3,7 +3,7 @@ import Input from '../src/comps/Form/Input';
 import SigninForm from '../src/comps/Form/SignIn'; 
 import SignupForm from '../src/comps/Form/SignUp';
 import PaymentForm from '../src/comps/Form/Payment';
-import UserProfile from '../src/comps/UserProfile';
+import UserInfo from '../src/comps/UserInfoSession';
 import ApplyForm from '../src/comps/Form/ApplyTutor';
 
 export default {
@@ -17,5 +17,5 @@ export const BasicSigninForm = () => <SigninForm />;
 export const BasicSignupForm = () => <SignupForm />;
 export const BasicPaymentForm = () => <PaymentForm />;
 export const BasicApplyForm = () => <ApplyForm />;
-export const BasicUserProfile = () => <UserProfile />;
+export const BasicUserInfo = () => <UserInfo />;
 
