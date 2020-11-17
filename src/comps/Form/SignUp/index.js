@@ -9,15 +9,15 @@ const FormContainer = styled.div`
     box-sizing:border-box;
     display: flex;
     flex-direction: column;
-    align-content:center;       
+    align-content:center;  
+    align-items:center;
+    padding:40px;     
 `;
 
-const Logo = styled.div`
+const Logo = styled.img`
     margin-bottom:50px;
-    img{
-        width:224px;
-        height:106px;
-    }
+    width:224px;
+    height:106px;
 `;
 
 const Title = styled.div`
@@ -45,9 +45,7 @@ const Choose = styled.div`
 
 const SignupForm = ({title}) => {
     return <FormContainer>
-        <Logo>
-            <img src={LOGO}/>
-        </Logo>
+            <Logo src={LOGO}/>
             <Title>
                 <div>
                     <b>{title}</b>

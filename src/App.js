@@ -24,6 +24,8 @@ import TermsOfService from './pages/TermsofService';
 import SignInPage from './pages/SignIn';
 import SignUpPage from './pages/SignUp';
 import EditAccount from './pages/EditAccount'; 
+import TutorProfile from './pages/TutorProfile';
+
 
 //global styles
 import './App.scss'
@@ -32,8 +34,6 @@ import './App.scss'
 function App() {
   return (
     <Router>
-      <Sidebar /> 
-        <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SignInPage} />
             <Route path="/SignUp" component={SignUpPage} />
@@ -42,14 +42,13 @@ function App() {
             <Route path="/ContactUs" component={ContactUs} />
             <Route path="/FAQ" component={FAQ} />
             <Route path="/FindATutor" component={FindATutor} />
+            <Route path="/TutorProfile" component={TutorProfile} />
             <Route path="/MyAccount" component={MyAccount} />
             <Route path="/MySession" component={MySession} />
             <Route path="/PrivacyPolicy" component={PrivacyPolicy} />
             <Route path="/TermsOfService" component={TermsOfService} />
             <Route path="/EditAccount" component={EditAccount} />
           </Switch>
-        </BrowserRouter>
-      <RightSidebar />
     </Router>
   );
 }

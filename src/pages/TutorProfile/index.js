@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
 import RightSidebar from '../../comps/RightSidebar';
+import UserProfile from '../../comps/UserProfile';
 
 const UserProfilePage = styled.div`
     min-width: 100vw;
@@ -15,7 +16,6 @@ const Content = styled.div`
     max-width: 50vw;
     min-height: 85vh;
     margin: auto;
-    margin-left: 20;
     text-align: start;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@ export default function ContactUs() {
     <UserProfilePage>
       <Sidebar />
       <Content>
-      
+        <UserProfile/>
       </Content>
       <RightSidebar />
   </UserProfilePage>
