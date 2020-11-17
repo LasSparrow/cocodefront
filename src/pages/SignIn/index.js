@@ -19,7 +19,7 @@ export default function SignInPage() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }
-
+  
   return <PageCon>
       <Logo src={LOGO} />
       <SignIn />
