@@ -25,7 +25,6 @@ import './App.scss'
 function App() {
   return (
     <Router>
-      <Sidebar /> 
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SignInPage} />
