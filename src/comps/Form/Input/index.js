@@ -5,13 +5,10 @@ const InputCon = styled.div`
     display:flex;
     flex-direction:column;
     outline: none;
-    margin-left: 10px;
-    margin-right: 10px;
     width: ${props=>props.width};
 `;
 
 const Label = styled.label`
-    margin-left: -10px;
     font-size: ${props=>props.fontSize};
     font-weight: ${props=>props.fontWeight};
     width:384px; 
