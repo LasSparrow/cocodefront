@@ -9,28 +9,19 @@ const PageCon = styled.div`
   display: flex;
   align-items:center;
 `;
-const Logo = styled.div`
-  width:50%;
-  height:50%;
-  img{
-    width:495px;
-    height:235px;
-  }
+const Logo = styled.img`
+  width:30%;
+  height:30%;
+  padding:10%;
 `;
 
 export default function SignInPage() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }
-
-  return (
-    <PageCon>
-      <Logo >
-        <img src={LOGO}/>
-      </Logo>
-      <div>
-        <SignIn />
-      </div>
-    </PageCon>
-  )
+  
+  return <PageCon>
+      <Logo src={LOGO} />
+      <SignIn />
+  </PageCon>
 }
