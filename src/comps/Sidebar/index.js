@@ -1,5 +1,6 @@
 import React, {useState} from 'react'; 
-import styled from 'styled-components'; 
+import styled from 'styled-components';
+import './Sidebar.css'
 import sidebarlogo from '../../public/logo.svg';
 import sidebarprofile from '../../public//ProfileIcon.png';
 import sidebarexplore from '../../public/ExploreIcon.png';
@@ -10,8 +11,7 @@ import sidebarsettings from '../../public/SettingsIcon.png';
 import Search from '../../comps/Search'; 
 import {
     BrowserRouter as Router, 
-    Switch,
-    Route,
+    NavLink,
     Link
   } from "react-router-dom"; 
 
@@ -43,81 +43,6 @@ const LogoContainer = styled.div`
     padding-left: 15px;
 `; 
 
-const ProfileContainer = styled.div`
-    max-width: 130px; 
-    max-height: 20px; 
-    display: inline-flex; 
-    align-items: center; 
-    margin-top: 60px; 
-    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
-    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
-    cursor: pointer;
-    user-select: none; 
-`;
-
-const ExploreContainer = styled.div`
-    max-width: 130px; 
-    max-height: 20px; 
-    display: inline-flex; 
-    align-items: center; 
-    margin-top: 40px; 
-    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
-    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
-    cursor: pointer;
-    user-select: none;
-`;
-
-const HistoryContainer = styled.div`
-    max-width: 130px; 
-    max-height: 20px; 
-    display: inline-flex; 
-    align-items: center; 
-    margin-top: 40px; 
-    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
-    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
-    cursor: pointer;
-    user-select: none;
-`;
-
-const TopTutorsContainer = styled.div`
-    max-width: 160px; 
-    max-height: 20px; 
-    display: inline-flex; 
-    align-items: center; 
-    margin-top: 40px; 
-    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
-    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
-    img {
-        margin-left: 20px; 
-    }
-    cursor: pointer;
-    user-select: none;
-`;
-
-const SupportContainer = styled.div`
-    max-width: 130px; 
-    max-height: 20px; 
-    display: inline-flex; 
-    align-items: center; 
-    margin-top: 40px; 
-    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
-    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
-    cursor: pointer;
-    user-select: none;
-`;
-
-const SettingsContainer = styled.div`
-    max-width: 130px; 
-    max-height: 20px; 
-    display: inline-flex; 
-    align-items: center; 
-    margin-top: 40px; 
-    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
-    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
-    cursor: pointer;
-    user-select: none;
-`;
-
 const BecomeTutorContainer = styled.div`
     transform: ${props=>props.hoveredtwo ? "scale(1)" : "scale(1.1)"};
     transition: 0.5s; 
@@ -140,46 +65,34 @@ const Sidebar = () => {
 
     return <SidebarContainer> 
         <Link to ='/Explore' style={{ textDecoration: 'none' }} >
-            <LogoContainer> 
+            <LogoContainer>  
                 <img src="/logo.svg"></img>
             </LogoContainer>
         </Link>
-        <Link to ="/MyAccount" style={{ textDecoration: 'none' }} >
-            <ProfileContainer>
-                <img src="/ProfileIcon.png"></img>
-                Profile 
-            </ProfileContainer>
-        </Link>
-        <Link to ="/Explore" style={{ textDecoration: 'none' }}>
-            <ExploreContainer>
-                <img src="/ExploreIcon.png"></img>
-                Explore 
-            </ExploreContainer>
-        </Link>
-        <Link to ="/MySession" style={{ textDecoration: 'none' }}>
-            <HistoryContainer>
-                <img src="/HistoryIcon.png"></img>
-                History 
-            </HistoryContainer>
-        </Link>
-        <Link to="/FindATutor" style={{ textDecoration: 'none' }} >
-            <TopTutorsContainer>
-                <img src="/TopTutorsIcon.png"></img>
-                    Find Tutors 
-            </TopTutorsContainer>
-        </Link>
-        <Link to="/FAQ" style={{ textDecoration: 'none' }} >
-            <SupportContainer>
-                <img src="/SupportIcon.png"></img>
-                Support
-            </SupportContainer>
-        </Link>
-        <Link to="/EditAccount" style={{ textDecoration: 'none' }} >
-            <SettingsContainer>
-                <img src="/SettingsIcon.png"></img>
-                Settings
-            </SettingsContainer>
-        </Link>
+        <NavLink to ="/MyAccount"className="navlink" activeClassName="selected">
+            <img src="/ProfileIcon.png"></img>
+            Profile 
+        </NavLink>
+        <NavLink to ="/Explore" className="navlink" activeClassName="selected">
+            <img src="/ExploreIcon.png"></img>
+            Explore 
+        </NavLink>
+        <NavLink to ="/MySession" className="navlink" activeClassName="selected">
+            <img src="/HistoryIcon.png"></img>
+            History 
+        </NavLink>
+        <NavLink to="/FindATutor" className="navlink" activeClassName="selected">
+            <img src="/TopTutorsIcon.png"></img>
+                Find Tutors 
+        </NavLink>
+        <NavLink to="/FAQ" className="navlink" activeClassName="selected">
+            <img src="/SupportIcon.png"></img>
+            Support
+        </NavLink>
+        <NavLink to="/EditAccount" className="navlink" activeClassName="selected">
+            <img src="/SettingsIcon.png"></img>
+            Settings
+        </NavLink>
         <Link to ="/BecomeATutor" style={{ textDecoration: 'none' }} >
             <BecomeTutorContainer> 
                 Become A Tutor 
