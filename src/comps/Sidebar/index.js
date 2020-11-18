@@ -196,6 +196,9 @@ const BecomeTutorContainer = styled.div`
 `;
 
 const Sidebar = () => {
+    const[hovered, setHovered] = useState(true); 
+    const[hoveredtwo, setHoveredtwo] = useState(true); 
+
 
     return <SidebarContainer> 
         <ContentCont>
@@ -245,7 +248,11 @@ const Sidebar = () => {
               </NavLink>
             </SettingsContainer>
         <Link to ="/BecomeATutor" style={{ textDecoration: 'none' }} >
-            <BecomeTutorContainer> 
+            <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{
+                setHoveredtwo(!hoveredtwo);
+            }} onMouseLeave={() =>{
+                setHoveredtwo(!hoveredtwo); 
+            }}> 
                 Become A Tutor 
             </BecomeTutorContainer>
         </Link>
