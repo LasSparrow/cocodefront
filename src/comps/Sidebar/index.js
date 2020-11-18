@@ -63,7 +63,7 @@ const ContentCont = styled.div`
 `;
 
 const LogoContainer = styled.div`
-    transform: ${props=>props.hovered ? "scale(1)" : "scale(1.1)"};
+    transform: ${props=>props.hovered ? "scale(1.1)" : "scale(1)"};
     transition: 0.5s;
     min-width: 175px; 
     min-height: 84px;  
