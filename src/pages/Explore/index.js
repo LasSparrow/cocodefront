@@ -6,7 +6,7 @@ import ExploreBox from '../../comps/Explore';
 import ExploreHTML from '../../comps/HTMLExplore';
 import ExploreCSS from '../../comps/CSSExplore'; 
 import ExplorePython from '../../comps/PythonExplore'; 
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"; 
+import {Link} from 'react-router-dom'; 
 
 const ExplorePageContainer = styled.div`
   max-width: 100vw;
@@ -44,8 +44,7 @@ export default function ExplorePage() {
     alert(str);
   }
 
-  return <Router>
-  <ExplorePageContainer>
+  return <ExplorePageContainer>
       <Sidebar />
     <ContentTop>
         <ExploreHTML />
@@ -57,5 +56,7 @@ export default function ExplorePage() {
     </ContentBottom>
     <RightSidebar />
   </ExplorePageContainer>
-  </Router>
+}
+
+ExplorePage.defaultProps = {
 }

@@ -3,9 +3,7 @@
 import Page from './pages/FAQ';
 
 import React, {Fragment} from 'react';
-import Sidebar from './comps/Sidebar';
-import RightSidebar from './comps/RightSidebar';
-import {BrowserRouter as Router, Switch, Route, Link, BrowserRouter} from "react-router-dom"; 
+import {BrowserRouter as Router, Switch, Route, Link,} from "react-router-dom"; 
 import ExplorePage from "./pages/Explore"; 
 import BecomeATutor from './pages/BecomeATutor';
 import ContactUs from './pages/ContactUs';
@@ -19,10 +17,11 @@ import SignInPage from './pages/SignIn';
 import SignUpPage from './pages/SignUp';
 import EditAccount from './pages/EditAccount'; 
 import TutorProfile from './pages/TutorProfile';
-
+import SessionRequested from './pages/SessionRequested'; 
 
 //global styles
-import './App.scss';
+import './App.scss'
+import StudentSessionRequested from './comps/Calendar';
 
 
 function App() {
@@ -34,14 +33,16 @@ function App() {
             <Route path="/Explore" component={ExplorePage} />
             <Route path="/BecomeATutor" component={BecomeATutor} />
             <Route path="/ContactUs" component={ContactUs} />
-            <Route path="/FAQ" component={FAQ} />
+            <Route path="/FAQ" component={FAQ}/>
             <Route path="/FindATutor" component={FindATutor} />
             <Route path="/TutorProfile" component={TutorProfile} />
             <Route path="/MyAccount" component={MyAccount} />
             <Route path="/MySession" component={MySession} />
             <Route path="/PrivacyPolicy" component={PrivacyPolicy} />
             <Route path="/TermsOfService" component={TermsOfService} />
+            <Route path="/SessionRequested" component={SessionRequested} />
             <Route path="/EditAccount" component={EditAccount} />
+            <Route path="/StudentSessionRequested" component={StudentSessionRequested} /> 
           </Switch>
     </Router>
   );

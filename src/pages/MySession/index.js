@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
 import Session from '../../comps/Session';
+import RightSidebar from '../../comps/RightSidebar';
 
 const MysessionPage = styled.div`
   width:100vw;
@@ -41,5 +42,6 @@ export default function MySession() {
             <Session />
           </div>
         </SessionList>
+        <RightSidebar /> 
     </MysessionPage>
   }

@@ -1,10 +1,17 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components';
+import './Sidebar.css'
+import sidebarlogo from '../../public/logo.svg';
+import sidebarprofile from '../../public//ProfileIcon.png';
+import sidebarexplore from '../../public/ExploreIcon.png';
+import sidebarhistory from '../../public/HistoryIcon.png';
+import sidebartutors from '../../public/TopTutorsIcon.png';
+import sidebarsupport from '../../public/SupportIcon.png';
+import sidebarsettings from '../../public/SettingsIcon.png';
 import Search from '../../comps/Search'; 
 import {
     BrowserRouter as Router, 
-    Switch,
-    Route,
+    NavLink,
     Link
   } from "react-router-dom";
 
@@ -189,15 +196,10 @@ const BecomeTutorContainer = styled.div`
 `;
 
 const Sidebar = () => {
-    const[hovered, setHovered] = useState(true); 
-    const[hoveredtwo, setHoveredtwo] = useState(true); 
-    const[clicked, setClicked] = useState(1);
 
-    return <Router> 
-    <Switch>
-    <SidebarContainer> 
+    return <SidebarContainer> 
         <ContentCont>
-        <Link to ="/Explore" style={{ textDecoration: 'none' }} >
+        <Link to ='/Explore' style={{ textDecoration: 'none' }} >
             <LogoContainer hovered={hovered} onMouseEnter={() =>{
                 setHovered(!hovered);
             }} onMouseLeave={() =>{
@@ -206,68 +208,50 @@ const Sidebar = () => {
                 <img src="/logo.svg"></img>
             </LogoContainer>
         </Link>
-        <Link to ="/MyAccount" style={{ textDecoration: 'none' }} >
-            <ProfileContainer clicked={clicked === 2} onClick={() =>{
-                setClicked(2); 
-            }}>
-                <img src="/ProfileIcon.png" class="headericon"></img>
-                Profile 
+            <ProfileContainer>
+              <NavLink to ="/MyAccount"className="navlink" activeClassName="selected">
+                  <img src="/ProfileIcon.png"></img>
+                  Profile 
+              </NavLink>
             </ProfileContainer>
-        </Link>
-        <Link to ="/Explore" style={{ textDecoration: 'none' }}>
-            <ExploreContainer clicked={clicked === 1} onClick={() =>{
-                setClicked(1); 
-            }}>
-                <img src="/ExploreIcon.png" class="headericon"></img>
-                Explore 
+            <ExploreContainer>
+              <NavLink to ="/Explore" className="navlink" activeClassName="selected">
+                  <img src="/ExploreIcon.png"></img>
+                  Explore 
+              </NavLink>
             </ExploreContainer>
-        </Link>
-        <Link to ="/MySession" style={{ textDecoration: 'none' }}>
-            <HistoryContainer clicked={clicked === 3} onClick={() =>{
-                setClicked(3); 
-            }}>
-                <img src="/HistoryIcon.png" class="headericon"></img>
-                History 
+            <HistoryContainer>
+              <NavLink to ="/MySession" className="navlink" activeClassName="selected">
+                  <img src="/HistoryIcon.png"></img>
+                  History 
+              </NavLink>
             </HistoryContainer>
-        </Link>
-        <Link to="/FindATutor" style={{ textDecoration: 'none' }} >
-            <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
-                setClicked(4); 
-            }}>
-                <img src="/TopTutorsIcon.png" class="headericon"></img>
-                    Tutors
+            <TopTutorsContainer>
+              <NavLink to="/FindATutor" className="navlink" activeClassName="selected">
+                  <img src="/TopTutorsIcon.png"></img>
+                   Tutors 
+              </NavLink>
             </TopTutorsContainer>
-        </Link>
-        <Link to="/FAQ" style={{ textDecoration: 'none' }} >
-            <SupportContainer class="headerlink" clicked={clicked === 5} onClick={() =>{
-                setClicked(5); 
-            }}>
-                <img src="/SupportIcon.png" class="headericon"></img>
-                Support
+            <SupportContainer>
+              <NavLink to="/FAQ" className="navlink" activeClassName="selected">
+                  <img src="/SupportIcon.png"></img>
+                  Support
+              </NavLink>
             </SupportContainer>
-        </Link>
-        <Link to="/EditAccount" style={{ textDecoration: 'none' }} >
-            <SettingsContainer class="headerlink" clicked={clicked === 6} onClick={() =>{
-                setClicked(6); 
-            }}>
-                <img src="/SettingsIcon.png" class="headericon"></img>
-                Settings
+            <SettingsContainer>
+              <NavLink to="/EditAccount" className="navlink" activeClassName="selected">
+                  <img src="/SettingsIcon.png"></img>
+                  Settings
+              </NavLink>
             </SettingsContainer>
-        </Link>
         <Link to ="/BecomeATutor" style={{ textDecoration: 'none' }} >
-            <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{
-                setHoveredtwo(!hoveredtwo);
-            }} onMouseLeave={() =>{
-                setHoveredtwo(!hoveredtwo); 
-            }}> 
+            <BecomeTutorContainer> 
                 Become A Tutor 
             </BecomeTutorContainer>
         </Link>
         <Search class="headersearch"/>
         </ContentCont>
   </SidebarContainer>
-  </Switch>
-  </Router>
 }
 
 Sidebar.defaultProps = {
