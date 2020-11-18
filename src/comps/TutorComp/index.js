@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Button from '../Button';
 import LangTags from '../LangTags';
 import BookModal from '../BookModal/BookModal'
+import {Link} from 'react-router-dom'; 
+import CalendarPage from '../../pages/StudentSessionRequested';
 
 
 const ButtonBox = styled.div`
@@ -58,7 +60,9 @@ const TutorComp = ({text, name, img}) => {
                 <Blurb>{text}</Blurb>
             </Info>
             <ButtonBox>
-                <Button text="Profile"/>
+                <Link to="/TutorProfile" style={{ textDecoration: 'none' }} >
+                    <Button text="Profile"/>
+                </Link>
                 <Button text="Book" openModal={openModal}/>
             </ButtonBox>
         </Top>
@@ -68,7 +72,7 @@ const TutorComp = ({text, name, img}) => {
             <LangTags text="Java"/>
         </LangBox>
         <BookModal open={open} setOpen={setOpen}>
-            <h1>Book A Tutor</h1>
+            <CalendarPage />
         </BookModal>
     </TutorCompContainer>
 }
