@@ -14,10 +14,6 @@ const FAQPage = styled.div`
 
 const Content = styled.div`
     margin: auto;
-    // margin-top: 25px;
-    // margin-left: 200px;
-    // margin-right: 40px;
-    // margin-bottom: 25px;
     max-width: 40vw;
     height: 90vh;
     padding: 20px 40px 20px 40px;

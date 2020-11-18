@@ -6,6 +6,10 @@ const AccountBoxMain = styled.div`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        margin-right: 20px;
+    }   
 `;
 
 const AccountBoxContainer = styled.div`

@@ -7,22 +7,26 @@ import Input from '../../comps/Form/Input';
 import Button from '../../comps/Button';
 
 const FreeSessionPage = styled.div`
-    min-width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
+    // margin: 0;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     background: #F5F5FB;
 `;
 
 const Content = styled.div`
-    margin: auto;
-    max-width: 40vw;
+    overflow: auto;
     height: 90vh;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 40px 20px 30px;
     background-color: #FFFFFF;
     box-shadow: 5px 10px 10px #888888;
     border-radius: 30px;
     text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 const Center = styled.div`
@@ -30,10 +34,18 @@ const Center = styled.div`
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    text-align: start;
+    align-self: start;
+    max-width: 56%;
+    margin-left: 280px;
+
+    @media only screen and (min-width: 1920px) {
+            display: none;
+        }
 `;
 
-const Text = styled.div``;
+const Text = styled.div`
+    margin: 30px 0px 30px 0px;
+`;
 
 export default function FreeSession() {
     const HandleBoxClick = (str)=>{
@@ -45,9 +57,10 @@ export default function FreeSession() {
         <Center>
             <Title title="Get a Free Session"/>
             <Content>
+                <Text>Please fill out the short form in order to receive a free 30 minute session.</Text>
                 <Input label="Full Name" height="30px" fontSize="11pt" fontWeight="600" ph="Full Name"/>  
                 <Input label="School Email" height="30px" fontSize="11pt" fontWeight="600" ph="School Email"/> 
-                <Input label="What languages/programs are you using?" height="30px" fontSize="11pt" fontWeight="600" ph="Full Name"/>
+                <Input label="What languages/programs are you using?" height="30px" fontSize="11pt" fontWeight="600" ph="Languages/Programs"/>
                 <Button text="Submit"/>
                 <Text>By clicking submit you agree to receive regular email updates from CoCode's news subscription. You will receive a redemption code in an email shortly. The code can be used to waive the fee of a 30 minute session with any tutor. </Text>
             </Content>

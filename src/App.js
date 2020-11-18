@@ -1,12 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/FreeSession';
-import {
-  BrowserRouter as Router, 
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"; 
+import Page from './pages/FAQ';
 
 import React, {Fragment} from 'react';
 import Sidebar from './comps/Sidebar';
@@ -28,7 +22,7 @@ import TutorProfile from './pages/TutorProfile';
 
 
 //global styles
-import './App.scss'
+import './App.scss';
 
 
 function App() {

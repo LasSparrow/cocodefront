@@ -6,7 +6,7 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom"; 
+  } from "react-router-dom";
 
 const SidebarContainer = styled.div`
     padding: 25px 25px 0px 25px;
@@ -20,13 +20,39 @@ const SidebarContainer = styled.div`
     img {
         margin-right: 20px; 
     }
+
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: 10vh;
+        flex-direction: row;
+
+        .headericon{
+            display: none;
+        }
+
+        .headersearch{
+            
+        }
+
+        p{
+            display: none;
+        }
+    }
+
 `;
 
-const Links = styled.div`
-    width: 100px;
+const ContentCont = styled.div`
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: 10vh;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 `;
 
 const LogoContainer = styled.div`
@@ -36,6 +62,11 @@ const LogoContainer = styled.div`
     min-height: 84px;  
     cursor: pointer;
     padding-left: 15px;
+
+    @media (max-width: 1024px) {
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
 `; 
 
 const ProfileContainer = styled.div`
@@ -48,6 +79,11 @@ const ProfileContainer = styled.div`
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none; 
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+        margin-left: 10px;
+    }
 `;
 
 const ExploreContainer = styled.div`
@@ -60,6 +96,10 @@ const ExploreContainer = styled.div`
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
 `;
 
 const HistoryContainer = styled.div`
@@ -72,6 +112,10 @@ const HistoryContainer = styled.div`
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
 `;
 
 const TopTutorsContainer = styled.div`
@@ -84,6 +128,10 @@ const TopTutorsContainer = styled.div`
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
 `;
 
 const SupportContainer = styled.div`
@@ -96,6 +144,10 @@ const SupportContainer = styled.div`
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
 `;
 
 const SettingsContainer = styled.div`
@@ -108,6 +160,10 @@ const SettingsContainer = styled.div`
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
 `;
 
 const BecomeTutorContainer = styled.div`
@@ -126,6 +182,10 @@ const BecomeTutorContainer = styled.div`
     margin-top: 60px; 
     cursor: pointer;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 const Sidebar = () => {
@@ -136,6 +196,7 @@ const Sidebar = () => {
     return <Router> 
     <Switch>
     <SidebarContainer> 
+        <ContentCont>
         <Link to ="/Explore" style={{ textDecoration: 'none' }} >
             <LogoContainer hovered={hovered} onMouseEnter={() =>{
                 setHovered(!hovered);
@@ -149,7 +210,7 @@ const Sidebar = () => {
             <ProfileContainer clicked={clicked === 2} onClick={() =>{
                 setClicked(2); 
             }}>
-                <img src="/ProfileIcon.png"></img>
+                <img src="/ProfileIcon.png" class="headericon"></img>
                 Profile 
             </ProfileContainer>
         </Link>
@@ -157,7 +218,7 @@ const Sidebar = () => {
             <ExploreContainer clicked={clicked === 1} onClick={() =>{
                 setClicked(1); 
             }}>
-                <img src="/ExploreIcon.png"></img>
+                <img src="/ExploreIcon.png" class="headericon"></img>
                 Explore 
             </ExploreContainer>
         </Link>
@@ -165,7 +226,7 @@ const Sidebar = () => {
             <HistoryContainer clicked={clicked === 3} onClick={() =>{
                 setClicked(3); 
             }}>
-                <img src="/HistoryIcon.png"></img>
+                <img src="/HistoryIcon.png" class="headericon"></img>
                 History 
             </HistoryContainer>
         </Link>
@@ -173,23 +234,23 @@ const Sidebar = () => {
             <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
                 setClicked(4); 
             }}>
-                <img src="/TopTutorsIcon.png"></img>
-                    Top Tutors 
+                <img src="/TopTutorsIcon.png" class="headericon"></img>
+                    Tutors
             </TopTutorsContainer>
         </Link>
         <Link to="/FAQ" style={{ textDecoration: 'none' }} >
-            <SupportContainer clicked={clicked === 5} onClick={() =>{
+            <SupportContainer class="headerlink" clicked={clicked === 5} onClick={() =>{
                 setClicked(5); 
             }}>
-                <img src="/SupportIcon.png"></img>
+                <img src="/SupportIcon.png" class="headericon"></img>
                 Support
             </SupportContainer>
         </Link>
         <Link to="/EditAccount" style={{ textDecoration: 'none' }} >
-            <SettingsContainer clicked={clicked === 6} onClick={() =>{
+            <SettingsContainer class="headerlink" clicked={clicked === 6} onClick={() =>{
                 setClicked(6); 
             }}>
-                <img src="/SettingsIcon.png"></img>
+                <img src="/SettingsIcon.png" class="headericon"></img>
                 Settings
             </SettingsContainer>
         </Link>
@@ -202,7 +263,8 @@ const Sidebar = () => {
                 Become A Tutor 
             </BecomeTutorContainer>
         </Link>
-        <Search />
+        <Search class="headersearch"/>
+        </ContentCont>
   </SidebarContainer>
   </Switch>
   </Router>

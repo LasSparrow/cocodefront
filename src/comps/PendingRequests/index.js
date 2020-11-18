@@ -6,6 +6,10 @@ const PRTabMain = styled.div`
     max-height: 176px; 
     display: flex; 
     flex-direction: column; 
+
+    @media (max-width: 1024px) {
+        margin-right: 30px;
+    }   
 `;
 
 const PRTabContainer = styled.div`
@@ -15,6 +19,10 @@ const PRTabContainer = styled.div`
     flex-direction: row; 
     align-items: center; 
     margin: 12px 0px 12px 0px; 
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 const PRTabLeft = styled.div`
@@ -66,13 +74,32 @@ const PRText = styled.div`
     font-weight: 600; 
     color: #011F3B; 
     margin-bottom: 15px; 
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 0;
+    }   
 `; 
+
+const DDIcon = styled.img`
+    max-height: 20px;
+    max-width: 20px;
+    align-self: center;
+    display: none;
+    margin-left: 10px;
+
+    @media (max-width: 1024px) {
+        display: inline-flex;
+    }   
+`;
 
 const PRTab = () => {
     const[enlarge, setEnlarge] = useState(true); 
     return <PRTabMain>
 
-        <PRText>Pending Requests</PRText>
+        <PRText>Pending Requests 
+            <DDIcon src="/DropdownIcon.png"/>
+        </PRText>
 
         <PRTabContainer>
         <PRTabLeft>
