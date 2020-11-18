@@ -1,6 +1,7 @@
 import React from 'react'; 
 import styled from "styled-components";
 import Button from "../../Button";
+import {Link} from 'react-router-dom'; 
 
 const InputBox = styled.div`
     width: 700px;
@@ -76,10 +77,12 @@ const SigninForm = () => {
                     <label>Password</label>
                     <input type="password" placeholder="Password"/>
                 </div>  
-            </InputForm> 
-            <SigninBut>
-                    <Button text="Sign In"/>
-            </SigninBut>         
+            </InputForm>
+            <Link to="/Explore" style={{ textDecoration: 'none' }} >
+                <SigninBut>
+                        <Button text="Sign In"/>
+                </SigninBut>    
+            </Link>     
     </InputBox>
 }
 

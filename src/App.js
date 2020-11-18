@@ -1,7 +1,5 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/FAQ';
-
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link,} from "react-router-dom"; 
 import ExplorePage from "./pages/Explore"; 
@@ -28,7 +26,6 @@ function App() {
   return (
     <Router>
           <Switch>
-            <Page/>
             <Route path="/" exact component={SignInPage} />
             <Route path="/SignUp" component={SignUpPage} />
             <Route path="/Explore" component={ExplorePage} />

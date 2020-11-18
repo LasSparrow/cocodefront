@@ -61,7 +61,7 @@ const ContentCont = styled.div`
 `;
 
 const LogoContainer = styled.div`
-    transform: ${props=>props.hovered ? "scale(1.1)" : "scale(1)"};
+    transform: ${props=>props.hovered ? "scale(1)" : "scale(1.1)"};
     transition: 0.5s;
     min-width: 175px; 
     min-height: 84px;  
@@ -217,37 +217,37 @@ const Sidebar = () => {
         </Link>
             <ProfileContainer>
               <NavLink to ="/MyAccount"className="navlink" activeClassName="selected">
-                  <img src="/ProfileIcon.png" class="headericon"></img>
+                  <img src="/ProfileIcon.png"></img>
                   Profile 
               </NavLink>
             </ProfileContainer>
             <ExploreContainer>
               <NavLink to ="/Explore" className="navlink" activeClassName="selected">
-                  <img src="/ExploreIcon.png" class="headericon"></img>
+                  <img src="/ExploreIcon.png"></img>
                   Explore 
               </NavLink>
             </ExploreContainer>
             <HistoryContainer>
               <NavLink to ="/MySession" className="navlink" activeClassName="selected">
-                  <img src="/HistoryIcon.png" class="headericon"></img>
+                  <img src="/HistoryIcon.png"></img>
                   History 
               </NavLink>
             </HistoryContainer>
             <TopTutorsContainer>
               <NavLink to="/FindATutor" className="navlink" activeClassName="selected">
-                  <img src="/TopTutorsIcon.png" class="headericon"></img>
+                  <img src="/TopTutorsIcon.png"></img>
                    Tutors 
               </NavLink>
             </TopTutorsContainer>
             <SupportContainer>
               <NavLink to="/FAQ" className="navlink" activeClassName="selected">
-                  <img src="/SupportIcon.png" class="headericon"></img>
+                  <img src="/SupportIcon.png"></img>
                   Support
               </NavLink>
             </SupportContainer>
             <SettingsContainer>
               <NavLink to="/EditAccount" className="navlink" activeClassName="selected">
-                  <img src="/SettingsIcon.png" class="headericon"></img>
+                  <img src="/SettingsIcon.png"></img>
                   Settings
               </NavLink>
             </SettingsContainer>
