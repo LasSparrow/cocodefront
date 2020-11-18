@@ -6,6 +6,7 @@ import ExploreBox from '../../comps/Explore';
 import ExploreHTML from '../../comps/HTMLExplore';
 import ExploreCSS from '../../comps/CSSExplore'; 
 import ExplorePython from '../../comps/PythonExplore'; 
+import {Link} from 'react-router-dom'; 
 
 const ExplorePageContainer = styled.div`
     max-width: 100vw;

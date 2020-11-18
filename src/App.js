@@ -13,7 +13,7 @@ import SignInPage from './pages/SignIn';
 import SignUpPage from './pages/SignUp';
 import EditAccount from './pages/EditAccount'; 
 import TutorProfile from './pages/TutorProfile';
-
+import SessionRequested from './pages/SessionRequested'; 
 
 //global styles
 import './App.scss'
@@ -35,6 +35,7 @@ function App() {
             <Route path="/MySession" component={MySession} />
             <Route path="/PrivacyPolicy" component={PrivacyPolicy} />
             <Route path="/TermsOfService" component={TermsOfService} />
+            <Route path="/SessionRequested" component={SessionRequested} />
             <Route path="/EditAccount" component={EditAccount} />
           </Switch>
     </Router>

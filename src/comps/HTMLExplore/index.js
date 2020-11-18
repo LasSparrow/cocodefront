@@ -1,5 +1,6 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'; 
 
 const ImageContainer = styled.div`
     max-width: 801px; 
@@ -60,7 +61,8 @@ const IconContainer = styled.div`
 const ExploreHTML = () => {
     const[hovered, setHovered] = useState(true); 
 
-return  <ImageContainer>
+return  <Link to="/FindATutor">
+        <ImageContainer>
         <img src="/WebDevImage.png"></img>
         <BigTextContainer>HTML</BigTextContainer>
         <SmallTextContainer>3200⠀Students 55⠀Tutors</SmallTextContainer>
@@ -72,6 +74,7 @@ return  <ImageContainer>
             <img src="/FavouriteIcon.png"></img>
         </IconContainer>
     </ImageContainer>
+    </Link>
 }
 
 ExploreHTML.defaultProps = {
