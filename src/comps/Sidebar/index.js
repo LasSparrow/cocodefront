@@ -38,7 +38,6 @@ const SidebarContainer = styled.div`
         }
 
         .headersearch{
-            
         }
 
         p{
@@ -57,7 +56,6 @@ const ContentCont = styled.div`
         width: 100vw;
         height: 10vh;
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;
     }
 `;
@@ -90,6 +88,7 @@ const ProfileContainer = styled.div`
     @media (max-width: 1024px) {
         margin: 0px;
         margin-left: 10px;
+        margin-bottom: 70px;
     }
 `;
 
@@ -106,6 +105,7 @@ const ExploreContainer = styled.div`
 
     @media (max-width: 1024px) {
         margin: 0px;
+        margin-bottom: 70px;
     }
 `;
 
@@ -122,6 +122,7 @@ const HistoryContainer = styled.div`
 
     @media (max-width: 1024px) {
         margin: 0px;
+        margin-bottom: 70px;
     }
 `;
 
@@ -138,6 +139,7 @@ const TopTutorsContainer = styled.div`
 
     @media (max-width: 1024px) {
         margin: 0px;
+        margin-bottom: 70px;
     }
 `;
 
@@ -154,6 +156,7 @@ const SupportContainer = styled.div`
 
     @media (max-width: 1024px) {
         margin: 0px;
+        margin-bottom: 70px;
     }
 `;
 
@@ -170,6 +173,7 @@ const SettingsContainer = styled.div`
 
     @media (max-width: 1024px) {
         margin: 0px;
+        margin-bottom: 70px;
     }
 `;
 
@@ -213,37 +217,37 @@ const Sidebar = () => {
         </Link>
             <ProfileContainer>
               <NavLink to ="/MyAccount"className="navlink" activeClassName="selected">
-                  <img src="/ProfileIcon.png"></img>
+                  <img src="/ProfileIcon.png" class="headericon"></img>
                   Profile 
               </NavLink>
             </ProfileContainer>
             <ExploreContainer>
               <NavLink to ="/Explore" className="navlink" activeClassName="selected">
-                  <img src="/ExploreIcon.png"></img>
+                  <img src="/ExploreIcon.png" class="headericon"></img>
                   Explore 
               </NavLink>
             </ExploreContainer>
             <HistoryContainer>
               <NavLink to ="/MySession" className="navlink" activeClassName="selected">
-                  <img src="/HistoryIcon.png"></img>
+                  <img src="/HistoryIcon.png" class="headericon"></img>
                   History 
               </NavLink>
             </HistoryContainer>
             <TopTutorsContainer>
               <NavLink to="/FindATutor" className="navlink" activeClassName="selected">
-                  <img src="/TopTutorsIcon.png"></img>
+                  <img src="/TopTutorsIcon.png" class="headericon"></img>
                    Tutors 
               </NavLink>
             </TopTutorsContainer>
             <SupportContainer>
               <NavLink to="/FAQ" className="navlink" activeClassName="selected">
-                  <img src="/SupportIcon.png"></img>
+                  <img src="/SupportIcon.png" class="headericon"></img>
                   Support
               </NavLink>
             </SupportContainer>
             <SettingsContainer>
               <NavLink to="/EditAccount" className="navlink" activeClassName="selected">
-                  <img src="/SettingsIcon.png"></img>
+                  <img src="/SettingsIcon.png" class="headericon"></img>
                   Settings
               </NavLink>
             </SettingsContainer>
