@@ -1,7 +1,5 @@
 import React, {Fragment} from 'react';
-import Sidebar from './comps/Sidebar';
-import RightSidebar from './comps/RightSidebar';
-import {BrowserRouter as Router, Switch, Route, Link, BrowserRouter} from "react-router-dom"; 
+import {BrowserRouter as Router, Switch, Route, Link,} from "react-router-dom"; 
 import ExplorePage from "./pages/Explore"; 
 import BecomeATutor from './pages/BecomeATutor';
 import ContactUs from './pages/ContactUs';
@@ -30,7 +28,7 @@ function App() {
             <Route path="/Explore" component={ExplorePage} />
             <Route path="/BecomeATutor" component={BecomeATutor} />
             <Route path="/ContactUs" component={ContactUs} />
-            <Route path="/FAQ" component={FAQ} />
+            <Route path="/FAQ" component={FAQ}/>
             <Route path="/FindATutor" component={FindATutor} />
             <Route path="/TutorProfile" component={TutorProfile} />
             <Route path="/MyAccount" component={MyAccount} />

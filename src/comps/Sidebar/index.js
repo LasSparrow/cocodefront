@@ -80,7 +80,7 @@ const HistoryContainer = styled.div`
 `;
 
 const TopTutorsContainer = styled.div`
-    max-width: 150px; 
+    max-width: 160px; 
     max-height: 20px; 
     display: inline-flex; 
     align-items: center; 
@@ -137,83 +137,56 @@ const BecomeTutorContainer = styled.div`
 `;
 
 const Sidebar = () => {
-    const[hovered, setHovered] = useState(true); 
-    const[hoveredtwo, setHoveredtwo] = useState(true); 
-    const[clicked, setClicked] = useState(1);
 
-    return <Router> 
-    <Switch>
-    <SidebarContainer> 
-        <Link to ="/Explore" style={{ textDecoration: 'none' }} >
-            <LogoContainer hovered={hovered} onMouseEnter={() =>{
-                setHovered(!hovered);
-            }} onMouseLeave={() =>{
-                setHovered(!hovered); 
-            }}> 
+    return <SidebarContainer> 
+        <Link to ='/Explore' style={{ textDecoration: 'none' }} >
+            <LogoContainer> 
                 <img src="/logo.svg"></img>
             </LogoContainer>
         </Link>
         <Link to ="/MyAccount" style={{ textDecoration: 'none' }} >
-            <ProfileContainer clicked={clicked === 2} onClick={() =>{
-                setClicked(2); 
-            }}>
+            <ProfileContainer>
                 <img src="/ProfileIcon.png"></img>
                 Profile 
             </ProfileContainer>
         </Link>
         <Link to ="/Explore" style={{ textDecoration: 'none' }}>
-            <ExploreContainer clicked={clicked === 1} onClick={() =>{
-                setClicked(1); 
-            }}>
+            <ExploreContainer>
                 <img src="/ExploreIcon.png"></img>
                 Explore 
             </ExploreContainer>
         </Link>
         <Link to ="/MySession" style={{ textDecoration: 'none' }}>
-            <HistoryContainer clicked={clicked === 3} onClick={() =>{
-                setClicked(3); 
-            }}>
+            <HistoryContainer>
                 <img src="/HistoryIcon.png"></img>
                 History 
             </HistoryContainer>
         </Link>
         <Link to="/FindATutor" style={{ textDecoration: 'none' }} >
-            <TopTutorsContainer clicked={clicked === 4} onClick={() =>{
-                setClicked(4); 
-            }}>
+            <TopTutorsContainer>
                 <img src="/TopTutorsIcon.png"></img>
-                    Top Tutors 
+                    Find Tutors 
             </TopTutorsContainer>
         </Link>
         <Link to="/FAQ" style={{ textDecoration: 'none' }} >
-            <SupportContainer clicked={clicked === 5} onClick={() =>{
-                setClicked(5); 
-            }}>
+            <SupportContainer>
                 <img src="/SupportIcon.png"></img>
                 Support
             </SupportContainer>
         </Link>
         <Link to="/EditAccount" style={{ textDecoration: 'none' }} >
-            <SettingsContainer clicked={clicked === 6} onClick={() =>{
-                setClicked(6); 
-            }}>
+            <SettingsContainer>
                 <img src="/SettingsIcon.png"></img>
                 Settings
             </SettingsContainer>
         </Link>
         <Link to ="/BecomeATutor" style={{ textDecoration: 'none' }} >
-            <BecomeTutorContainer hoveredtwo={hoveredtwo} onMouseEnter={() =>{
-                setHoveredtwo(!hoveredtwo);
-            }} onMouseLeave={() =>{
-                setHoveredtwo(!hoveredtwo); 
-            }}> 
+            <BecomeTutorContainer> 
                 Become A Tutor 
             </BecomeTutorContainer>
         </Link>
         <Search />
   </SidebarContainer>
-  </Switch>
-  </Router>
 }
 
 Sidebar.defaultProps = {
