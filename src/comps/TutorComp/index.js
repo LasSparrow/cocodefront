@@ -4,6 +4,7 @@ import Button from '../Button';
 import LangTags from '../LangTags';
 import BookModal from '../BookModal/BookModal'
 import {Link} from 'react-router-dom'; 
+import CalendarPage from '../../pages/StudentSessionRequested';
 
 
 const ButtonBox = styled.div`
@@ -71,7 +72,7 @@ const TutorComp = ({text, name, img}) => {
             <LangTags text="Java"/>
         </LangBox>
         <BookModal open={open} setOpen={setOpen}>
-            <h1>Book</h1>
+            <CalendarPage />
         </BookModal>
     </TutorCompContainer>
 }

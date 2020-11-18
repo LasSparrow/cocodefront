@@ -17,6 +17,7 @@ import SessionRequested from './pages/SessionRequested';
 
 //global styles
 import './App.scss'
+import StudentSessionRequested from './comps/Calendar';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/TermsOfService" component={TermsOfService} />
             <Route path="/SessionRequested" component={SessionRequested} />
             <Route path="/EditAccount" component={EditAccount} />
+            <Route path="/StudentSessionRequested" component={StudentSessionRequested} /> 
           </Switch>
     </Router>
   );
