@@ -5,21 +5,24 @@ import PRTab from '../PendingRequests';
 import USTab from '../UpcomingSessions'; 
 import FSTab from '../FreeSession'; 
 
-const AllContainers = styled.div`
-//clicked prop css here
-`;
-
-const RightSidebarContainer = styled(AllContainers)`
+const RightSidebarContainer = styled.div`
+    margin: 0;
     width: 300px; 
     height: 100vh; 
     display: flex; 
     flex-direction: column;
-    padding: 0px 5px 0px 5px;
-    margin-left: 20px;
     background: white;
     position: fixed;
     right: 0;
     align-items: center;
+    overflow: auto;
+
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: 10vh;
+        flex-direction: row-reverse;
+        margin-top: 12vh;
+    }
 `; 
 
 const AccountBoxContainer = styled.div`
@@ -28,14 +31,26 @@ const AccountBoxContainer = styled.div`
 
 const PRTabContainer = styled.div`
     margin: 0px 0px 20px 0px; 
+
+    @media (max-width: 1024px) {
+        margin: 0;
+    }
 `; 
 
 const USTabContainer = styled.div`
     margin: 0px 0px 20px 0px; 
+
+    @media (max-width: 1024px) {
+        margin: 0;
+    }
 `;
 
 const FSTabContainer = styled.div`
     margin: 0px 0px 75px 0px; 
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 const RightSidebar = ({name, img}) => {

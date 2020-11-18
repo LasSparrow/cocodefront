@@ -6,6 +6,10 @@ const AccountBoxMain = styled.div`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        margin-right: 20px;
+    }   
 `;
 
 const AccountBoxContainer = styled.div`
@@ -39,7 +43,7 @@ const ExpandContainer = styled.div`
     box-sizing: border-box; 
     box-shadow: 5px 0px 18px rgba(0, 0, 0, 0, 0.08);
     cursor: pointer; 
-    margin-left: -15px;
+    margin-left: -10px;
     a {
         margin: 10px 0; 
     }
@@ -51,28 +55,36 @@ const DDIcon = styled.img`
     align-self: center;
 `;
 
+const UserImg = styled.img`
+    height: 60px;
+    width: 60px;
+    align-self: center;
+    object-fit: cover;
+    border-radius: 150px;
+`;
+
 const AccountBox = ({name,img}) => {
     const[expanded, setExpanded] = useState(false)
 
     return <AccountBoxMain>
-    <AccountBoxContainer>
-        <img src={img}></img>
-        <Name>{name}</Name>
-        <DDIcon src="/DropdownIcon.png" onClick={()=>{
+    <AccountBoxContainer onClick={()=>{
             setExpanded(!expanded);
-        }}></DDIcon> 
+        }}>
+        <UserImg src={img}/>
+        <Name>{name}</Name>
+        <DDIcon src="/DropdownIcon.png"></DDIcon> 
     </AccountBoxContainer>
     <ExpandContainer expanded={expanded}>
         <a>My Account</a>
         <a>Account Settings</a>
-        <a>Payment Information</a>
+        <a>My Sessions</a>
     </ExpandContainer>
 </AccountBoxMain>
 }
 
 AccountBox.defaultProps = {
     name: "Adam Jameson",
-    img: "/Account Icon.png"
+    img: "/adamjameson.jpg"
 }
 
 export default AccountBox; 

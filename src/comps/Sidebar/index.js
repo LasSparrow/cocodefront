@@ -13,15 +13,10 @@ import {
     BrowserRouter as Router, 
     NavLink,
     Link
-  } from "react-router-dom"; 
+  } from "react-router-dom";
 
-const AllContainers = styled.div`
-//clicked prop css here
-`;
-
-const SidebarContainer = styled(AllContainers)`
+const SidebarContainer = styled.div`
     padding: 25px 25px 0px 25px;
-    flex: 0 0 200px;
     width: 200px;
     height: 100vh;
     background-color: #FFFFFF; 
@@ -32,6 +27,39 @@ const SidebarContainer = styled(AllContainers)`
     img {
         margin-right: 20px; 
     }
+
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: 10vh;
+        flex-direction: row;
+
+        .headericon{
+            display: none;
+        }
+
+        .headersearch{
+            
+        }
+
+        p{
+            display: none;
+        }
+    }
+
+`;
+
+const ContentCont = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+        width: 100vw;
+        height: 10vh;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 `;
 
 const LogoContainer = styled.div`
@@ -41,7 +69,109 @@ const LogoContainer = styled.div`
     min-height: 84px;  
     cursor: pointer;
     padding-left: 15px;
+
+    @media (max-width: 1024px) {
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
 `; 
+
+const ProfileContainer = styled.div`
+    max-width: 130px; 
+    max-height: 20px; 
+    display: inline-flex; 
+    align-items: center; 
+    margin-top: 60px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
+    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
+    cursor: pointer;
+    user-select: none; 
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+        margin-left: 10px;
+    }
+`;
+
+const ExploreContainer = styled.div`
+    max-width: 130px; 
+    max-height: 20px; 
+    display: inline-flex; 
+    align-items: center; 
+    margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
+    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
+`;
+
+const HistoryContainer = styled.div`
+    max-width: 130px; 
+    max-height: 20px; 
+    display: inline-flex; 
+    align-items: center; 
+    margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
+    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
+`;
+
+const TopTutorsContainer = styled.div`
+    max-width: 150px; 
+    max-height: 20px; 
+    display: inline-flex; 
+    align-items: center; 
+    margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
+    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
+`;
+
+const SupportContainer = styled.div`
+    max-width: 130px; 
+    max-height: 20px; 
+    display: inline-flex; 
+    align-items: center; 
+    margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
+    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
+`;
+
+const SettingsContainer = styled.div`
+    max-width: 130px; 
+    max-height: 20px; 
+    display: inline-flex; 
+    align-items: center; 
+    margin-top: 40px; 
+    font-weight: ${props=>props.clicked ? 'bold' : 'none'}; 
+    color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
+    cursor: pointer;
+    user-select: none;
+
+    @media (max-width: 1024px) {
+        margin: 0px;
+    }
+`;
 
 const BecomeTutorContainer = styled.div`
     transform: ${props=>props.hoveredtwo ? "scale(1)" : "scale(1.1)"};
@@ -59,46 +189,68 @@ const BecomeTutorContainer = styled.div`
     margin-top: 60px; 
     cursor: pointer;
     user-select: none;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 const Sidebar = () => {
 
     return <SidebarContainer> 
+        <ContentCont>
         <Link to ='/Explore' style={{ textDecoration: 'none' }} >
-            <LogoContainer>  
+            <LogoContainer hovered={hovered} onMouseEnter={() =>{
+                setHovered(!hovered);
+            }} onMouseLeave={() =>{
+                setHovered(!hovered); 
+            }}> 
                 <img src="/logo.svg"></img>
             </LogoContainer>
         </Link>
-        <NavLink to ="/MyAccount"className="navlink" activeClassName="selected">
-            <img src="/ProfileIcon.png"></img>
-            Profile 
-        </NavLink>
-        <NavLink to ="/Explore" className="navlink" activeClassName="selected">
-            <img src="/ExploreIcon.png"></img>
-            Explore 
-        </NavLink>
-        <NavLink to ="/MySession" className="navlink" activeClassName="selected">
-            <img src="/HistoryIcon.png"></img>
-            History 
-        </NavLink>
-        <NavLink to="/FindATutor" className="navlink" activeClassName="selected">
-            <img src="/TopTutorsIcon.png"></img>
-                Find Tutors 
-        </NavLink>
-        <NavLink to="/FAQ" className="navlink" activeClassName="selected">
-            <img src="/SupportIcon.png"></img>
-            Support
-        </NavLink>
-        <NavLink to="/EditAccount" className="navlink" activeClassName="selected">
-            <img src="/SettingsIcon.png"></img>
-            Settings
-        </NavLink>
+            <ProfileContainer>
+              <NavLink to ="/MyAccount"className="navlink" activeClassName="selected">
+                  <img src="/ProfileIcon.png"></img>
+                  Profile 
+              </NavLink>
+            </ProfileContainer>
+            <ExploreContainer>
+              <NavLink to ="/Explore" className="navlink" activeClassName="selected">
+                  <img src="/ExploreIcon.png"></img>
+                  Explore 
+              </NavLink>
+            </ExploreContainer>
+            <HistoryContainer>
+              <NavLink to ="/MySession" className="navlink" activeClassName="selected">
+                  <img src="/HistoryIcon.png"></img>
+                  History 
+              </NavLink>
+            </HistoryContainer>
+            <TopTutorsContainer>
+              <NavLink to="/FindATutor" className="navlink" activeClassName="selected">
+                  <img src="/TopTutorsIcon.png"></img>
+                   Tutors 
+              </NavLink>
+            </TopTutorsContainer>
+            <SupportContainer>
+              <NavLink to="/FAQ" className="navlink" activeClassName="selected">
+                  <img src="/SupportIcon.png"></img>
+                  Support
+              </NavLink>
+            </SupportContainer>
+            <SettingsContainer>
+              <NavLink to="/EditAccount" className="navlink" activeClassName="selected">
+                  <img src="/SettingsIcon.png"></img>
+                  Settings
+              </NavLink>
+            </SettingsContainer>
         <Link to ="/BecomeATutor" style={{ textDecoration: 'none' }} >
             <BecomeTutorContainer> 
                 Become A Tutor 
             </BecomeTutorContainer>
         </Link>
-        <Search />
+        <Search class="headersearch"/>
+        </ContentCont>
   </SidebarContainer>
 }
 

@@ -8,16 +8,12 @@ const FAQPage = styled.div`
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     background: #F5F5FB;
-`;
+  `;
 
 const Content = styled.div`
     margin: auto;
-    // margin-top: 25px;
-    // margin-left: 200px;
-    // margin-right: 40px;
-    // margin-bottom: 25px;
     max-width: 40vw;
     height: 90vh;
     padding: 20px 40px 20px 40px;

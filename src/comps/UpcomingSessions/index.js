@@ -6,6 +6,10 @@ const USTabMain = styled.div`
     max-height: 176px; 
     display: flex; 
     flex-direction: column; 
+
+    @media (max-width: 1024px) {
+        margin-right: 20px;
+    }   
 `;
 
 const USTabContainer = styled.div`
@@ -15,6 +19,10 @@ const USTabContainer = styled.div`
     flex-direction: row; 
     align-items: center; 
     margin: 12px 0px 12px 0px; 
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 const USTabLeft = styled.div`
@@ -55,12 +63,31 @@ const USText = styled.div`
     font-weight: 600; 
     color: #011F3B; 
     margin-bottom: 15px; 
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 0;
+    }   
 `; 
+
+const DDIcon = styled.img`
+    max-height: 20px;
+    max-width: 20px;
+    align-self: center;
+    display: none;
+    margin-left: 10px;
+
+    @media (max-width: 1024px) {
+        display: inline-flex;
+    }   
+`;
 
 const USTab = () => {
     return <USTabMain>
 
-        <USText>Upcoming Sessions</USText>
+        <USText>Upcoming Sessions
+            <DDIcon src="/DropdownIcon.png"/>
+        </USText>
 
         <USTabContainer>
         <USTabLeft>
