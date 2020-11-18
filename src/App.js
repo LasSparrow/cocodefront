@@ -1,7 +1,5 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Page from './pages/FAQ';
-
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Switch, Route, Link,} from "react-router-dom"; 
 import ExplorePage from "./pages/Explore"; 
