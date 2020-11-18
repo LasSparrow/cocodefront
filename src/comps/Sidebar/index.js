@@ -170,6 +170,7 @@ const SettingsContainer = styled.div`
     color: ${props=>props.clicked ?  "#173F5F" : "#8DA1B5"}; 
     cursor: pointer;
     user-select: none;
+    margin-bottom: 60px;
 
     @media (max-width: 1024px) {
         margin: 0px;
@@ -190,7 +191,6 @@ const BecomeTutorContainer = styled.div`
     align-items: center; 
     justify-content: center; 
     line-height; 17px; 
-    margin-top: 60px; 
     cursor: pointer;
     user-select: none;
 

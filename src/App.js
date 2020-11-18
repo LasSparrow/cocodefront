@@ -28,7 +28,6 @@ function App() {
   return (
     <Router>
           <Switch>
-            <Page/>
             <Route path="/" exact component={SignInPage} />
             <Route path="/SignUp" component={SignUpPage} />
             <Route path="/Explore" component={ExplorePage} />
