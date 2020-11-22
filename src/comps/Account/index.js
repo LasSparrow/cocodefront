@@ -1,5 +1,6 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
+import DDIcon from '../../public/DropdownIcon.png'
 
 const AccountBoxMain = styled.div`
     -webkit-user-select: none;
@@ -49,18 +50,18 @@ const ExpandContainer = styled.div`
     }
 `; 
 
-const DDIcon = styled.img`
-    max-height: 20px;
-    max-width: 20px;
-    align-self: center;
-`;
-
 const UserImg = styled.img`
     height: 60px;
     width: 60px;
     align-self: center;
     object-fit: cover;
     border-radius: 150px;
+`;
+
+const RotateImg = styled.img`
+    transform:${props=>props.expanded ? "rotate(270deg)" : "rotate(360deg)"};
+    transition: 0.5s;
+    margin-bottom: -10px; 
 `;
 
 const AccountBox = ({name,img}) => {
@@ -72,7 +73,7 @@ const AccountBox = ({name,img}) => {
         }}>
         <UserImg src={img}/>
         <Name>{name}</Name>
-        <DDIcon src="/DropdownIcon.png"></DDIcon> 
+        <div><RotateImg expanded={!expanded} src={DDIcon} /></div> 
     </AccountBoxContainer>
     <ExpandContainer expanded={expanded}>
         <a>My Account</a>
