@@ -2,6 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 import Button from "../../Button";
 import {Link} from 'react-router-dom'; 
+import axios from 'axios'; 
+import loginUser from '../../../api/auth/loginUser'; 
 
 const InputBox = styled.div`
     width: 700px;
@@ -58,6 +60,16 @@ const SigninBut = styled.div`
     height:auto;
 `;
 
+const HandleLogin = async (e) => {
+    e.preventDefault(); 
+    const data = await 
+  loginUser("mail@parsa.pro", "123456");
+  
+  
+  console.log(data)
+
+}
+
 const SigninForm = () => {
     return <InputBox> 
             <TitleBox>
@@ -78,11 +90,9 @@ const SigninForm = () => {
                     <input type="password" placeholder="Password"/>
                 </div>  
             </InputForm>
-            <Link to="/Explore" style={{ textDecoration: 'none' }} >
                 <SigninBut>
-                        <Button text="Sign In"/>
-                </SigninBut>    
-            </Link>     
+                        <Button text="Sign In" onClick={HandleLogin} />
+                </SigninBut>        
     </InputBox>
 }
 

@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import React, {Fragment} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link,} from "react-router-dom"; 
 import ExplorePage from "./pages/Explore"; 
 import BecomeATutor from './pages/BecomeATutor';
@@ -15,11 +15,16 @@ import SignInPage from './pages/SignIn';
 import SignUpPage from './pages/SignUp';
 import EditAccount from './pages/EditAccount'; 
 import TutorProfile from './pages/TutorProfile';
-import SessionRequested from './pages/SessionRequested'; 
+import SessionRequested from './pages/SessionRequested';
+import SessionConfirmed from './pages/SessionConfirmed'; 
+import InfoPage from './pages/StudentSessionInfo'; 
+import ConfirmPage from './pages/StudentSessionConfirm';
+import CalendarPage from './pages/StudentSessionRequested';
+import PaymentPage from './pages/StudentSessionPayment';
+import StudentSessionSuccess from './pages/StudentSessionSuccess'; 
 
 //global styles
 import './App.scss'
-import StudentSessionRequested from './comps/Calendar';
 
 
 function App() {
@@ -39,8 +44,13 @@ function App() {
             <Route path="/PrivacyPolicy" component={PrivacyPolicy} />
             <Route path="/TermsOfService" component={TermsOfService} />
             <Route path="/SessionRequested" component={SessionRequested} />
+            <Route path="/SessionConfirmed" component={SessionConfirmed} />
             <Route path="/EditAccount" component={EditAccount} />
-            <Route path="/StudentSessionRequested" component={StudentSessionRequested} /> 
+            <Route path="/StudentSessionRequested" component={CalendarPage} /> 
+            <Route path="/StudentSessionInfo" component={InfoPage} />
+            <Route path="/StudentSessionConfirm" component={ConfirmPage} />
+            <Route path="/StudentSessionPayment" component={PaymentPage} />
+            <Route path="/StudentSessionSuccess" component={StudentSessionSuccess} />
           </Switch>
     </Router>
   );

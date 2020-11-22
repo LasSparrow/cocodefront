@@ -15,6 +15,8 @@ const loginUser =  async (email , password) => {
 
     const data = {email , password}
 
+     
+    console.log(url)
     return await (await axios.post(url , data , config)).data
 }
 
