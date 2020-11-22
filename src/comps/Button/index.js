@@ -5,7 +5,7 @@ const Text = styled.div`
     transform: scale(1.2);
 `;
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.button`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@ const ButtonContainer = styled.div`
 const Button = (props) => {
     const[highlight, setHighlight] = useState(true);
 
-    return <ButtonContainer onClick={props.openModal} highlight={highlight} onMouseOver={()=>{
+    return <ButtonContainer onClick={props.onClick} highlight={highlight} onMouseOver={()=>{
         setHighlight(false);
     }} onMouseLeave={()=>{
         setHighlight(true);

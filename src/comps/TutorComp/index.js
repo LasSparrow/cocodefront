@@ -63,7 +63,7 @@ const TutorComp = ({text, name, img}) => {
                 <Link to="/TutorProfile" style={{ textDecoration: 'none' }} >
                     <Button text="Profile"/>
                 </Link>
-                <Button text="Book" openModal={openModal}/>
+                <Button text="Book" onClick={openModal}/>
             </ButtonBox>
         </Top>
         <LangBox>

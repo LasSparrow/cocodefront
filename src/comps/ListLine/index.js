@@ -19,6 +19,7 @@ const ListLine = () => {
 }
 
 ListLine.defaultProps = {
+    width: "150px" 
 }
 
 export default ListLine; 

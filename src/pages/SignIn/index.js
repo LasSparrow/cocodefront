@@ -1,7 +1,9 @@
+import axios from 'axios';
 import React, {useState} from 'react';
 import styled from 'styled-components'; 
 import SignIn from '../../comps/Form/SignIn'
 import LOGO from '../../public/logo.svg'
+import loginUser from '../../api/auth/loginUser'; 
 
 const PageCon = styled.div`
   width:100vw;
