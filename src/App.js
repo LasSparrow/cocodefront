@@ -16,6 +16,7 @@ import SignUpPage from './pages/SignUp';
 import EditAccount from './pages/EditAccount'; 
 import TutorProfile from './pages/TutorProfile';
 import SessionRequested from './pages/SessionRequested'; 
+import Page from './pages/CollabSpace';
 
 //global styles
 import './App.scss'
@@ -26,6 +27,7 @@ function App() {
   return (
     <Router>
           <Switch>
+            <Page/>
             <Route path="/" exact component={SignInPage} />
             <Route path="/SignUp" component={SignUpPage} />
             <Route path="/Explore" component={ExplorePage} />

@@ -6,9 +6,10 @@ import Input from '../../comps/Form/Input';
 import ListLine from '../../comps/ListLine';
 import Button from '../../comps/Button';
 import Title from '../../comps/Title';
+import ContentBox from '../../comps/ContentBox';
 
 const EditAccountPage = styled.div`
-    min-width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -20,10 +21,6 @@ const EditAccountPage = styled.div`
 `;
 
 const Content = styled.div`
-    padding: 20px 40px 20px 40px;
-    background-color: #FFFFFF;
-    box-shadow: 5px 10px 10px #888888;
-    border-radius: 30px;
 `;
 
 const Center = styled.div`
@@ -51,7 +48,7 @@ export default function EditAccount() {
 
 return <EditAccountPage>
     <Sidebar />
-    <Center>
+    <ContentBox>
         <Title title="Edit Account"/>
         <Content>
             <Input label="Full Name" height="30px" fontSize="11pt" fontWeight="600" ph="Full Name"/>
@@ -78,7 +75,7 @@ return <EditAccountPage>
                 <Button text="Save Changes"/>
             </ButtonAlign>  
         </Content>
-    </Center>
+    </ContentBox>
     <RightSidebar/>
     </EditAccountPage>
 }

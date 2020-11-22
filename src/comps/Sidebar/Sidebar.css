@@ -11,6 +11,12 @@
     text-decoration: none;
 }
 
+@media (max-width: 1024px) {
+.navlink > img {
+    display: none;
+    }
+}
+
 .navlink.selected{
     font-weight: bold !important;
     color: #173F5F !important;

@@ -14,6 +14,7 @@ const RightSidebarContainer = styled.div`
     background: white;
     position: fixed;
     right: 0;
+    z-index: 4;
     align-items: center;
     overflow: auto;
 
@@ -21,7 +22,9 @@ const RightSidebarContainer = styled.div`
         width: 100vw;
         height: 10vh;
         flex-direction: row-reverse;
-        margin-top: 12vh;
+        margin-top: 11vh;
+        z-index: 0;
+        box-shadow: 5px 5px 5px #999999;
     }
 `; 
 

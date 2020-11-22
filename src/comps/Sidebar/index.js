@@ -1,13 +1,6 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components';
 import './Sidebar.css'
-import sidebarlogo from '../../public/logo.svg';
-import sidebarprofile from '../../public//ProfileIcon.png';
-import sidebarexplore from '../../public/ExploreIcon.png';
-import sidebarhistory from '../../public/HistoryIcon.png';
-import sidebartutors from '../../public/TopTutorsIcon.png';
-import sidebarsupport from '../../public/SupportIcon.png';
-import sidebarsettings from '../../public/SettingsIcon.png';
 import Search from '../../comps/Search'; 
 import {
     BrowserRouter as Router, 
@@ -24,6 +17,7 @@ const SidebarContainer = styled.div`
     flex-direction: column; 
     align-items: center;
     position: fixed;
+    z-index: 5;
     img {
         margin-right: 20px; 
     }
@@ -33,18 +27,10 @@ const SidebarContainer = styled.div`
         height: 10vh;
         flex-direction: row;
 
-        .headericon{
-            display: none;
-        }
-
-        .headersearch{
-        }
-
         p{
             display: none;
         }
     }
-
 `;
 
 const ContentCont = styled.div`
@@ -230,7 +216,7 @@ const Sidebar = () => {
             <HistoryContainer>
               <NavLink to ="/MySession" className="navlink" activeClassName="selected">
                   <img src="/HistoryIcon.png"></img>
-                  History 
+                  Sessions 
               </NavLink>
             </HistoryContainer>
             <TopTutorsContainer>
