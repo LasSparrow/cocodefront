@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components'; 
 import SignUp from '../../comps/Form/SignUp';
 import SignupImg from '../../public/SignupImg.png';

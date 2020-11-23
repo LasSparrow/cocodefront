@@ -22,6 +22,7 @@ import ConfirmPage from './pages/StudentSessionConfirm';
 import CalendarPage from './pages/StudentSessionRequested';
 import PaymentPage from './pages/StudentSessionPayment';
 import StudentSessionSuccess from './pages/StudentSessionSuccess'; 
+import ReviewPage from './pages/ReviewPage';
 
 //global styles
 import './App.scss'
@@ -51,6 +52,7 @@ function App() {
             <Route path="/StudentSessionConfirm" component={ConfirmPage} />
             <Route path="/StudentSessionPayment" component={PaymentPage} />
             <Route path="/StudentSessionSuccess" component={StudentSessionSuccess} />
+            <Route path="/GiveReview" component={ReviewPage} />
           </Switch>
     </Router>
   );

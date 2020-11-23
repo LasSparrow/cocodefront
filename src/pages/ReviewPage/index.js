@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
 
-const ReceivedMsgPage = styled.div`
+const ReviewPage = styled.div`
     min-width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -38,12 +38,12 @@ const Content = styled.div`
     }
 `;
 
-export default function MsgReceived() {
-  const HandleBoxClick = (str)=>{
-    alert(str);
-  }
+export default function Review() {
+    const HandleBoxClick = (str)=>{
+      alert(str);
+    }
 
-  return <ReceivedMsgPage>
+  return <ReviewPage>
       <Sidebar />
       <Content>
           <div>
@@ -55,5 +55,5 @@ export default function MsgReceived() {
             <p>Please contact us at <span>cocode.code@email.com</span> or visit <span>FAQ</span></p>
           </div>
       </Content>
-  </ReceivedMsgPage>
+  </ReviewPage>
 }
