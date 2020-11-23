@@ -4,6 +4,7 @@ import AccountBox from '../Account';
 import PRTab from '../PendingRequests';
 import USTab from '../UpcomingSessions'; 
 import FSTab from '../FreeSession'; 
+import {Link} from 'react-router-dom'; 
 
 const RightSidebarContainer = styled.div`
     margin: 0;
@@ -64,8 +65,10 @@ const RightSidebar = ({name, img}) => {
             <PRTabContainer>
                 <PRTab />
             </PRTabContainer>
-            <USTabContainer>  
+            <USTabContainer> 
+                <Link to="/CollabSpace">
                 <USTab />
+                </Link>
             </USTabContainer>  
             <FSTabContainer>
                 <FSTab />

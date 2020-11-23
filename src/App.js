@@ -22,11 +22,15 @@ import ConfirmPage from './pages/StudentSessionConfirm';
 import CalendarPage from './pages/StudentSessionRequested';
 import PaymentPage from './pages/StudentSessionPayment';
 import StudentSessionSuccess from './pages/StudentSessionSuccess'; 
+<<<<<<< HEAD
 import ReviewPage from './pages/ReviewPage';
+=======
+import authTest from './api/auth/authTest'; 
+>>>>>>> 0fa47b837b07cc92c90cfb8760dcb509093ca8fe
 
 //global styles
 import './App.scss'
-
+import CollabSpace from './pages/CollabSpace';
 
 function App() {
   return (
@@ -34,7 +38,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={SignInPage} />
             <Route path="/SignUp" component={SignUpPage} />
-            <Route path="/Explore" component={ExplorePage} />
+            <Route path="/Explore" component={ExplorePage}  onEnter={authTest}/>
             <Route path="/BecomeATutor" component={BecomeATutor} />
             <Route path="/ContactUs" component={ContactUs} />
             <Route path="/FAQ" component={FAQ}/>
@@ -53,6 +57,7 @@ function App() {
             <Route path="/StudentSessionPayment" component={PaymentPage} />
             <Route path="/StudentSessionSuccess" component={StudentSessionSuccess} />
             <Route path="/GiveReview" component={ReviewPage} />
+            <Route path="/CollabSpace" component={CollabSpace} />
           </Switch>
     </Router>
   );
