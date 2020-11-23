@@ -22,10 +22,10 @@ import ConfirmPage from './pages/StudentSessionConfirm';
 import CalendarPage from './pages/StudentSessionRequested';
 import PaymentPage from './pages/StudentSessionPayment';
 import StudentSessionSuccess from './pages/StudentSessionSuccess'; 
+import authTest from './api/auth/authTest'; 
 
 //global styles
 import './App.scss'
-
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={SignInPage} />
             <Route path="/SignUp" component={SignUpPage} />
-            <Route path="/Explore" component={ExplorePage} />
+            <Route path="/Explore" component={ExplorePage}  onEnter={authTest}/>
             <Route path="/BecomeATutor" component={BecomeATutor} />
             <Route path="/ContactUs" component={ContactUs} />
             <Route path="/FAQ" component={FAQ}/>
