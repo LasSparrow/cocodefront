@@ -26,6 +26,7 @@ import authTest from './api/auth/authTest';
 
 //global styles
 import './App.scss'
+import CollabSpace from './pages/CollabSpace';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
             <Route path="/StudentSessionConfirm" component={ConfirmPage} />
             <Route path="/StudentSessionPayment" component={PaymentPage} />
             <Route path="/StudentSessionSuccess" component={StudentSessionSuccess} />
+            <Route path="/CollabSpace" component={CollabSpace} />
           </Switch>
     </Router>
   );
