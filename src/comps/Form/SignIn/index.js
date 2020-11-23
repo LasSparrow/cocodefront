@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
 import styled from "styled-components";
 import Button from "../../Button";
 import {Link} from 'react-router-dom'; 
@@ -60,17 +60,11 @@ const SigninBut = styled.div`
     height:auto;
 `;
 
-const HandleLogin = async (e) => {
-    e.preventDefault(); 
-    const data = await 
-  loginUser("mail@parsa.pro", "123456");
-  
-  
-  console.log(data)
 
-}
+const SigninForm = ({onClick}) => {
 
-const SigninForm = () => {
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
     return <InputBox> 
             <TitleBox>
                 <div>
@@ -83,21 +77,27 @@ const SigninForm = () => {
             <InputForm>
                 <div>
                     <label>Email</label>
-                    <input type="email" placeholder="Email"/>
+                    <input type="email" onChange={(e)=>{
+                        setEmail(e.target.value)
+                    }} placeholder="Email"/>
                 </div>
                 <div>
                     <label>Password</label>
-                    <input type="password" placeholder="Password"/>
+                    <input type="password" onChange={e=> {
+                        setPass(e.target.value)
+                    }} placeholder="Password"/>
                 </div>  
             </InputForm>
                 <SigninBut>
-                        <Button text="Sign In" onClick={HandleLogin} />
+                        <Button text="Sign In" onClick={()=>{
+                            onClick(email, pass)
+                        }} />
                 </SigninBut>        
     </InputBox>
 }
 
 SigninForm.defaultProps = {
-    
+    onClick:()=>{}
 }
 
 export default SigninForm; 

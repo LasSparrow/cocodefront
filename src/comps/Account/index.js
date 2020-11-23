@@ -79,6 +79,7 @@ const AccountBox = ({name,img}) => {
         <a>My Account</a>
         <a>Account Settings</a>
         <a>My Sessions</a>
+        <a>Log Out</a>
     </ExpandContainer>
 </AccountBoxMain>
 }
