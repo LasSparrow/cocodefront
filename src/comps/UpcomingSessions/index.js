@@ -43,6 +43,10 @@ const DDIcon = styled.img`
     }   
 `;
 
+//Filters sessions to those that have not yet been attended to
+const filterSessions = item => !item.isAttended
+
+
 const USTab = () => {
 
     
@@ -53,10 +57,12 @@ const USTab = () => {
     useEffect(() => {
         const fetch = async () => {
             const sessionsData = await getUserAttend(token)
-            setSessions(sessionsData)
+            setSessions(sessionsData.filter(filterSessions))
         }
-        fetch()
+        fetch() 
     } , [token])
+
+
 
     return (
         <USTabMain>
@@ -72,7 +78,5 @@ const USTab = () => {
     )
 }
 
-USTab.defaultProps = {
-}
 
 export default USTab; 
