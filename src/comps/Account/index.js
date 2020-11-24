@@ -1,6 +1,7 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
 import DDIcon from '../../public/DropdownIcon.png'
+import {Link} from 'react-router-dom'; 
 
 const AccountBoxMain = styled.div`
     -webkit-user-select: none;
@@ -76,10 +77,10 @@ const AccountBox = (props) => {
         <div><RotateImg expanded={!expanded} src={DDIcon} /></div> 
     </AccountBoxContainer>
     <ExpandContainer expanded={expanded}>
-        <a>My Account</a>
-        <a>Account Settings</a>
-        <a>My Sessions</a>
-        <a>Log Out</a>
+        <Link to="/MyAccount" style={{ textDecoration: 'none' }} ><a>My Account</a></Link>
+        <Link to="/EditAccount" style={{ textDecoration: 'none' }} ><a>Account Settings</a></Link>
+        <Link to="/MySession" style={{ textDecoration: 'none' }} ><a>My Sessions</a></Link>
+        <Link to="/" style={{ textDecoration: 'none' }} ><a>Log Out</a></Link>
     </ExpandContainer>
 </AccountBoxMain>
 }

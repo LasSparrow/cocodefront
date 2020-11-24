@@ -1,6 +1,7 @@
 import React, {useState} from 'react'; 
 import styled from "styled-components";
 import Button from "../../Button";
+import {Link} from 'react-router-dom';
 
 const InputBox = styled.div`
     width: 700px;
@@ -68,7 +69,7 @@ const SigninForm = ({onClick}) => {
                     Sign In
                 </div>
                 <FormSubtitle>
-                    Don't have an account? <a href="url">Sign Up</a>
+                    Don't have an account? <Link to="/SignUp" style={{ textDecoration: 'none' }} ><a href="url">Sign Up</a></Link>
                 </FormSubtitle>
             </TitleBox>
             <InputForm>

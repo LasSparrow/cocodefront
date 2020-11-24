@@ -7,25 +7,17 @@ const LangTagsContainer = styled.div`
     justify-content: center;
     max-width: 100px; 
     max-height: 10px; 
-    background-color: ${props=>props.selected ? "#173F5F" : "#018EA2"};
+    background-color: #173F5F;
     border-radius: 10px;
     padding: 5px 10px;
     margin: 5px;
     color: white;
-    cursor: ${props=>props.select ? "default" : "pointer"};
     user-select: none; 
 `;
 
 const LangTags = ({text, select}) => {
-    const[selected, setSelected] = useState(true);
 
-    useEffect(()=>{
-        setSelected(select);
-    },[select])
-
-    return <LangTagsContainer selected={selected} onClick={()=>{
-        setSelected(!selected);
-    }}> 
+    return <LangTagsContainer> 
         {text}
     </LangTagsContainer>
 }

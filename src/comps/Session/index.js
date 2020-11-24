@@ -5,7 +5,7 @@ import Arrow from '../../public/chevron_right-24px.svg'
 
 const SessionBox = styled.div`
     border: 1px solid #7B7B7B;
-    width: 820px;
+    width: 800px;
     max-height: 60px;
     border-radius:20px;
     display:flex;
@@ -30,7 +30,7 @@ const Icon = styled.div`
 
 const SessionDes = styled.div`
     background-color: #D6D6D6;
-    width: 820px;
+    width: 800px;
     border-radius:20px;
     box-sizing:border-box;
     padding: 20px;
