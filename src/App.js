@@ -35,7 +35,7 @@ function App() {
             <UserContextProvider>
               <Route path="/" exact component={SignInPage} />
               <Route path="/SignUp" component={SignUpPage} />
-              <Route path="/Explore" component={_ => <Authenticate> <ExplorePage /> </Authenticate>} />
+              <Route path="/Explore" component={ExplorePage} />
               <Route path="/BecomeATutor" component={BecomeATutor} />
               <Route path="/ContactUs" component={ContactUs} />
               <Route path="/FAQ" component={FAQ}/>

@@ -18,7 +18,7 @@ export default function Authenticate(props){
         }
 
         if(token){
-            if(!user){
+            if(!user.username){
                 fetch()
             }
         }else{
