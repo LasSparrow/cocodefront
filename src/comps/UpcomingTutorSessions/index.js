@@ -1,11 +1,10 @@
 import React  , {useEffect , useState} from 'react'; 
 import styled from 'styled-components'; 
-import SingleSession from './SingleSession';
-import { useToken } from '../../hooks/useToken';
-import getUserAttend from '../../api/attend/getUserAttend';
-import {Link} from 'react-router-dom';
+import SingleSession from './SingleSession'
+import { useToken } from '../../hooks/useToken'
+import getTutorSession from '../../api/session/getTutorSession'
 
-const USTabMain = styled.div`
+const USTutorTabMain = styled.div`
     max-width: 246px; 
     max-height: 176px; 
     display: flex; 
@@ -17,6 +16,8 @@ const USTabMain = styled.div`
 `;
 
 const USText = styled.div`
+    display:flex;
+    justify-content:center;
     max-width: 200px; 
     max-height: 22px; 
     text-align: start;
@@ -44,49 +45,40 @@ const DDIcon = styled.img`
     }   
 `;
 
-const NoItem = styled.span`
-    color:gray;
-    display:block;
-    margin:10px auto;
-    text-align:center;
-    font-size:0.9rem;
-`
-
-//Filters sessions to those that have not yet been attended to
-const filterAttend = item => !item.isAttended
 
 
-const USTab = () => {
+const USTutorTab = () => {
 
     
-    const [attends , setAttends] = useState([])
+    const [sessions , setSessions] = useState([])
 
     const [token] = useToken()
 
     useEffect(() => {
         const fetch = async () => {
-            const sessionsData = await getUserAttend(token)
-            setAttends(sessionsData.filter(filterAttend))
+            const sessionsData = await getTutorSession(token)
+            setSessions(sessionsData)
         }
         fetch() 
     } , [token])
 
 
-    return (
-        <USTabMain>
 
-            <Link to="/MySession" style={{ textDecoration: 'none' }} ><USText>Upcoming Sessions
+    return (
+        <USTutorTabMain>
+
+            <USText>Upcoming Tutoring
                 <DDIcon src="/DropdownIcon.png"/>
-            </USText></Link>
+            </USText>
             
-            {attends.length ?
-                 attends.map(item => <SingleSession session={item.session} />)
-                : <NoItem> No Upcoming Sessions </NoItem>    
+            {
+                sessions.map(item => <SingleSession session={item} />)
             }
             
-        </USTabMain>
+
+        </USTutorTabMain>
     )
 }
 
 
-export default USTab; 
+export default USTutorTab; 

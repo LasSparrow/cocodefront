@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import dateFormatter from '../../helpers/dateFormatter'
+import dateFormatter , { secondsToHours } from '../../helpers/dateFormatter'
 
 const USTabLink = styled.div`
     display:flex;
@@ -56,14 +56,14 @@ export default function SingleSession(props){
 
     return (
         <USTabContainer>
-            <Link to={`/collabspace/tutor/${props.session.uuid}`} >
+            <Link to={`/collabspace/user/${props.session.uuid}`} >
                 <USTabLink>
                     <USTabLeft>
                         <img src="/BoxIcon.png"></img>
                     </USTabLeft>
                     <USTabText>
                             <h1>{props.session.category.text}</h1>
-                            <p>{startTime}, {props.session.tutor.user.firstName} {props.session.tutor.user.lastName}</p>
+                            <p>{startTime}, {secondsToHours(props.session.duration)}</p>
                     </USTabText>
                 </USTabLink>
             </Link>
