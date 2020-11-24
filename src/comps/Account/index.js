@@ -72,7 +72,7 @@ const AccountBox = (props) => {
             setExpanded(!expanded);
         }}>
         <UserImg src={props.user.profilePhoto}/>
-        <Name>{props.user.firstName}</Name>
+        <Name>{props.user.firstName} {props.user.lastName}</Name>
         <div><RotateImg expanded={!expanded} src={DDIcon} /></div> 
     </AccountBoxContainer>
     <ExpandContainer expanded={expanded}>
