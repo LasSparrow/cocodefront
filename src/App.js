@@ -1,7 +1,5 @@
-//import logo from './logo.svg';
-//import './App.css';
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link,} from "react-router-dom"; 
+import {BrowserRouter as Router, Switch, Route,} from "react-router-dom"; 
 import ExplorePage from "./pages/Explore"; 
 import BecomeATutor from './pages/BecomeATutor';
 import ContactUs from './pages/ContactUs';
@@ -24,6 +22,7 @@ import PaymentPage from './pages/StudentSessionPayment';
 import StudentSessionSuccess from './pages/StudentSessionSuccess'; 
 import authTest from './api/auth/authTest'; 
 import UserContextProvider from './comps/ContextProviders/UserContextProvide'
+import Authenticate from './comps/Authenticate/Authenticate'
 
 //global styles
 import './App.scss'
@@ -36,7 +35,7 @@ function App() {
             <UserContextProvider>
               <Route path="/" exact component={SignInPage} />
               <Route path="/SignUp" component={SignUpPage} />
-              <Route path="/Explore" component={ExplorePage}  onEnter={authTest}/>
+              <Route path="/Explore" component={_ => <Authenticate> <ExplorePage /> </Authenticate>} />
               <Route path="/BecomeATutor" component={BecomeATutor} />
               <Route path="/ContactUs" component={ContactUs} />
               <Route path="/FAQ" component={FAQ}/>
