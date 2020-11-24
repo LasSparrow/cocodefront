@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import dateFormatter from '../../helpers/dateFormatter'
 
 const USTabLeft = styled.div`
     max-width: 48px; 
@@ -44,14 +45,18 @@ const USTabContainer = styled.div`
 `;
 
 export default function SingleSession(props){
+
+    const startTime = dateFormatter(props.session.startTime)
+    console.log(startTime)
+
     return (
         <USTabContainer>
             <USTabLeft>
                 <img src="/BoxIcon.png"></img>
             </USTabLeft>
             <USTabText>
-                <h1>Python Development</h1>
-                <p>27 Nov 2020, Sandy Rivers</p>
+                <h1>{props.session.category.text}</h1>
+                <p>{startTime}, {props.session.tutor.user.firstName} {props.session.tutor.user.lastName}</p>
             </USTabText>
         </USTabContainer>
     )
