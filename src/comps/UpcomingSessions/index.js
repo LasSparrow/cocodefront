@@ -1,6 +1,8 @@
 import React  , {useEffect , useState} from 'react'; 
 import styled from 'styled-components'; 
 import SingleSession from './SingleSession'
+import { useToken } from '../../hooks/useToken'
+import getUserAttend from '../../api/attend/getUserAttend'
 
 const USTabMain = styled.div`
     max-width: 246px; 
@@ -43,9 +45,18 @@ const DDIcon = styled.img`
 
 const USTab = () => {
 
+    
     const [sessions , setSessions] = useState([])
 
-    
+    const [token] = useToken()
+
+    useEffect(() => {
+        const fetch = async () => {
+            const sessionsData = await getUserAttend(token)
+            setSessions(sessionsData)
+        }
+        fetch()
+    } , [token])
 
     return (
         <USTabMain>
