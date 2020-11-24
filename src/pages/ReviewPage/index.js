@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
+import Rating from '../../comps/Rating';
+import RightSidebar from '../../comps/RightSidebar';
 
 const ReviewPage = styled.div`
     min-width: 100vw;
@@ -11,30 +13,15 @@ const ReviewPage = styled.div`
 `;
 
 const Content = styled.div`
-    margin: auto;
-    padding: 100px;
-    background-color: #FFFFFF;
-    box-shadow: 5px 10px 10px #888888;
-    border-radius: 30px;
-    text-align: start;
-    div{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        padding-bottom:50px;
-        h1{
-            color:#018EA2;
-        }
-        span{
-            color:#173F5F;
-            font-size:16px;
-            text-decoration: underline;
-            cursor:pointer;
-        }
-        p {
-            margin:5px;
-            font-size:18px;
-        }
+    margin:auto;
+    margin-top: 10px;
+    h1 {
+      margin-bottom:50px;
+    }
+    textarea {
+      border:none;
+      background-color:#D6D6D6;
+      margin-top: 10px;
     }
 `;
 
@@ -42,18 +29,17 @@ export default function Review() {
     const HandleBoxClick = (str)=>{
       alert(str);
     }
-
-  return <ReviewPage>
-      <Sidebar />
-      <Content>
-          <div>
-            <h1>Your Application Has Been Received!</h1>
-            <p>We will contact you soon as we are processing your application</p>
-          </div>
-          <div>
-            <p>For more information or questions</p>
-            <p>Please contact us at <span>cocode.code@email.com</span> or visit <span>FAQ</span></p>
-          </div>
+    
+  return <ReviewPage> 
+        <Sidebar/>
+        <Content>
+          <h1>Rate Your Tutor</h1>
+          <Rating />
+          <p>What do you feel about the classes? Let us know your thoughts!</p>
+          <p>Your feeback can be a big help to other students and your tutors.</p>
+          <textarea id="review" name="review" rows="15" cols="85" maxlength="200" placeholder="Your comment...">
+          </textarea>
       </Content>
-  </ReviewPage>
+      <RightSidebar />
+   </ReviewPage>
 }
