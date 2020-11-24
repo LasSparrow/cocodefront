@@ -68,9 +68,7 @@ const RightSidebar = (props) => {
                 <PRTab />
             </PRTabContainer>
             <USTabContainer> 
-                <Link to="/CollabSpace">
                 <USTab />
-                </Link>
             </USTabContainer>  
             <FSTabContainer>
                 <FSTab />

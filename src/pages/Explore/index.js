@@ -45,7 +45,6 @@ const ContentBottom = styled.div`
 export default function ExplorePage() {
   
   const [user , ] = useUser()
-  console.log('USER' , user)
 
   return (
     <Authenticate>

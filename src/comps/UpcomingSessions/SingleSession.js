@@ -1,6 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import dateFormatter from '../../helpers/dateFormatter'
+
+const USTabLink = styled.div`
+    display:flex;
+`
 
 const USTabLeft = styled.div`
     max-width: 48px; 
@@ -9,6 +14,7 @@ const USTabLeft = styled.div`
     justify-content: center;
     margin-right: 20px; 
 `; 
+
 
 const USTabText = styled.div`
     min-width: 138px; 
@@ -51,13 +57,17 @@ export default function SingleSession(props){
 
     return (
         <USTabContainer>
-            <USTabLeft>
-                <img src="/BoxIcon.png"></img>
-            </USTabLeft>
-            <USTabText>
-                <h1>{props.session.category.text}</h1>
-                <p>{startTime}, {props.session.tutor.user.firstName} {props.session.tutor.user.lastName}</p>
-            </USTabText>
+            <Link to={`/collabspace/user/${props.session.uuid}`} >
+                <USTabLink>
+                    <USTabLeft>
+                        <img src="/BoxIcon.png"></img>
+                    </USTabLeft>
+                    <USTabText>
+                            <h1>{props.session.category.text}</h1>
+                            <p>{startTime}, {props.session.tutor.user.firstName} {props.session.tutor.user.lastName}</p>
+                    </USTabText>
+                </USTabLink>
+            </Link>
         </USTabContainer>
     )
 }

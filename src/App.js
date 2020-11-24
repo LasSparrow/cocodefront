@@ -53,7 +53,7 @@ function App() {
               <Route path="/StudentSessionConfirm" component={ConfirmPage} />
               <Route path="/StudentSessionPayment" component={PaymentPage} />
               <Route path="/StudentSessionSuccess" component={StudentSessionSuccess} />
-              <Route path="/CollabSpace" component={CollabSpace} />
+              <Route path="/CollabSpace/:role/:uuid" component={CollabSpace} />
             </UserContextProvider>
           </Switch>
     </Router>
