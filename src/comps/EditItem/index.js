@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'; 
 import styled from "styled-components";
+import {Link} from 'react-router-dom'; 
 
 const Title = styled.div`
     margin-right: 10px;
@@ -37,7 +38,7 @@ const EditItem = ({desc, title}) => {
         <Content>
             <Section>
                 <Title>{title}</Title>
-                <Pencil src="/pencil.svg"></Pencil>
+                <Link to="/EditAccount" style={{ textDecoration: 'none' }} ><Pencil src="/pencil.svg"></Pencil></Link>
             </Section>
             <Desc>{desc}</Desc>
         </Content>

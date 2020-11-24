@@ -20,6 +20,7 @@ import ConfirmPage from './pages/StudentSessionConfirm';
 import CalendarPage from './pages/StudentSessionRequested';
 import PaymentPage from './pages/StudentSessionPayment';
 import StudentSessionSuccess from './pages/StudentSessionSuccess'; 
+import FreeSession from './pages/FreeSession';
 import authTest from './api/auth/authTest'; 
 import UserContextProvider from './comps/ContextProviders/UserContextProvide'
 import Authenticate from './comps/Authenticate/Authenticate'
@@ -54,6 +55,7 @@ function App() {
               <Route path="/StudentSessionPayment" component={PaymentPage} />
               <Route path="/StudentSessionSuccess" component={StudentSessionSuccess} />
               <Route path="/CollabSpace/:role/:uuid" component={CollabSpace} />
+              <Route path="/FreeSession" component={FreeSession} />
             </UserContextProvider>
           </Switch>
     </Router>

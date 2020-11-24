@@ -1,8 +1,9 @@
 import React  , {useEffect , useState} from 'react'; 
 import styled from 'styled-components'; 
-import SingleSession from './SingleSession'
-import { useToken } from '../../hooks/useToken'
-import getUserAttend from '../../api/attend/getUserAttend'
+import SingleSession from './SingleSession';
+import { useToken } from '../../hooks/useToken';
+import getUserAttend from '../../api/attend/getUserAttend';
+import {Link} from 'react-router-dom';
 
 const USTabMain = styled.div`
     max-width: 246px; 
@@ -63,17 +64,15 @@ const USTab = () => {
     } , [token])
 
 
-
     return (
         <USTabMain>
 
-            <USText>Upcoming Sessions
+            <Link to="/MySession" style={{ textDecoration: 'none' }} ><USText>Upcoming Sessions
                 <DDIcon src="/DropdownIcon.png"/>
-            </USText>
+            </USText></Link>
             
             {attends.map(item => <SingleSession session={item.session} />)}
             
-
         </USTabMain>
     )
 }

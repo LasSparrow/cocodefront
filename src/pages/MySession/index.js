@@ -16,7 +16,7 @@ const SessionList = styled.div`
     width:60%;
     text-align:left;
     margin-left:25%;
-    margin-top:5%;
+    margin-top: 10vh;
 `;
 
 const Title = styled.div`

@@ -36,6 +36,7 @@ const Camera = styled.img`
     width: 40px;
     height: 40px;
     padding-top: 4px;
+    padding-left: 4px;
 `;
 
 const EditProfPic = () => {

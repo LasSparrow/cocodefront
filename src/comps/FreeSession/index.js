@@ -1,5 +1,6 @@
 import React, {useState} from 'react'; 
 import styled from 'styled-components'; 
+import {Link} from 'react-router-dom';
 
 const FSContainer = styled.div`
     max-width: 250px; 
@@ -56,13 +57,13 @@ const FSTab = () => {
         <FSMiddle>
             Struggling at school?
         </FSMiddle>
-        <FSButton enlarge={enlarge} onMouseEnter={() =>{
+        <Link to="/FreeSession" style={{ textDecoration: 'none' }} ><FSButton enlarge={enlarge} onMouseEnter={() =>{
             setEnlarge(!enlarge); 
         }} onMouseLeave={() =>{
             setEnlarge(!enlarge);
         }}>
             Get a free session
-        </FSButton>
+        </FSButton></Link>
     </FSContainer>
 }
 

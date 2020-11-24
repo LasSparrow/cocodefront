@@ -1,6 +1,7 @@
 import React, {useState} from 'react' 
 import styled from 'styled-components'
 import Authenticate from '../Authenticate/Authenticate'
+import {Link} from 'react-router-dom';
 
 const PRTabMain = styled.div`
     max-width: 246px; 
@@ -101,9 +102,9 @@ const PRTab = () => {
         <Authenticate>
             <PRTabMain>
 
-            <PRText>Pending Requests 
+            <Link to="/MySession" style={{ textDecoration: 'none' }} ><PRText>Pending Requests 
                 <DDIcon src="/DropdownIcon.png"/>
-            </PRText>
+            </PRText></Link>
 
             <PRTabContainer>
             <PRTabLeft>

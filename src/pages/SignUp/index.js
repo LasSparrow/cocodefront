@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SignUp from '../../comps/Form/SignUp';
 import SignupImg from '../../public/SignupImg.png';
 import Button from '../../comps/Button';
+import {Link} from 'react-router-dom';
 
 const PageCon = styled.div`
   width:100vw;
@@ -42,9 +43,9 @@ export default function SignUpPage() {
       <Form>
           <SignUp />
           <Submit>
-            <Button text="Sign Up"/>
+            <Link to="/Explore" style={{ textDecoration: 'none' }} ><Button text="Sign Up"/></Link>
             <div>
-                Already have an account? <a href="url">Sign in</a>
+                Already have an account? <Link to="/" style={{ textDecoration: 'none' }} ><a href="url">Sign in</a></Link>
             </div>
         </Submit>
       </Form>
