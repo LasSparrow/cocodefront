@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
 
@@ -38,7 +38,7 @@ const Content = styled.div`
     }
 `;
 
-export default function TermsofService() {
+export default function MsgReceived() {
   const HandleBoxClick = (str)=>{
     alert(str);
   }
@@ -52,7 +52,7 @@ export default function TermsofService() {
           </div>
           <div>
             <p>For more information or questions</p>
-            <p>Please contact us at <span>cocode.code@email.com</span> or visit <span>FAQ page</span></p>
+            <p>Please contact us at <span>cocode.code@email.com</span> or visit <span>FAQ</span></p>
           </div>
       </Content>
   </ReceivedMsgPage>
