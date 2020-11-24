@@ -4,3 +4,7 @@ export default function dateFormatter(dateToFormat){
     console.log(dateToFormat)
     return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}` 
 }
+
+export function secondsToHours(seconds){
+    return seconds / 3600 + ` Hour`
+}

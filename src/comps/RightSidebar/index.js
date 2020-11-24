@@ -1,11 +1,12 @@
-import React, {useState, Component} from 'react'; 
+import React from 'react'; 
 import styled from 'styled-components' 
 import AccountBox from '../Account'
 import PRTab from '../PendingRequests'
-import USTab from '../UpcomingSessions' 
+import USTab from '../UpcomingSessions'
+import USTutorTab from '../UpcomingTutorSessions'
 import FSTab from '../FreeSession'
-import {Link} from 'react-router-dom'
-import Authenticate from '../Authenticate/Authenticate'
+import { useUser } from '../../hooks/useUser'
+
 
 const RightSidebarContainer = styled.div`
     margin: 0;
@@ -59,6 +60,9 @@ const FSTabContainer = styled.div`
 `;
 
 const RightSidebar = (props) => {
+
+    const [user] = useUser()
+
     return (
         <RightSidebarContainer>
             <AccountBoxContainer>
@@ -69,7 +73,14 @@ const RightSidebar = (props) => {
             </PRTabContainer>
             <USTabContainer> 
                 <USTab />
-            </USTabContainer>  
+            </USTabContainer>
+            {
+                user.tutor ? (
+                    <USTabContainer> 
+                        <USTutorTab />
+                    </USTabContainer>  
+                ) : null
+            }
             <FSTabContainer>
                 <FSTab />
             </FSTabContainer>
