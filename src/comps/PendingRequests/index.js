@@ -1,5 +1,6 @@
-import React, {useState} from 'react'; 
-import styled from 'styled-components'; 
+import React, {useState} from 'react' 
+import styled from 'styled-components'
+import Authenticate from '../Authenticate/Authenticate'
 
 const PRTabMain = styled.div`
     max-width: 246px; 
@@ -94,48 +95,54 @@ const DDIcon = styled.img`
 `;
 
 const PRTab = () => {
-    const[enlarge, setEnlarge] = useState(true); 
-    return <PRTabMain>
+    const[enlarge, setEnlarge] = useState(true)
 
-        <PRText>Pending Requests 
-            <DDIcon src="/DropdownIcon.png"/>
-        </PRText>
+    return (
+        <Authenticate>
+            <PRTabMain>
 
-        <PRTabContainer>
-        <PRTabLeft>
-            <img src="/PencilIcon.png"></img>
-        </PRTabLeft>
-        <PRTabText>
-            <h1>Machine Learning</h1>
-            <p>Sandy Rivers</p>
-        </PRTabText>
-        <PRTabRight enlarge={enlarge === 1} onMouseEnter={() =>{
-            setEnlarge(1);
-        }} onMouseLeave={() =>{
-            setEnlarge(!enlarge);
-        }}> 
-            <img src="/InformationIcon.png"></img>
-        </PRTabRight>
-        </PRTabContainer>
+            <PRText>Pending Requests 
+                <DDIcon src="/DropdownIcon.png"/>
+            </PRText>
 
-        <PRTabContainer>
-        <PRTabLeft>
-            <img src="/PencilIcon.png"></img>
-        </PRTabLeft>
-        <PRTabText>
-            <h1>Data Structure</h1>
-            <p>Sandy Rivers</p>
-        </PRTabText>
-        <PRTabRight enlarge={enlarge === 3} onMouseEnter={() =>{
-            setEnlarge(3);
-        }} onMouseLeave={() =>{
-            setEnlarge(!enlarge);
-        }}>
-            <img src="/InformationIcon.png"></img>
-        </PRTabRight>
-        </PRTabContainer>
+            <PRTabContainer>
+            <PRTabLeft>
+                <img src="/PencilIcon.png"></img>
+            </PRTabLeft>
+            <PRTabText>
+                <h1>Machine Learning</h1>
+                <p>Sandy Rivers</p>
+            </PRTabText>
+            <PRTabRight enlarge={enlarge === 1} onMouseEnter={() =>{
+                setEnlarge(1);
+            }} onMouseLeave={() =>{
+                setEnlarge(!enlarge);
+            }}> 
+                <img src="/InformationIcon.png"></img>
+            </PRTabRight>
+            </PRTabContainer>
 
-        </PRTabMain>
+            <PRTabContainer>
+            <PRTabLeft>
+                <img src="/PencilIcon.png"></img>
+            </PRTabLeft>
+            <PRTabText>
+                <h1>Data Structure</h1>
+                <p>Sandy Rivers</p>
+            </PRTabText>
+            <PRTabRight enlarge={enlarge === 3} onMouseEnter={() =>{
+                setEnlarge(3);
+            }} onMouseLeave={() =>{
+                setEnlarge(!enlarge);
+            }}>
+                <img src="/InformationIcon.png"></img>
+            </PRTabRight>
+            </PRTabContainer>
+
+            </PRTabMain>   
+        </Authenticate>
+
+    )
 }
 
 PRTab.defaultProps = {

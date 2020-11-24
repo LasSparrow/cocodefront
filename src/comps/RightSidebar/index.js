@@ -1,10 +1,11 @@
 import React, {useState, Component} from 'react'; 
-import styled from 'styled-components'; 
-import AccountBox from '../Account'; 
-import PRTab from '../PendingRequests';
-import USTab from '../UpcomingSessions'; 
-import FSTab from '../FreeSession'; 
-import {Link} from 'react-router-dom'; 
+import styled from 'styled-components' 
+import AccountBox from '../Account'
+import PRTab from '../PendingRequests'
+import USTab from '../UpcomingSessions' 
+import FSTab from '../FreeSession'
+import {Link} from 'react-router-dom'
+import Authenticate from '../Authenticate/Authenticate'
 
 const RightSidebarContainer = styled.div`
     margin: 0;
@@ -57,10 +58,11 @@ const FSTabContainer = styled.div`
     }
 `;
 
-const RightSidebar = ({name, img}) => {
-    return <RightSidebarContainer>
+const RightSidebar = (props) => {
+    return (
+        <RightSidebarContainer>
             <AccountBoxContainer>
-                <AccountBox name={name} src={img}/> 
+                <AccountBox user={props.user}/> 
             </AccountBoxContainer>
             <PRTabContainer>
                 <PRTab />
@@ -73,7 +75,8 @@ const RightSidebar = ({name, img}) => {
             <FSTabContainer>
                 <FSTab />
             </FSTabContainer>
-    </RightSidebarContainer>
+        </RightSidebarContainer>
+    )
 }
 
 RightSidebar.defaultProps = {

@@ -64,15 +64,15 @@ const RotateImg = styled.img`
     margin-bottom: -10px; 
 `;
 
-const AccountBox = ({name,img}) => {
+const AccountBox = (props) => {
     const[expanded, setExpanded] = useState(false)
 
     return <AccountBoxMain>
     <AccountBoxContainer onClick={()=>{
             setExpanded(!expanded);
         }}>
-        <UserImg src={img}/>
-        <Name>{name}</Name>
+        <UserImg src={props.user.profilePhoto}/>
+        <Name>{props.user.firstName} {props.user.lastName}</Name>
         <div><RotateImg expanded={!expanded} src={DDIcon} /></div> 
     </AccountBoxContainer>
     <ExpandContainer expanded={expanded}>
