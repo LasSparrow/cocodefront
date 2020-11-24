@@ -22,11 +22,8 @@ import ConfirmPage from './pages/StudentSessionConfirm';
 import CalendarPage from './pages/StudentSessionRequested';
 import PaymentPage from './pages/StudentSessionPayment';
 import StudentSessionSuccess from './pages/StudentSessionSuccess'; 
-<<<<<<< HEAD
 import ReviewPage from './pages/ReviewPage';
-=======
 import authTest from './api/auth/authTest'; 
->>>>>>> 0fa47b837b07cc92c90cfb8760dcb509093ca8fe
 
 //global styles
 import './App.scss'
