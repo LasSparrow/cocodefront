@@ -1,10 +1,13 @@
-import axios from 'axios';
-import React from 'react';
-import styled from 'styled-components'; 
+import React , {useEffect} from 'react'
+import styled from 'styled-components'
 import SignIn from '../../comps/Form/SignIn'
 import LOGO from '../../public/logo.svg'
-import loginUser from '../../api/auth/loginUser'; 
-import {useHistory} from 'react-router-dom';
+import loginUser from '../../api/auth/loginUser' 
+import {useHistory} from 'react-router-dom'
+import { useUser } from '../../hooks/useUser'
+import { useToken } from '../../hooks/useToken'
+import getUser from '../../api/user/getUser'
+
 
 const PageCon = styled.div`
   width:100vw;
@@ -19,12 +22,17 @@ const Logo = styled.img`
 `;
 
 export default function SignInPage() {
+
+  const [ , setToken] = useToken()
+
   const history = useHistory();
-  console.log(history);
+
   const HandleBoxClick = async (email, pass)=>{
     const data = await loginUser(email, pass);
   
     if(data.access_token){
+      setToken(data.access_token)
+
       history.push("/explore")
     } 
     

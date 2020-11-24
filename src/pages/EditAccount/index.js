@@ -7,6 +7,7 @@ import ListLine from '../../comps/ListLine';
 import Button from '../../comps/Button';
 import Title from '../../comps/Title';
 import ContentBox from '../../comps/ContentBox';
+import {Link} from 'react-router-dom';
 
 const EditAccountPage = styled.div`
     width: 100%;
@@ -71,7 +72,7 @@ return <EditAccountPage>
             <Input label="Province" height="30px" fontSize="11pt" fontWeight="600" ph="Province"/>
             <Input label="Postal Code" height="30px" fontSize="11pt" fontWeight="600" ph="Postal Code"/>
             <ButtonAlign>
-                <Button text="Back to Account"/>
+                <Link to="/MyAccount" style={{ textDecoration: 'none' }} ><Button text="Back to Account"/></Link>
                 <Button text="Save Changes"/>
             </ButtonAlign>  
         </Content>

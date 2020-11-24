@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
-import styled from "styled-components";
-import Sidebar from '../../comps/Sidebar';
-import RightSidebar from '../../comps/RightSidebar';
-import ExploreBox from '../../comps/Explore'; 
-import ExploreHTML from '../../comps/HTMLExplore';
-import ExploreCSS from '../../comps/CSSExplore'; 
-import ExplorePython from '../../comps/PythonExplore'; 
-import {Link} from 'react-router-dom'; 
+import React from 'react'
+import styled from "styled-components"
+import Sidebar from '../../comps/Sidebar'
+import RightSidebar from '../../comps/RightSidebar'
+import ExploreBox from '../../comps/Explore'
+import ExploreHTML from '../../comps/HTMLExplore'
+import ExploreCSS from '../../comps/CSSExplore'
+import ExplorePython from '../../comps/PythonExplore'
+import { useUser } from '../../hooks/useUser'
+import Authenticate from '../../comps/Authenticate/Authenticate'
+
+
 
 const ExplorePageContainer = styled.div`
   max-width: 100vw;
@@ -40,22 +43,26 @@ const ContentBottom = styled.div`
 `;
 
 export default function ExplorePage() {
-  const HandleBoxClick = (str)=>{
-    alert(str);
-  }
+  
+  const [user , ] = useUser()
 
-  return <ExplorePageContainer>
-      <Sidebar />
-    <ContentTop>
-        <ExploreHTML />
-        <ExploreBox /> 
-    </ContentTop>
-    <ContentBottom>
-      <ExploreCSS /> 
-      <ExplorePython />
-    </ContentBottom>
-    <RightSidebar />
-  </ExplorePageContainer>
+  return (
+    <Authenticate>
+      <ExplorePageContainer>
+        <Sidebar />
+        <ContentTop>
+            <ExploreHTML />
+            <ExploreBox /> 
+        </ContentTop>
+        <ContentBottom>
+          <ExploreCSS /> 
+          <ExplorePython />
+        </ContentBottom>
+        <RightSidebar user={user} />
+      </ExplorePageContainer>
+    </Authenticate>
+    
+  )
 }
 
 ExplorePage.defaultProps = {
