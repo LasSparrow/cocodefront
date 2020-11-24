@@ -5,7 +5,7 @@ import ApplyTutor from '../../comps/Form/ApplyTutor';
 
 const BecomeTutorPage = styled.div`
   width:100%;
-  height:100%;
+  height:100vh;
   display:flex;
   align-items:flex-start;
   background: #F5F5FB;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Sidebar from '../../comps/Sidebar';
 import EditProfPic from '../../comps/EditProfPic';
 import AccountEdit from '../../comps/AccountEdit';
+import RightSidebar from '../../comps/RightSidebar';
 
 const MyAccountPage = styled.div`
   min-width: 100vw;
@@ -13,7 +14,7 @@ const MyAccountPage = styled.div`
 `;
 
 const Content = styled.div`
-  width: 60vw;
+  width: 50vw;
   margin-left: 350px;
   margin-right: 40px;
   flex-direction: column;
@@ -30,7 +31,7 @@ const NameComp = styled.h1`
   margin: auto;
   transform: scale(1.2);
   top: -120px;
-  left: 200px;
+  left: 60%;
 `;
 
 export default function MyAccount({name}) {
@@ -47,6 +48,7 @@ export default function MyAccount({name}) {
       </ProfPicContainer>
       <AccountEdit />
     </Content>
+    <RightSidebar/>
   </MyAccountPage>
 }
 

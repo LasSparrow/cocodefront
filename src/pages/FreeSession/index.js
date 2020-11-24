@@ -37,10 +37,6 @@ const Center = styled.div`
     align-self: start;
     max-width: 56%;
     margin-left: 280px;
-
-    @media only screen and (min-width: 1920px) {
-            display: none;
-        }
 `;
 
 const Text = styled.div`
