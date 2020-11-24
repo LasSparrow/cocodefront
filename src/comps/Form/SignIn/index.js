@@ -1,9 +1,6 @@
 import React, {useState} from 'react'; 
 import styled from "styled-components";
 import Button from "../../Button";
-import {Link} from 'react-router-dom'; 
-import axios from 'axios'; 
-import loginUser from '../../../api/auth/loginUser'; 
 
 const InputBox = styled.div`
     width: 700px;
