@@ -4,6 +4,7 @@ import Button from '../Button'
 
 export default function CodeJar(props){
 
+
     const Workspace = styled.div`
         width:100%;
         height:calc(100% - 150px);
@@ -12,10 +13,12 @@ export default function CodeJar(props){
         align-items:center;
     `;
 
-    if(props.url){
+    const url = props.session["codejarPublicUrl"] || props.session["codejarAdminUrl"]
+
+    if(url){
         return (
             <Workspace>
-                <iframe src={props.url} title="Collaborative Workspace"></iframe>
+                <iframe src={url} title="Collaborative Workspace"></iframe>
             </Workspace>
         )
     }
