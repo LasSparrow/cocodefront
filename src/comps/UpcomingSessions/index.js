@@ -43,20 +43,26 @@ const DDIcon = styled.img`
     }   
 `;
 
+//Filters sessions to those that have not yet been attended to
+const filterAttend = item => !item.isAttended
+
+
 const USTab = () => {
 
     
-    const [sessions , setSessions] = useState([])
+    const [attends , setAttends] = useState([])
 
     const [token] = useToken()
 
     useEffect(() => {
         const fetch = async () => {
             const sessionsData = await getUserAttend(token)
-            setSessions(sessionsData)
+            setAttends(sessionsData.filter(filterAttend))
         }
-        fetch()
+        fetch() 
     } , [token])
+
+
 
     return (
         <USTabMain>
@@ -65,14 +71,12 @@ const USTab = () => {
                 <DDIcon src="/DropdownIcon.png"/>
             </USText>
             
-            <SingleSession />
+            {attends.map(item => <SingleSession session={item.session} />)}
             
 
         </USTabMain>
     )
 }
 
-USTab.defaultProps = {
-}
 
 export default USTab; 
