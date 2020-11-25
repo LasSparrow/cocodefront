@@ -49,7 +49,7 @@ export default function CollabSpace() {
   
 
   if(role === 'user'){
-    console.log(session)
+
     return (
       <Authenticate>
         <SocketContextProvider>
@@ -64,7 +64,7 @@ export default function CollabSpace() {
       </Authenticate>
     )
   }else if(role === 'tutor'){
-    console.log(session)
+
     return (
       <Authenticate>
         <SocketContextProvider>
