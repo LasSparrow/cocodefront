@@ -6,6 +6,7 @@ import USTab from '../UpcomingSessions'
 import USTutorTab from '../UpcomingTutorSessions'
 import FSTab from '../FreeSession'
 import { useUser } from '../../hooks/useUser'
+import Authenticate from '../Authenticate/Authenticate'
 
 
 const RightSidebarContainer = styled.div`
@@ -64,27 +65,30 @@ const RightSidebar = (props) => {
     const [user] = useUser()
 
     return (
-        <RightSidebarContainer>
-            <AccountBoxContainer>
-                <AccountBox user={props.user}/> 
-            </AccountBoxContainer>
-            <PRTabContainer>
-                <PRTab />
-            </PRTabContainer>
-            <USTabContainer> 
-                <USTab />
-            </USTabContainer>
-            {
-                user.tutor ? (
-                    <USTabContainer> 
-                        <USTutorTab />
-                    </USTabContainer>  
-                ) : null
-            }
-            <FSTabContainer>
-                <FSTab />
-            </FSTabContainer>
+        <Authenticate>
+            <RightSidebarContainer>
+                <AccountBoxContainer>
+                    <AccountBox user={user}/> 
+                </AccountBoxContainer>
+                <PRTabContainer>
+                    <PRTab />
+                </PRTabContainer>
+                <USTabContainer> 
+                    <USTab />
+                </USTabContainer>
+                {
+                    user.tutor ? (
+                        <USTabContainer> 
+                            <USTutorTab />
+                        </USTabContainer>  
+                    ) : null
+                }
+                <FSTabContainer>
+                    <FSTab />
+                </FSTabContainer>
         </RightSidebarContainer>
+    </Authenticate>
+
     )
 }
 
