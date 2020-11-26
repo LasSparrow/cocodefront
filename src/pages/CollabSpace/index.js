@@ -52,15 +52,13 @@ export default function CollabSpace() {
 
     return (
       <Authenticate>
-        <SocketContextProvider>
           <CollabSpacePage>
             <Sidebar />
             <CollabContent>
               <VideoCall token={token} uuid={session.uuid} />
-              <CodeJar isTutor={session.isTutor} session={session} />
+                <CodeJar isTutor={session.isTutor} session={session} />
             </CollabContent>
           </CollabSpacePage>
-        </SocketContextProvider>
       </Authenticate>
     )
   }else if(role === 'tutor'){
