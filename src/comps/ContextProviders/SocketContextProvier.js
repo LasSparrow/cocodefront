@@ -6,14 +6,15 @@ import socketContext from '../../contexts/socketContext'
 
 export default function SocketContextProvider(props){
 
+    const [token] = useToken()
+
     const [socket , setSocket] = useState()
 
     useEffect(() => {
-        // const serverUrl = 'ws://localhost:8080/'
-
         const newSocket = io(socketUrl, {
-            secure: true,
-            transports: ['websocket'],
+            query : {
+                token
+            }
           });
 
         setSocket(newSocket)
