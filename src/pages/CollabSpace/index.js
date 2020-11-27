@@ -55,7 +55,7 @@ export default function CollabSpace() {
           <CollabSpacePage>
             <Sidebar />
             <CollabContent>
-              <VideoCall token={token} uuid={session.uuid} />
+              <VideoCall uuid={session.uuid} />
               <CodeJar isTutor={session.isTutor} session={session}  createWorkspace={createWorkspace} />
             </CollabContent>
           </CollabSpacePage>

@@ -21,7 +21,7 @@ export default function VideoCall(props){
     `  
 
     useEffect(() => {
-        emit('room' , { message : 'hello'})
+        emit('room' , { uuid : props.uuid})
 
     } , [emit , on])
 

@@ -12,10 +12,8 @@ export default function SocketContextProvider(props){
 
     useEffect(() => {
         const newSocket = io(socketUrl, {
-            secure: true,
-            transports: ['websocket'],
-            extraHeaders: {
-                Authorization: token
+            query : {
+                token
             }
           });
 
