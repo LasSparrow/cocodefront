@@ -21,21 +21,31 @@ export default function VideoCall(props){
     justify-content:center;
     align-items:center;
     ` 
-    
+    const [localStream , setLocalStream] = useState(new MediaStream())
+    const [remoteStream , setRemoteStream] = useState(new MediaStream())
 
+    useEffect(() => {
+        document.querySelector('#local-video').srcObject = localStream || new MediaStream()
+        document.querySelector('#remote-video').srcObject = remoteStream || new MediaStream()
+
+    } , [localStream , setLocalStream , remoteStream , setRemoteStream])
+
+    const handleCall = async (e) => {
+        await makeOffer()
+        // setLocalStream(await navigator.mediaDevices.getUserMedia({video : true}))
+    }    
 
     const localVideoElement = document.querySelector('#local-video')
     const remoteVideoElement = document.querySelector('#remote-video')
 
     const setLocalMedia = (stream) => {
-        setMedia(localVideoElement , stream)
+        setLocalStream(stream)
     }
     
     const setRemoteMedia = (stream) => {
-        setMedia(remoteVideoElement , stream)
+        setRemoteStream(stream)
     }
 
-    
     const rtcConfig =  {
         getUserMedia,
         setLocalMedia,
@@ -47,19 +57,18 @@ export default function VideoCall(props){
 
     
     useEffect(() => {
-        emit('room' , { uuid : props.uuid})    
+        emit('room' , { uuid : props.uuid})
     } , [emit , on , props.uuid])
 
-    // props.uuid , emit , on
     return (
         <Webcams>
             <Webcam1>
-            <video id="local-video" height="190" width="300"/>
+            <video id="local-video" autoPlay preload="auto" playsInline> Start streaming </video>
             </Webcam1>
             <Webcam2>
-            <video id="remote-video" height="190" width="300" />
+            <video id="remote-video" autoPlay  preload="auto" playsInline></video>
             </Webcam2>
-            <Button text="Start Call" onClick={async e => await makeOffer()} /> 
+            <Button text="Start Call" onClick={handleCall} /> 
         </Webcams>
     )
     
