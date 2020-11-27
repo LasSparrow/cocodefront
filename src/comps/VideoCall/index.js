@@ -22,6 +22,7 @@ export default function VideoCall(props){
 
     useEffect(() => {
         emit('room' , { message : 'hello'})
+
     } , [emit , on])
 
     return (
@@ -30,7 +31,7 @@ export default function VideoCall(props){
             <video id="local-video" height="190" width="300"/>
             </Webcam1>
             <Webcam2>
-            <video height="190px" />
+            <video height="190" width="300" />
             </Webcam2>
             <Button text="Start Call" /> 
         </Webcams>
