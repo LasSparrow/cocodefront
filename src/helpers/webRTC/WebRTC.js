@@ -55,7 +55,7 @@ export default class WebRTC{
             if (this.peerConnection.connectionState === 'connected') {
                 this.localStream.getTracks().forEach(track => {
                     console.log('sending tracks to remote')
-                    this.peerConnection.addTrack(track, this.localStream);
+                    // this.peerConnection.addTrack(track, this.localStream);
 
                     //THIS IS WHERE I MESSED UP 
                     //this.remoteStream is set in track event listener and assigned to the video element here WRONG!!!
@@ -66,7 +66,7 @@ export default class WebRTC{
     async trackEventListener(){
         this.peerConnection.addEventListener('track' , async event => {
             console.log('remote track recieved')
-            this.remoteStream.addTrack(event.track , this.remoteStream)
+            // this.remoteStream.addTrack(event.track , this.remoteStream)
             this.setRemoteMedia(this.remoteStream)
         })
     }
