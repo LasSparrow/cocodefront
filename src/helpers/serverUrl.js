@@ -1,3 +1,3 @@
 const url = 'https://cocodeserver.herokuapp.com/'
-export const socketUrl = 'ws://localhost:8080/'
+export const socketUrl = 'wss://cocodeserver.herokuapp.com/'
 export default url  

@@ -15,7 +15,7 @@ const bootstrap  = ({getUserMedia , setLocalMedia , setRemoteMedia , socket , uu
     }
 
     async function makeOffer(){
-        console.log('Caller creates an offer')
+        // console.log('Caller creates an offer')
         await initiateRTC()
         setLocalMedia(await getUserMedia())
         const offer = await rtc.makeOffer()
@@ -24,19 +24,20 @@ const bootstrap  = ({getUserMedia , setLocalMedia , setRemoteMedia , socket , uu
 
     socket.on('offer' , async offer => {
         await initiateRTC()
-        console.log('Callee recieves the offer')
-        console.log(offer)
+        setLocalMedia(await getUserMedia())
+        // console.log('Callee recieves the offer')
+        // console.log(offer)
         const answer = await rtc.recieveOffer(offer)
         socket.emit('answer' , {answer , uuid})
     })
 
     socket.on('answer' , async answer => {
-        console.log('Caller recieves the answer')
+        // console.log('Caller recieves the answer')
         await rtc && await rtc.recieveAnswer(answer)
     })
 
     socket.on('new-ice-candidate' , async iceCandidate => {
-        console.log('Socket: the other party has recieved an ice candaidate')
+        // console.log('Ice Candidate receievd')
         try {
             await rtc && await rtc.remoteIceRecieved(iceCandidate)
         } catch (e) {
