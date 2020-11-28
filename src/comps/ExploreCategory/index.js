@@ -94,8 +94,8 @@ return (
 
 ExploreCategory.defaultProps = {
     text : '',
-    tutors : 0,
-    students : 0,
+    tutors :  Math.floor(Math.random() * 100),
+    students : Math.floor(Math.random() * 100),
     image : '/WebDevImage.png'
 }
 

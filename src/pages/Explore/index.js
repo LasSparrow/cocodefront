@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import Sidebar from '../../comps/Sidebar'
 import RightSidebar from '../../comps/RightSidebar'
-import ExploreCategory from '../../comps/ExploreCategory'
+import ExploreCategories from '../../comps/ExploreCategories'
 import Authenticate from '../../comps/Authenticate/Authenticate'
 import SocketContextProvier from '../../comps/ContextProviders/SocketContextProvier'
 
@@ -32,10 +32,7 @@ export default function ExplorePage() {
         <ExplorePageContainer>
           <Sidebar />
           <Content>
-              <ExploreCategory text="html" tutors="12" students="34" image={'/WebDevImage.png'} />
-              <ExploreCategory text="JavaScript" tutors="8" students="13" image={'/JavaScriptImage.png'} />
-              <ExploreCategory text="CSS" tutors="17" students="41" image={'/CSSImage.png'} /> 
-              <ExploreCategory  text="Python" tutors="4" students="2" image={'/PythonImage.jpg'} />
+            <ExploreCategories />
           </Content>
           <RightSidebar/>
         </ExplorePageContainer>
