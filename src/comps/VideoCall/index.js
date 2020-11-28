@@ -21,29 +21,23 @@ export default function VideoCall(props){
     justify-content:center;
     align-items:center;
     ` 
-    const [localStream , setLocalStream] = useState(new MediaStream())
-    const [remoteStream , setRemoteStream] = useState(new MediaStream())
-
-    useEffect(() => {
-        document.querySelector('#local-video').srcObject = localStream || new MediaStream()
-        document.querySelector('#remote-video').srcObject = remoteStream || new MediaStream()
-
-    } , [localStream , setLocalStream , remoteStream , setRemoteStream])
 
     const handleCall = async (e) => {
         await makeOffer()
         // setLocalStream(await navigator.mediaDevices.getUserMedia({video : true}))
     }    
 
-    const localVideoElement = document.querySelector('#local-video')
-    const remoteVideoElement = document.querySelector('#remote-video')
 
     const setLocalMedia = (stream) => {
-        setLocalStream(stream)
+        const localVideoElement = document.querySelector('#local-video')
+        localVideoElement.srcObject = stream
+        // setLocalStream(stream)
     }
     
     const setRemoteMedia = (stream) => {
-        setRemoteStream(stream)
+        console.log('STREAM:' , stream)
+        const remoteVideoElement = document.querySelector('#remote-video')
+        remoteVideoElement.srcObject =stream
     }
 
     const rtcConfig =  {
@@ -63,10 +57,10 @@ export default function VideoCall(props){
     return (
         <Webcams>
             <Webcam1>
-            <video id="local-video" autoPlay preload="auto" playsInline> Start streaming </video>
+                <video id="local-video" autoPlay preload="auto" playsInline> Start streaming </video>
             </Webcam1>
             <Webcam2>
-            <video id="remote-video" autoPlay  preload="auto" playsInline></video>
+                <video id="remote-video" autoPlay  preload="auto" playsInline></video>
             </Webcam2>
             <Button text="Start Call" onClick={handleCall} /> 
         </Webcams>
