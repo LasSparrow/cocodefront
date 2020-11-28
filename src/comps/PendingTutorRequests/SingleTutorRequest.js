@@ -10,8 +10,6 @@ const PRTabContainer = styled.div`
     flex-direction: row; 
     align-items: center; 
     margin: 12px 0px 12px 0px; 
-        display: flex;
-    width: 100%;
 
     @media (max-width: 1024px) {
         display: none;
@@ -24,7 +22,6 @@ const PRTabLeft = styled.div`
     display: flex; 
     justify-content: center;
     margin-right: 20px; 
-    
 `; 
 
 const PRTabText = styled.div`
@@ -62,7 +59,7 @@ const PRTabRight = styled.div`
 `;
 
 
-export default function SingleSession(props){
+export default function SingleTutorRequest(props){
     return (
         <PRTabContainer>
             <PRTabLeft>
@@ -70,7 +67,7 @@ export default function SingleSession(props){
             </PRTabLeft>
             <PRTabText>
                 <h1>{props.category.text}</h1>
-                <p>{props.tutor.firstName} {props.tutor.lastName}</p>
+                <p>{props.user.firstName} {props.user.lastName}</p>
             </PRTabText>
             <PRTabRight> 
                 <img src="/InformationIcon.png"></img>
