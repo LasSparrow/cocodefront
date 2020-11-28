@@ -37,7 +37,7 @@ const bootstrap  = ({getUserMedia , setLocalMedia , setRemoteMedia , socket , uu
     })
 
     socket.on('new-ice-candidate' , async iceCandidate => {
-        console.log('Ice Candidate receievd')
+        // console.log('Ice Candidate receievd')
         try {
             await rtc && await rtc.remoteIceRecieved(iceCandidate)
         } catch (e) {

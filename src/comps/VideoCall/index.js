@@ -1,9 +1,9 @@
-import React , { useEffect , useState } from 'react'
+import React , { useEffect} from 'react'
 import styled from "styled-components"
 import Button from '../Button'
 import { useSocket } from '../../hooks/useSocket'
 import bootstrapRTC from '../../helpers/webRTC'
-import { getUserMedia , setMedia } from '../../helpers/webRTC/userMedia'
+import { getUserMedia} from '../../helpers/webRTC/userMedia'
 
 
 export default function VideoCall(props){
@@ -24,7 +24,6 @@ export default function VideoCall(props){
 
     const handleCall = async (e) => {
         await makeOffer()
-        // setLocalStream(await navigator.mediaDevices.getUserMedia({video : true}))
     }    
 
 
@@ -34,6 +33,7 @@ export default function VideoCall(props){
     }
     
     const setRemoteMedia = (stream) => {
+        console.log(stream.id)
         const localVideoElement = document.querySelector('#remote-video')
         localVideoElement.srcObject = stream
     }

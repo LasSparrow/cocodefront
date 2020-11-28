@@ -4,7 +4,7 @@ export async function getUserMedia(){
             "width": 640,
             "height": 480
         },
-        // 'audio' : {'echoCancellation': true}
+        'audio' : {'echoCancellation': true}
     }
     return await navigator.mediaDevices.getUserMedia(constraints)
 }
