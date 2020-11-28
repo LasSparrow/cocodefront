@@ -31,13 +31,11 @@ export default function VideoCall(props){
     const setLocalMedia = (stream) => {
         const localVideoElement = document.querySelector('#local-video')
         localVideoElement.srcObject = stream
-        // setLocalStream(stream)
     }
     
     const setRemoteMedia = (stream) => {
-        console.log('STREAM:' , stream)
-        const remoteVideoElement = document.querySelector('#remote-video')
-        remoteVideoElement.srcObject =stream
+        const localVideoElement = document.querySelector('#remote-video')
+        localVideoElement.srcObject = stream
     }
 
     const rtcConfig =  {

@@ -58,9 +58,10 @@ export default class WebRTC{
     }
     async trackEventListener(){
         this.peerConnection.addEventListener('track' , async event => {
-            console.log('remote track recieved' , event.track)
-            this.remoteStream.addTrack(event.track , this.remoteStream)
-            this.setRemoteMedia(this.remoteStream)
+            console.log('remote track recieved')
+            this.remoteStream.addTrack(event.track)
+            console.log(this.remoteStream.getTracks())
+            this.setRemoteMedia(this.remoteStream.clone())
         })
     }
 
