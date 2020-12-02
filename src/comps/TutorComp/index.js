@@ -5,15 +5,6 @@ import LangTags from '../LangTags';
 import BookModal from '../BookModal/BookModal'
 import {Link} from 'react-router-dom'; 
 import CalendarPage from '../../pages/StudentSessionRequested';
-
-
-const ButtonBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    max-width: 150px;
-    justify-content: center;
-`;
-
 const LangBox = styled.div``;
 
 const TutorCompContainer = styled.div`
@@ -25,7 +16,7 @@ const TutorCompContainer = styled.div`
 `;
 
 const ProfileImg = styled.img`
-    width: 175px;
+    width: 200px;
     height: 200px;  
     margin: 10px;  
     object-fit: cover;
@@ -43,6 +34,15 @@ const Info = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 15px;
+    width:calc(100% - 300px);
+`;
+
+
+const ButtonBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    width:100px;
+    justify-content: center;
 `;
 
 const TutorComp = ({text, name, img}) => {
@@ -52,29 +52,31 @@ const TutorComp = ({text, name, img}) => {
         setOpen(true)
     }
 
-    return <TutorCompContainer>
-        <Top>
-            <ProfileImg src={img}/>
-            <Info>
-                <Name>{name}</Name>
-                <Blurb>{text}</Blurb>
-            </Info>
-            <ButtonBox>
-                <Link to="/TutorProfile" style={{ textDecoration: 'none' }} >
-                    <Button text="Profile"/>
-                </Link>
-                <Button text="Book" onClick={openModal}/>
-            </ButtonBox>
-        </Top>
-        <LangBox>
-            <LangTags text="ReactJS"/>
-            <LangTags text="JavaScript"/>
-            <LangTags text="Java"/>
-        </LangBox>
-        <BookModal open={open} setOpen={setOpen}>
-            <CalendarPage />
-        </BookModal>
-    </TutorCompContainer>
+    return (
+        <TutorCompContainer>
+            <Top>
+                <ProfileImg src={img}/>
+                <Info>
+                    <Name>{name}</Name>
+                    <Blurb>{text}</Blurb>
+                </Info>
+                <ButtonBox>
+                    <Link to="/TutorProfile" style={{ textDecoration: 'none' }} >
+                        <Button text="Profile"/>
+                    </Link>
+                    <Button text="Book" onClick={openModal}/>
+                </ButtonBox>
+            </Top>
+            <LangBox>
+                <LangTags text="ReactJS"/>
+                <LangTags text="JavaScript"/>
+                <LangTags text="Java"/>
+            </LangBox>
+            <BookModal open={open} setOpen={setOpen}>
+                <CalendarPage />
+            </BookModal>
+        </TutorCompContainer>
+    )
 }
 
 TutorComp.defaultProps = {
