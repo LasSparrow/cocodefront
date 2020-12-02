@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
-import styled from "styled-components";
-import Sidebar from '../../comps/Sidebar';
-import RightSidebar from '../../comps/RightSidebar';
-import TutorComp from '../../comps/TutorComp';
+import React, { useState , useEffect} from 'react'
+import styled from "styled-components"
+import Sidebar from '../../comps/Sidebar'
+import RightSidebar from '../../comps/RightSidebar'
+import TutorComp from '../../comps/TutorComp'
+import getAllTutors from '../../api/tutor/getAllTutors'
+import { useToken } from '../../hooks/useToken'
+import Loading from '../../comps/Loading'
 
 const FindATutorPage = styled.div`
     min-width: 100vw;
@@ -64,11 +67,27 @@ const TutorComps = styled.div`
     flex-direction:column;
     justify-content:flex-start;
 `
+const LoadingContainer = styled.div`
+    width:100%;
+    margin-top:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+`
 
 export default function FindATutor() {
-  const HandleBoxClick = (str)=>{
-    alert(str);
-  }
+    const [tutors , setTutors] = useState([])
+    const [token,] = useToken()
+    const [loading , setLoading] = useState(true)
+
+    useEffect(() => {
+        async function fetch(){
+            const data = await getAllTutors(token)
+            setTutors(data)
+            setLoading(false)
+        }
+        fetch()
+    } , [])
 
   return <FindATutorPage>
     <Sidebar />
@@ -116,8 +135,10 @@ export default function FindATutor() {
             <Submit value="Search" type="submit"/>
         </Form>
         <TutorComps>
-            <TutorComp name="Angela Miller" img="angelamiller.jpg" text="Since high school, she has been immersed in the technological aspect of the world. She has been following the latest tech trends and performs well in school projects and assignments. She enjoys being helpful and is willing to share her knowledge with other people."/>
-            <TutorComp />
+            {loading && <LoadingContainer><Loading /></LoadingContainer>}
+            {
+                tutors.map(item => <TutorComp tutor={item} />)
+            }  
         </TutorComps>
     </Content>
     <RightSidebar />

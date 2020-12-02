@@ -45,7 +45,7 @@ const ButtonBox = styled.div`
     justify-content: center;
 `;
 
-const TutorComp = ({text, name, img}) => {
+const TutorComp = ({tutor , ...props}) => {
     const [open, setOpen] = useState(false)
 
     const openModal = () => {
@@ -55,10 +55,10 @@ const TutorComp = ({text, name, img}) => {
     return (
         <TutorCompContainer>
             <Top>
-                <ProfileImg src={img}/>
+                <ProfileImg src={tutor.user.profilePhoto}/>
                 <Info>
-                    <Name>{name}</Name>
-                    <Blurb>{text}</Blurb>
+                    <Name>{tutor.user.firstName}  {tutor.user.lastName}</Name>
+                    <Blurb>{tutor.bioText}</Blurb>
                 </Info>
                 <ButtonBox>
                     <Link to="/TutorProfile" style={{ textDecoration: 'none' }} >
@@ -68,9 +68,9 @@ const TutorComp = ({text, name, img}) => {
                 </ButtonBox>
             </Top>
             <LangBox>
-                <LangTags text="ReactJS"/>
-                <LangTags text="JavaScript"/>
-                <LangTags text="Java"/>
+                {
+                    tutor.categories.map(item => <LangTags text={item.text} />)
+                }
             </LangBox>
             <BookModal open={open} setOpen={setOpen}>
                 <CalendarPage />
