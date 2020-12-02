@@ -73,7 +73,7 @@ const TutorComp = ({tutor , ...props}) => {
                 }
             </LangBox>
             <BookModal open={open} setOpen={setOpen}>
-                <CalendarPage />
+                <CalendarPage tutor={tutor} />
             </BookModal>
         </TutorCompContainer>
     )

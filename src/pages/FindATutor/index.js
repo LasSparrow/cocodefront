@@ -6,6 +6,7 @@ import TutorComp from '../../comps/TutorComp'
 import getAllTutors from '../../api/tutor/getAllTutors'
 import { useToken } from '../../hooks/useToken'
 import Loading from '../../comps/Loading'
+import Authenticate from '../../comps/Authenticate/Authenticate'
 
 const FindATutorPage = styled.div`
     min-width: 100vw;
@@ -89,58 +90,62 @@ export default function FindATutor() {
         fetch()
     } , [])
 
-  return <FindATutorPage>
-    <Sidebar />
-    <Content>
-        <Title>Find A Tutor</Title>
-        <Label>Filters:</Label>
-        <Form>
-            <Dropdown>
-                <Select name="language">
-                    <Option selected disabled>Language</Option>
-                    <Option value="javascript">JavaScript</Option>
-                    <Option value="html">HTML</Option>
-                    <Option value="css">CSS</Option>
-                    <Option value="java">Java</Option>
-                </Select>
-            </Dropdown>
-            <Dropdown>
-                <Select name="price">
-                    <Option selected disabled>Price</Option>
-                    <Option value="free">Free</Option>
-                    <Option value="under10">Under $10</Option>
-                    <Option value="10to20">$10 - $19</Option>
-                    <Option value="20to30">$20 - $29</Option>
-                    <Option value="30to40">$30 - $39</Option>
-                    <Option value="40to50">$40 - $49</Option>
-                    <Option value="50plus">$50+</Option>
-                </Select>
-            </Dropdown>
-            <Dropdown>
-                <Select name="rating">
-                    <Option selected disabled>Rating</Option>
-                    <Option value="5star">5 star</Option>
-                    <Option value="4star">4 star</Option>
-                    <Option value="3star">3 star</Option>
-                    <Option value="2star">2 star</Option>
-                    <Option value="1star">1 star</Option>
-                    <Option value="0star">0 star</Option>
-                </Select>
-            </Dropdown>
-            <Dropdown>
-                <Select name="availability">
-                    <Option selected disabled>Availability</Option>
-                </Select>
-            </Dropdown>
-            <Submit value="Search" type="submit"/>
-        </Form>
-        <TutorComps>
-            {loading && <LoadingContainer><Loading /></LoadingContainer>}
-            {
-                tutors.map(item => <TutorComp tutor={item} />)
-            }  
-        </TutorComps>
-    </Content>
-    <RightSidebar />
-  </FindATutorPage>
+  return (
+    <Authenticate>
+        <FindATutorPage>
+            <Sidebar />
+            <Content>
+                <Title>Find A Tutor</Title>
+                <Label>Filters:</Label>
+                <Form>
+                    <Dropdown>
+                        <Select name="language">
+                            <Option selected disabled>Language</Option>
+                            <Option value="javascript">JavaScript</Option>
+                            <Option value="html">HTML</Option>
+                            <Option value="css">CSS</Option>
+                            <Option value="java">Java</Option>
+                        </Select>
+                    </Dropdown>
+                    <Dropdown>
+                        <Select name="price">
+                            <Option selected disabled>Price</Option>
+                            <Option value="free">Free</Option>
+                            <Option value="under10">Under $10</Option>
+                            <Option value="10to20">$10 - $19</Option>
+                            <Option value="20to30">$20 - $29</Option>
+                            <Option value="30to40">$30 - $39</Option>
+                            <Option value="40to50">$40 - $49</Option>
+                            <Option value="50plus">$50+</Option>
+                        </Select>
+                    </Dropdown>
+                    <Dropdown>
+                        <Select name="rating">
+                            <Option selected disabled>Rating</Option>
+                            <Option value="5star">5 star</Option>
+                            <Option value="4star">4 star</Option>
+                            <Option value="3star">3 star</Option>
+                            <Option value="2star">2 star</Option>
+                            <Option value="1star">1 star</Option>
+                            <Option value="0star">0 star</Option>
+                        </Select>
+                    </Dropdown>
+                    <Dropdown>
+                        <Select name="availability">
+                            <Option selected disabled>Availability</Option>
+                        </Select>
+                    </Dropdown>
+                    <Submit value="Search" type="submit"/>
+                </Form>
+                <TutorComps>
+                    {loading && <LoadingContainer><Loading /></LoadingContainer>}
+                    {
+                        tutors.map(item => <TutorComp tutor={item} />)
+                    }  
+                </TutorComps>
+            </Content>
+            <RightSidebar />
+        </FindATutorPage>
+    </Authenticate>
+    )
 }
