@@ -13,11 +13,11 @@ const FindATutorPage = styled.div`
 `;
 
 const Content = styled.div`
-    max-width: 50vw;
+    width: calc(100% - 650px);
     min-height: 85vh;
     margin: auto;
-    margin-left: 240px;
-    padding: 20px 40px 40px 40px;
+    margin-left: 250px;
+    padding: 20px 60px 40px 60px;
     text-align: start;
     display: flex;
     flex-direction: column;
@@ -57,6 +57,13 @@ const Form = styled.form`
     display: flex;
     margin-top: 10px;
 `;
+
+const TutorComps = styled.div`
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+`
 
 export default function FindATutor() {
   const HandleBoxClick = (str)=>{
@@ -106,10 +113,12 @@ export default function FindATutor() {
                     <Option selected disabled>Availability</Option>
                 </Select>
             </Dropdown>
-            <Submit label="Submit" type="submit"/>
+            <Submit value="Search" type="submit"/>
         </Form>
-      <TutorComp name="Angela Miller" img="angelamiller.jpg" text="Since high school, she has been immersed in the technological aspect of the world. She has been following the latest tech trends and performs well in school projects and assignments. She enjoys being helpful and is willing to share her knowledge with other people."/>
-      <TutorComp />
+        <TutorComps>
+            <TutorComp name="Angela Miller" img="angelamiller.jpg" text="Since high school, she has been immersed in the technological aspect of the world. She has been following the latest tech trends and performs well in school projects and assignments. She enjoys being helpful and is willing to share her knowledge with other people."/>
+            <TutorComp />
+        </TutorComps>
     </Content>
     <RightSidebar />
   </FindATutorPage>
