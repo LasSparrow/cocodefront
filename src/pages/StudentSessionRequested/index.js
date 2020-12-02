@@ -31,15 +31,12 @@ const ButtonContainer = styled.div`
 
 `;
 
-export default function CalendarPage() {
-    const HandleBoxClick = (str)=>{
-      alert(str);
-    }
+export default function CalendarPage(props) {
 
     return(
         <CalendarPageContainer>
             <HeaderContainer>Book A Session</HeaderContainer>
-            <ModalBioComp />
+            <ModalBioComp tutor={props.tutor} />
             <TextContainer>Choose a date and time that Angela is available:</TextContainer>
             <CalendarContainer>
                 <Calendar />
