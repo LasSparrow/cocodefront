@@ -34,8 +34,8 @@ export default function CollabSpace() {
   useEffect(() => {
       async function fetch(){
         const data = await getSesion(token , uuid)
-          setSession(data)
-          setLoading(false)
+        setSession(data)
+        setLoading(false)
       }
       fetch()
   } , [])
