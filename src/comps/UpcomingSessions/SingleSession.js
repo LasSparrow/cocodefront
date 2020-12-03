@@ -93,13 +93,14 @@ export default function SingleSession(props){
 
 
     useEffect(() => {
-        setInterval(async () => {
+        const interval = setInterval(async () => {
             const newSession  = await getSession(token , props.session.uuid)
             setSession({...session , ...newSession})
         } , 5000)
+
+        return () => clearInterval(interval)
     } , [])
     
-
 
     return (
         <USTabContainer>
