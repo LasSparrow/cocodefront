@@ -56,7 +56,7 @@ export default function SingleSession(props){
 
     return (
         <USTabContainer>
-            <Link to={`/collabspace/user/${props.session.uuid}`} >
+            <Link to={`/collabspace/tutor/${props.session.uuid}`} >
                 <USTabLink>
                     <USTabLeft>
                         <img src="/BoxIcon.png"></img>

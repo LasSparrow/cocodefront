@@ -7,7 +7,7 @@ import { useToken } from '../../hooks/useToken'
 
 
 const USTabContainer = styled.div`
-    max-width: 246px; 
+    width:80%; 
     max-height: 48px; 
     display: flex; 
     flex-direction: row; 
@@ -103,14 +103,14 @@ export default function SingleSession(props){
 
     return (
         <USTabContainer>
-            <Link to={`/collabspace/tutor/${props.session.uuid}`} >
+            <Link to={`/collabspace/user/${props.session.uuid}`} >
                 <USTabLink>
                     <USTabLeft>
                         <img src="/BoxIcon.png"></img>
                     </USTabLeft>
                     <USTabText>
                             <h1>{props.session.category.text}</h1>
-                            <p>{startTime} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {props.session.tutor.user.firstName} {props.session.tutor.user.lastName}</p>
+                            <p>{startTime} <br/> {props.session.tutor.user.firstName} {props.session.tutor.user.lastName}</p>
                     </USTabText>
                 </USTabLink>
             </Link>
