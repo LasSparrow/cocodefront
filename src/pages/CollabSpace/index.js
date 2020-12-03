@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './CollabSpace.css'
+import styled from 'styled-components'
 import { useParams , Redirect } from 'react-router-dom'
 import getSesion from '../../api/session/getSession'
 import { useToken } from '../../hooks/useToken'
@@ -19,6 +20,15 @@ export default function CollabSpace() {
   const [loading , setLoading] = useState(true)
   
   const [token] = useToken()
+
+
+  const LoadingContainer = styled.div`
+      width:100%;
+      height:500px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+  `
 
  
   useEffect(() => {
@@ -50,7 +60,7 @@ export default function CollabSpace() {
     }else{
       return (
         <CollabEnviroment>
-          <Loading />
+          <LoadingContainer><Loading /></LoadingContainer>
         </CollabEnviroment>
       )
     }
@@ -76,7 +86,7 @@ export default function CollabSpace() {
     }else{
       return (
         <CollabEnviroment>
-          <Loading />
+          <LoadingContainer><Loading /></LoadingContainer>
         </CollabEnviroment>
       )
     }
