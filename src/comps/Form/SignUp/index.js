@@ -11,64 +11,58 @@ const FormContainer = styled.div`
     flex-direction: column;
     align-content:center;  
     align-items:center;
-    padding:40px;     
-`;
+    padding:20px 40px 20px 40px;     
+`
 
 const Logo = styled.img`
-    margin-bottom:50px;
+    margin-bottom:30px;
     width:224px;
     height:106px;
-`;
+`
 
 const Title = styled.div`
     font-size: 25px;
-    margin-bottom:10px;
-`;
+    margin-bottom:5px;
+`
 
 const InputBox = styled.div`
     div{
         display:flex;
         flex-direction:column;
-        margin-top: 10px;
+        margin-top: 7px;
         text-align:left;
     }
-`;
-
-const Choose = styled.div`
-    display: flex;
-    margin-top: 25px;
-    font-size: 18px;
-    label{
-        margin-right:20px;
-    }
-`;
-
+`
 const SignupForm = ({title}) => {
-    return <FormContainer>
-            <Logo src={LOGO}/>
-            <Title>
+
+    return (
+        <FormContainer>
+                <Logo src={LOGO}/>
+                <Title>
+                    <div>
+                        <b>{title}</b>
+                    </div>
+                </Title>
+            <InputBox> 
                 <div>
-                    <b>{title}</b>
+                    <InPut abel="Username" type="text" ph="Username" />
                 </div>
-            </Title>
-        <InputBox> 
-            <div>
-                <InPut />
-            </div>
-            <div>
-                <InPut label="Email" type="email" ph="Email"/>
-            </div>
-            <div>
-                <InPut label="Password" type="password" ph="Password"/>
-            </div>
-        </InputBox>
-        <Choose>
-            <label>You are a:</label>
-            <div>
-                <Filter FilterName="Student" text1="Tutor"/>
-            </div>
-        </Choose>
-    </FormContainer>
+                <div>
+                    <InPut label="Email" type="email" ph="Email"/>
+                </div>
+                <div>
+                    <InPut label="First Name" type="text" ph="First Name"/>
+                </div>
+                <div>
+                    <InPut label="Last Name" type="text" ph="Last Name"/>
+                </div>
+                <div>
+                    <InPut label="Password" type="password" ph="Password"/>
+                </div>
+            </InputBox>
+            
+        </FormContainer>
+    )
 }
 
 SignupForm.defaultProps = {

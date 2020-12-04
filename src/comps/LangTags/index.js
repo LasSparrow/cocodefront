@@ -5,7 +5,6 @@ const LangTagsContainer = styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    max-width: 100px; 
     max-height: 10px; 
     background-color: #173F5F;
     border-radius: 10px;

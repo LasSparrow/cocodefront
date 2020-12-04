@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState } from 'react';
 import styled from 'styled-components'; 
 import SignUp from '../../comps/Form/SignUp';
 import SignupImg from '../../public/SignupImg.png';
@@ -29,21 +29,32 @@ const Submit = styled.div`
     }
 `;
 
+const ErrorContainer = styled.div`
+    color: #173F5F;
+    p{
+      text-align:center;
+
+    }
+`
+
 const Photo = styled.img`
     width:50%;
     height:auto;
 `;
 
 export default function SignUpPage() {
-  const HandleBoxClick = (str)=>{
-    alert(str);
-  }
+  
+  const [error , setError] = useState(true)
 
   return <PageCon>
       <Form>
           <SignUp />
+          <ErrorContainer>
+              {error && <p> Please review your inputs </p>}
+            </ErrorContainer>
           <Submit>
             <Link to="/Explore" style={{ textDecoration: 'none' }} ><Button text="Sign Up"/></Link>
+            
             <div>
                 Already have an account? <Link to="/" style={{ textDecoration: 'none' }} ><a href="url">Sign in</a></Link>
             </div>
