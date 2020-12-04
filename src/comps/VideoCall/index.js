@@ -1,9 +1,9 @@
 import React , { useEffect, useState} from 'react'
 import styled from "styled-components"
-import Button from '../Button'
 import { useSocket } from '../../hooks/useSocket'
 import bootstrapRTC from '../../helpers/webRTC'
 import { getUserMedia} from '../../helpers/webRTC/userMedia'
+import VideoCallControlls from './VideoCallControlls'
 
 
 export default function VideoCall(props){
@@ -71,7 +71,7 @@ export default function VideoCall(props){
             <Webcam2>
                 <video id="remote-video" muted autoPlay  preload="auto" playsInline></video>
             </Webcam2>
-            {callStarted ? <Button text="End Call" onClick={handleStopCall}  /> : <Button text="Start Call" onClick={handleCall} />} 
+            <VideoCallControlls callStarted={callStarted} handleCall={handleCall} handleStopCall={handleStopCall} /> 
         </Webcams>
     )
     
