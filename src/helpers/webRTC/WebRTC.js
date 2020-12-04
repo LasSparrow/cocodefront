@@ -74,5 +74,9 @@ export default class WebRTC{
             }
         })
     }
+
+    async close(){
+        this.peerConnection.close()
+    }
     
 }

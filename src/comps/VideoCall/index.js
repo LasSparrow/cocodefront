@@ -1,4 +1,4 @@
-import React , { useEffect} from 'react'
+import React , { useEffect, useState} from 'react'
 import styled from "styled-components"
 import Button from '../Button'
 import { useSocket } from '../../hooks/useSocket'
@@ -9,6 +9,8 @@ import { getUserMedia} from '../../helpers/webRTC/userMedia'
 export default function VideoCall(props){
 
     const [emit , on] = useSocket()
+
+    const [callStarted , setCallStarted] = useState(false) 
 
     const Webcam1 = styled.div``;
 
@@ -23,8 +25,18 @@ export default function VideoCall(props){
     ` 
     
     const handleCall = async (e) => {
+        setCallStarted(true)
         await makeOffer()
-    }    
+    }
+
+    const handleStopCall = async (e) => {
+        const localVideoElement = document.querySelector('#local-video')
+        localVideoElement.srcObject = null
+        const remoteVideoElement = document.querySelector('#remote-video')
+        remoteVideoElement.srcObject = null
+        setCallStarted(false)
+        closeConnection()
+    }
 
 
     const setLocalMedia = (stream) => {
@@ -44,7 +56,7 @@ export default function VideoCall(props){
         socket : { emit , on },
         uuid : props.uuid
     }
-    const {makeOffer} = bootstrapRTC(rtcConfig)
+    const {makeOffer , closeConnection} = bootstrapRTC(rtcConfig)
 
     
     useEffect(() => {   
@@ -54,12 +66,12 @@ export default function VideoCall(props){
     return (
         <Webcams>
             <Webcam1>
-                <video id="local-video" muted    autoPlay preload="auto" playsInline> Start streaming </video>
-            </Webcam1>
+                <video id="local-video" muted autoPlay preload="auto" playsInline> Start streaming </video>
+                </Webcam1>
             <Webcam2>
-                <video id="remote-video" autoPlay  preload="auto" playsInline></video>
+                <video id="remote-video" muted autoPlay  preload="auto" playsInline></video>
             </Webcam2>
-            <Button text="Start Call" onClick={handleCall} /> 
+            {callStarted ? <Button text="End Call" onClick={handleStopCall}  /> : <Button text="Start Call" onClick={handleCall} />} 
         </Webcams>
     )
     

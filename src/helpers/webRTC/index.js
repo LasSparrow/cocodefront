@@ -1,9 +1,13 @@
 
 import WebRTC from './WebRTC.js'
 
-const bootstrap  = ({getUserMedia , setLocalMedia , setRemoteMedia , socket , uuid}) => {
+const bootstrap  = ({getUserMedia , setLocalMedia , setRemoteMedia , socket , uuid }) => {
 
     let rtc
+
+    function closeConnection(){
+        rtc && rtc.close()
+    }
 
     function onIceCandidate(candidate){
         socket.emit('new-ice-candidate',  {candidate ,uuid});
@@ -45,7 +49,7 @@ const bootstrap  = ({getUserMedia , setLocalMedia , setRemoteMedia , socket , uu
         }
     })
 
-    return {makeOffer}
+    return {makeOffer , closeConnection}
     
 }
 
